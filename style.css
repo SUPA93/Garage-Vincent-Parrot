@@ -1,0 +1,23 @@
+body {
+    font-family: 'Inter', sans-serif;  
+    min-width: 201px;
+}
+.logo{
+    width: 100%;
+    justify-items: center;
+    margin-top:1em;
+    text-align: center;
+    /*background-color: rgba(254, 80, 0, 0.267);
+    */
+    background: rgb(168,58,17);
+    background: linear-gradient(180deg, rgba(168,58,17,1) 25%, rgba(84,84,84,1) 84%);
+}
+
+.logo img{
+    width: 100;
+    max-width: 900px;
+    height:150px;
+    margin: auto;
+    display: flex;
+    background-color: RGB(168, 58, 17);
+}
