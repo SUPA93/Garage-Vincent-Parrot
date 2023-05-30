@@ -1,23 +1,154 @@
+*{
+    padding: 0;
+    margin: 0;
+}
 body {
     font-family: 'Inter', sans-serif;  
     min-width: 201px;
 }
-.logo{
+h1, h3{
+    font-weight: 700;
+    background:-webkit-linear-gradient(180deg, rgba(168,58,17,1) 25%, rgba(84,84,84,1) 84%);
+    background-clip:text;
+    -webkit-background-clip:text;
+    color:transparent;
+    
+    
+}
+/*-----------LOGO ET ENTETE----------*/
+.logo {
     width: 100%;
-    justify-items: center;
-    margin-top:1em;
-    text-align: center;
-    /*background-color: rgba(254, 80, 0, 0.267);
-    */
+    /*margin-top:0.1em;*/
     background: rgb(168,58,17);
     background: linear-gradient(180deg, rgba(168,58,17,1) 25%, rgba(84,84,84,1) 84%);
+    border-left:2px solid rgb(168,58,17);
+    border-right:2px solid rgb(168,58,17);
+    
 }
-
-.logo img{
-    width: 100;
+.logo img {
+    width: 100%;
     max-width: 900px;
+    min-width: 280px;
     height:150px;
     margin: auto;
     display: flex;
     background-color: RGB(168, 58, 17);
+    border-radius: 5px;
+    box-shadow: 1px 1px 50px rgba(84,84,84,1);
+}
+/*---------GALAXY FOLD LOGO DISPLAY---------*/
+@media screen and (max-width: 280px){
+    .logo img {
+        width: 100%;
+        max-width: 900px;
+        min-width: 280px;
+        height:100px;
+        margin: auto;
+        display: flex;
+        background-color: RGB(168, 58, 17);
+    }
+        
+}
+
+/*------------NAVBAR------------*/
+.navbar {
+    width: 100%;
+    background-color:  rgba(84,84,84,1);
+    height: 3rem;   
+    /*border: 1px solid rgb(168,58,17);;*/
+    justify-content: center;
+    display: flex;
+    padding: 0px;
+    box-shadow: 2px 2px 10px ;
+}
+.navbar ul {
+    list-style: none;
+    color: aliceblue;
+    display: flex;
+    height: 100%;
+    width: 90%;
+    margin-top: 0px;
+    justify-content: space-around;
+    margin-bottom: 0px;
+    padding-left: 0px;
+}
+.navbar ul li {
+    color:white;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding-top: 10px;
+    border-left: 1px solid rgb(168,58,17);
+    border-right: 1px solid rgb(168,58,17);
+    border-radius: 5px;
+    /*box-shadow: 1px 1px 5px rgb(168,58,17);*/
+}
+.navbar ul li a {
+    text-decoration: none;
+    color: aliceblue;
+    overflow: hidden;
+}
+.navbar ul li a:link {
+    text-decoration: none;
+    color:white;
+}
+.navbar ul li:hover{
+    background-color: rgb(131, 131, 131);
+    color:white;
+    box-shadow: 1px 1px 5px rgb(168,58,17);
+}
+/*------banniere accueil------*/
+.article1{
+    height: 300px;
+    background-color: rgba(131, 131, 131, 0.479);
+    display: flex;
+    position: relative;
+    justify-content: center;    
+}
+.article1 h1{
+    font-size: 3rem;
+    border: 2px solid blue;
+    padding-top: 30px;
+    width: 50%;
+    padding-left: 20px;
+    overflow: hidden;
+    
+}
+.article1 img{
+    margin-top: 2px;
+    border: 1px solid black;
+    width: auto;
+    height: 300px;
+}
+/*-----banniere icons---------*/
+.article2 {
+    background-color: rgba(131, 131, 131, 0.479);
+    justify-content: center;
+}
+.article2 ul {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    list-style: none;
+}
+.article2 ul li {
+    display: block;
+}
+.article2 ul li img {
+    width: auto;
+    height: 80px;
+    border: 1px solid ;
+}
+.article2 h3{
+    font-size: 1.5rem;
+    border: 2px solid blue;
+    text-align: center;
+}
+
+/*----------MOBILE DISPLAY----------*/
+@media screen and (max-width: 632px) {
+    .navbar ul {
+    display: none;
+    
+    }
 }
