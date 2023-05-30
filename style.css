@@ -6,14 +6,12 @@ body {
     font-family: 'Inter', sans-serif;  
     min-width: 201px;
 }
-h1, h3{
+h1, h3, h2{
     font-weight: 700;
     background:-webkit-linear-gradient(180deg, rgba(168,58,17,1) 25%, rgba(84,84,84,1) 84%);
     background-clip:text;
     -webkit-background-clip:text;
     color:transparent;
-    
-    
 }
 /*-----------LOGO ET ENTETE----------*/
 .logo {
@@ -47,7 +45,7 @@ h1, h3{
         display: flex;
         background-color: RGB(168, 58, 17);
     }
-        
+    
 }
 
 /*------------NAVBAR------------*/
@@ -107,7 +105,7 @@ h1, h3{
 }
 .article1 h1{
     font-size: 3rem;
-    border: 2px solid blue;
+    
     padding-top: 30px;
     width: 50%;
     padding-left: 20px;
@@ -116,7 +114,7 @@ h1, h3{
 }
 .article1 img{
     margin-top: 2px;
-    border: 1px solid black;
+    
     width: auto;
     height: 300px;
 }
@@ -125,10 +123,13 @@ h1, h3{
     background-color: rgba(131, 131, 131, 0.479);
     justify-content: center;
 }
+.article2 h2 {
+    text-align: center;
+}
 .article2 ul {
     display: flex;
     justify-content: space-around;
-    margin-top: 30px;
+    margin-top: 20px;
     list-style: none;
 }
 .article2 ul li {
@@ -136,19 +137,66 @@ h1, h3{
 }
 .article2 ul li img {
     width: auto;
-    height: 80px;
-    border: 1px solid ;
+    height: 70px;
+    
 }
 .article2 h3{
     font-size: 1.5rem;
-    border: 2px solid blue;
     text-align: center;
+}
+.article3{
+    display: flex;
+    background-color:rgb(168,58,17) ;
+    justify-content: space-around;
+    font-size: 2rem;
+}
+.article3 img {
+    box-shadow: 20px 1px 50px rgba(131, 131, 131, 0.692);
+    border-radius: 50%;
+    border: 2px solid rgba(84,84,84,1);
+    width: auto;
+    height: 300px;
 }
 
 /*----------MOBILE DISPLAY----------*/
 @media screen and (max-width: 632px) {
     .navbar ul {
-    display: none;
-    
+        display: none;
+    }
+    .article1{
+        height: 200px;
+        background-color: rgba(131, 131, 131, 0.479);
+        display: flex;
+        position: relative;
+        justify-content: center;    
+    }
+    .article1 img{
+        margin-top: 2px;
+        
+        width: auto;
+        height: 200px;
+    }
+
+    .article1 h1{
+        font-size: 1.5rem;
+        
+        padding-top: 30px;
+        width: 50%;
+        padding-left: 10px;
+        overflow: hidden;
+        
+    }
+    .article2 h2 {
+        font-size: 1.5rem;
+        padding-top: 3px;
+    }
+    .article2 ul li img {
+        width: auto;
+        height: 40px;
+        border: 1px solid ;
+    }
+    .article2 h3{
+        font-size: 1rem;
+        text-align: center;
     }
 }
