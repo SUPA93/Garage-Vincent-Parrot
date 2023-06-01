@@ -13,190 +13,679 @@ h1, h3, h2{
     -webkit-background-clip:text;
     color:transparent;
 }
-/*-----------LOGO ET ENTETE----------*/
-.logo {
-    width: 100%;
-    /*margin-top:0.1em;*/
-    background: rgb(168,58,17);
-    background: linear-gradient(180deg, rgba(168,58,17,1) 25%, rgba(84,84,84,1) 84%);
-    border-left:2px solid rgb(168,58,17);
-    border-right:2px solid rgb(168,58,17);
-    
-}
-.logo img {
-    width: 100%;
-    max-width: 900px;
-    min-width: 280px;
-    height:150px;
-    margin: auto;
-    display: flex;
-    background-color: RGB(168, 58, 17);
-    border-radius: 5px;
-    box-shadow: 1px 1px 50px rgba(84,84,84,1);
-}
+
 /*---------GALAXY FOLD LOGO DISPLAY---------*/
-@media screen and (max-width: 280px){
+@media screen and (max-width: 280px) {
+    /*-----------LOGO ET ENTETE----------*/
+    .logo {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+}
     .logo img {
         width: 100%;
         max-width: 900px;
-        min-width: 280px;
-        height:100px;
+        min-width: 278px;
+        height:80px;
         margin: auto;
         display: flex;
         background-color: RGB(168, 58, 17);
+        border: none;
+        outline: none;
     }
-    
-}
-
-/*------------NAVBAR------------*/
-.navbar {
-    width: 100%;
-    background-color:  rgba(84,84,84,1);
-    height: 3rem;   
-    /*border: 1px solid rgb(168,58,17);;*/
-    justify-content: center;
-    display: flex;
-    padding: 0px;
-    box-shadow: 2px 2px 10px ;
-}
-.navbar ul {
-    list-style: none;
-    color: aliceblue;
-    display: flex;
-    height: 100%;
-    width: 90%;
-    margin-top: 0px;
-    justify-content: space-around;
-    margin-bottom: 0px;
-    padding-left: 0px;
-}
-.navbar ul li {
-    color:white;
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    padding-top: 10px;
-    border-left: 1px solid rgb(168,58,17);
-    border-right: 1px solid rgb(168,58,17);
-    border-radius: 5px;
-    /*box-shadow: 1px 1px 5px rgb(168,58,17);*/
-}
-.navbar ul li a {
-    text-decoration: none;
-    color: aliceblue;
-    overflow: hidden;
-}
-.navbar ul li a:link {
-    text-decoration: none;
-    color:white;
-}
-.navbar ul li:hover{
-    background-color: rgb(131, 131, 131);
-    color:white;
-    box-shadow: 1px 1px 5px rgb(168,58,17);
-}
-/*------banniere accueil------*/
-.article1{
-    height: 300px;
-    background-color: rgba(131, 131, 131, 0.479);
-    display: flex;
-    position: relative;
-    justify-content: center;    
-}
-.article1 h1{
-    font-size: 3rem;
-    
-    padding-top: 30px;
-    width: 50%;
-    padding-left: 20px;
-    overflow: hidden;
-    
-}
-.article1 img{
-    margin-top: 2px;
-    
-    width: auto;
-    height: 300px;
-}
-/*-----banniere icons---------*/
-.article2 {
-    background-color: rgba(131, 131, 131, 0.479);
-    justify-content: center;
-}
-.article2 h2 {
-    text-align: center;
-}
-.article2 ul {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-    list-style: none;
-}
-.article2 ul li {
-    display: block;
-}
-.article2 ul li img {
-    width: auto;
-    height: 70px;
-    
-}
-.article2 h3{
-    font-size: 1.5rem;
-    text-align: center;
-}
-.article3{
-    display: flex;
-    background-color:rgb(168,58,17) ;
-    justify-content: space-around;
-    font-size: 2rem;
-}
-.article3 img {
-    box-shadow: 20px 1px 50px rgba(131, 131, 131, 0.692);
-    border-radius: 50%;
-    border: 2px solid rgba(84,84,84,1);
-    width: auto;
-    height: 300px;
-}
-
-/*----------MOBILE DISPLAY----------*/
-@media screen and (max-width: 632px) {
+    /*----------NAVABAR--------*/
+    .navbar {
+        width: 280px;
+        background-color:  rgba(84,84,84,1);
+        height: 2rem;   
+        display: flex;
+        margin-left:auto;
+        margin-right: auto;
+        padding: 0px;
+        box-shadow: 0px 0px px ;
+    }
     .navbar ul {
         display: none;
     }
+    /*---------ARTICLE1------*/
     .article1{
-        height: 200px;
+        height: 100px;
         background-color: rgba(131, 131, 131, 0.479);
         display: flex;
         position: relative;
         justify-content: center;    
     }
     .article1 img{
-        margin-top: 2px;
-        
+        margin-top: 4px;
         width: auto;
-        height: 200px;
+        height: 90px;
     }
-
     .article1 h1{
-        font-size: 1.5rem;
-        
-        padding-top: 30px;
+        font-size: 1.1rem;
+        padding-top: 5px;
         width: 50%;
         padding-left: 10px;
         overflow: hidden;
         
     }
+    /*---------ARTICLE2-------*/
+    .article2 {
+        height: 80px;
+        background-color: rgba(131, 131, 131, 0.479);
+        justify-content: center;
+        padding-bottom: 10px;
+        box-shadow: 1px 1px 8px ;
+        text-align: center;
+    }
     .article2 h2 {
-        font-size: 1.5rem;
+        font-size: 0.8rem;
         padding-top: 3px;
+        margin-bottom: 5px;
+    }
+    .article2 ul{
+        display: flex;
+        justify-content: space-around;
+        list-style: none;
+        margin: 0px;
+    }
+    .article2 ul li {
+        display: block;
+    }
+    .article2 ul li img {
+        width: auto;
+        height: 30px;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 2px 2px 8px rgba(168, 57, 17, 1),
+            -2px -2px 8px rgba(131, 131, 131, 1);
+    }
+    .article2 p{
+        display: none;
+    }
+    .article2 h3{
+        font-size: 0.5rem;
+        text-align: center;
+    }
+    /*---------ARTICLE3------*/
+    .article3{
+        display: flex;
+        background-color:rgba(168, 57, 17, 0.74) ;
+        justify-content: space-around;
+        margin-left: auto;
+        margin-right: auto;
+        height: 80px;
+        margin-top: 50px;
+        border: 2px solid rgba(168, 57, 17, 0.74);
+        border-radius: 15px;
+        width: 90%;
+    
+    }
+    .article3 h4{
+        margin-top: 1vw;
+        text-align: center;
+        text-shadow: 0px 0px 10px white;
+        margin-left: 10px;
+        margin-right: 10px;
+        font-size: 1rem;
+    }
+    .article3 img {
+        border-radius: 1px 50px 50px 1px;
+        margin-top: -3px;
+        height: 80px;
+        width: auto;
+        border: 3px solid rgba(131, 131, 131,1) ;
+        box-shadow: -5px 1px 8px ;
+        
+    }
+
+
+}
+@media screen and (min-width: 281px) and (max-width: 380px) {
+    /*-----------LOGO ET ENTETE----------*/
+    .logo {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+}
+    .logo img {
+        width: 100%;
+        max-width: 900px;
+        min-width: 278px;
+        height:80px;
+        margin: auto;
+        display: flex;
+        background-color: RGB(168, 58, 17);
+        border: none;
+        outline: none;
+    }
+    /*----------NAVABAR--------*/
+    .navbar {
+        width: 100%;
+        background-color:  rgba(84,84,84,1);
+        height: 2rem;   
+        display: flex;
+        margin-left:auto;
+        margin-right: auto;
+        padding: 0px;
+        box-shadow: 0px 0px px ;
+    }
+    .navbar ul {
+        display: none;
+    }
+    /*---------ARTICLE1------*/
+    .article1{
+        height: 100px;
+        background-color: rgba(131, 131, 131, 0.479);
+        display: flex;
+        position: relative;
+        justify-content: center;    
+    }
+    .article1 img{
+        margin-top: 4px;
+        width: auto;
+        height: 90px;
+    }
+    .article1 h1{
+        font-size: 1.1rem;
+        padding-top: 5px;
+        width: 50%;
+        padding-left: 10px;
+        overflow: hidden;
+        
+    }
+    /*---------ARTICLE2-------*/
+    .article2 {
+        height: 80px;
+        background-color: rgba(131, 131, 131, 0.479);
+        justify-content: center;
+        padding-bottom: 10px;
+        box-shadow: 1px 1px 8px ;
+        text-align: center;
+    }
+    .article2 h2 {
+        font-size: 0.8rem;
+        padding-top: 3px;
+        margin-bottom: 5px;
+    }
+    .article2 ul{
+        display: flex;
+        justify-content: space-around;
+        list-style: none;
+        margin: 0px;
+    }
+    .article2 ul li {
+        display: block;
+    }
+    .article2 ul li img {
+        width: auto;
+        height: 30px;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 2px 2px 8px rgba(168, 57, 17, 1),
+            -2px -2px 8px rgba(131, 131, 131, 1);
+    }
+    .article2 p{
+        display: none;
+    }
+    .article2 h3{
+        font-size: 0.6rem;
+        text-align: center;
+    }
+    /*---------ARTICLE3------*/
+    .article3{
+        display: flex;
+        background-color:rgba(168, 57, 17, 0.74) ;
+        justify-content: space-around;
+        margin-left: auto;
+        margin-right: auto;
+        height: 80px;
+        margin-top: 50px;
+        border: 2px solid rgba(168, 57, 17, 0.74);
+        border-radius: 15px;
+        width: 90%;
+    
+    }
+    .article3 h4{
+        margin-top: 1vw;
+        text-align: center;
+        text-shadow: 0px 0px 10px white;
+        margin-left: 10px;
+        margin-right: 10px;
+        font-size: 1rem;
+    }
+    .article3 img {
+        border-radius: 1px 50px 50px 1px;
+        margin-top: -3px;
+        height: 80px;
+        width: auto;
+        border: 3px solid rgba(131, 131, 131,1) ;
+        box-shadow: -5px 1px 8px ;
+        
+    }
+}
+/*----------MOBILE DISPLAY----------*/
+
+@media screen and (min-width: 381px) and (max-width: 632px) {
+    /*-----------LOGO ET ENTETE----------*/
+    .logo {
+        width: 100%;
+        /*margin-top:0.1em;*/
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .logo img {
+        width: 100%;
+        max-width: 900px;
+        min-width: 278px;
+        height:100px;
+        margin: auto;
+        display: flex;
+        background-color: RGB(168, 58, 17);
+        border-radius: 5px;
+        box-shadow: 1px 1px 50px rgba(84,84,84,1);
+    }
+    /*----------NAVABAR--------*/
+    .navbar {
+        width: 100%;
+        background-color:  rgba(84,84,84,1);
+        height: 3rem;   
+        display: flex;
+        margin-left:auto;
+        margin-right: auto;
+        padding: 0px;
+        box-shadow: 0px 0px 10px ;
+    }
+    .navbar ul {
+        display: none;
+    }/*---------ARTICLE1------*/
+    .article1{
+        height: 160px;
+        background-color: rgba(131, 131, 131, 0.479);
+        display: flex;
+        position: relative;
+        justify-content: center;    
+    }
+    .article1 img{
+        margin-top: 4px;
+        width: auto;
+        height: 150px;
+    }
+    .article1 h1{
+        font-size: 1.8rem;
+        padding-top: 20px;
+        width: 50%;
+        padding-left: 15px;
+        overflow: hidden;
+        
+    }
+    /*---------ARTICLE2-------*/
+    .article2 {
+        background-color: rgba(131, 131, 131, 0.479);
+        justify-content: center;
+        padding-bottom: 10px;
+        box-shadow: 1px 1px 8px ;
+        height: 100px;
+        text-align: center;
+    }
+    .article2 h2 {
+        font-size: 1rem;
+        padding-top: 3px;
+        margin-bottom: 5px;
+    }
+    .article2 ul {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 0px;
+        list-style: none;
     }
     .article2 ul li img {
         width: auto;
         height: 40px;
-        border: 1px solid ;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 2px 2px 8px rgba(168, 57, 17, 1),
+            -2px -2px 8px rgba(131, 131, 131, 1);
+    }
+    .article2 p{
+        display: none;
     }
     .article2 h3{
+        font-size: 0.9rem;
+        text-align: center;
+        overflow: hidden;
+    }
+    /*---------ARTICLE3------*/
+    .article3{
+        display: flex;
+        background-color:rgba(168, 57, 17, 0.74) ;
+        justify-content: space-around;
+        margin-left: auto;
+        margin-right: auto;
+        height: 80px;
+        margin-top: 50px;
+        border: 2px solid rgba(168, 57, 17, 0.74);
+        border-radius: 15px;
+        width: 90%;
+    
+    }
+    .article3 h4{
+        margin-top: 1vw;
+        text-align: center;
+        text-shadow: 0px 0px 10px white;
+        margin-left: 10px;
+        margin-right: 10px;
         font-size: 1rem;
+    }
+    .article3 img {
+        border-radius: 1px 50px 50px 1px;
+        margin-top: -25px;
+        height: 120px;
+        width: auto;
+        border: 3px solid rgba(131, 131, 131,1) ;
+        box-shadow: -5px 1px 8px ;
+        
+    }
+}
+/**************TAB AND DESKTOP****************/
+@media screen and (min-width: 633px){
+    /*-----------LOGO ET ENTETE----------*/
+    .logo {
+        width: 100%;
+        /*margin-top:0.1em;*/
+        background: rgb(168,58,17);
+        background: linear-gradient(180deg, rgba(168,58,17,1) 25%, rgba(84,84,84,1) 84%);
+        /*border-left:2px solid rgb(168,58,17);
+        border-right:2px solid rgb(168,58,17);*/
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .logo img {
+        width: 100%;
+        max-width: 900px;
+        min-width: 280px;
+        height:150px;
+        margin: auto;
+        display: flex;
+        background-color: RGB(168, 58, 17);
+        border-radius: 5px;
+        box-shadow: 1px 1px 50px rgba(84,84,84,1);
+    }
+
+    /*------------NAVBAR------------*/
+    .navbar {
+        width: 100%;
+        background-color:  rgba(84,84,84,1);
+        height: 3rem;   
+        /*border: 1px solid rgb(168,58,17);;*/
+        justify-content: center;
+        display: flex;
+        padding: 0px;
+        box-shadow: 2px 2px 10px ;
+    }
+    .navbar ul {
+        list-style: none;
+        color: aliceblue;
+        display: flex;
+        height: 100%;
+        width: 90%;
+        margin-top: 0px;
+        justify-content: space-around;
+        margin-bottom: 0px;
+        padding-left: 0px;
+    }
+    .navbar ul li {
+        color:white;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        padding-top: 13px;
+        border-left: 1px solid rgb(168,58,17);
+        border-right: 1px solid rgb(168,58,17);
+        border-radius: 5px;
+    }
+    .navbar ul li a {
+        text-decoration: none;
+        color: aliceblue;
+        overflow: hidden;
+        text-shadow: 0px 0px 1px black ;
+    }
+    .navbar ul li a:link {
+        text-decoration: none;
+        color:white;
+    }
+    .navbar ul li:hover{
+        background-color: rgb(131, 131, 131);
+        color:white;
+        box-shadow: 1px 1px 5px rgb(168,58,17);
+    }
+    /*------banniere accueil------*/
+    .article1{
+        height: 300px;
+        background-color: rgba(131, 131, 131, 0.479);
+        display: flex;
+        position: relative;
+        justify-content: end;    
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .article1 h1{
+        font-size: 3rem;
+        padding-top: 30px;
+        width: 50%;
+        padding-left: 20px;
+        overflow: hidden;
+    }
+    .article1 img{
+        margin-top: 4px;
+        width: auto;
+        height: 294px;
+    }
+    /*-----banniere icons---------*/
+    .article2 {
+        background-color: rgba(131, 131, 131, 0.479);
+        justify-content: center;
+        padding-bottom: 10px;
+        box-shadow: 1px 1px 8px ;
         text-align: center;
     }
+    .article2 h2 {
+        text-align: center;
+        font-size: 2.5rem;
+    }
+    .article2 ul {
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 20px;
+        list-style: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .article2 ul li {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        text-align: center;
+        width: auto;
+    }
+    .article2 ul li img {
+        width: auto;
+        text-align: center;
+        height: 70px;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 2px 2px 8px rgba(168, 57, 17, 1),
+            -2px -2px 8px rgba(131, 131, 131, 1);
+        
+    }
+    .article2 h3{
+        
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    /*----------ARTICLE 3 DISCOUNT MESSAGE--------*/
+    .article3{
+        display: flex;
+        background-color:rgba(168, 57, 17, 0.74) ;
+        justify-content: space-around;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 2rem;
+        height: 150px;
+        margin-top: 150px;
+        border: 2px solid rgba(168, 57, 17, 0.74);
+        border-radius: 15px;
+        width: 50%;
+
+    }
+    .article3 h4{
+        margin-top: 10px;
+        text-align: center;
+        text-shadow: 0px 0px 10px white;
+        margin-left: 10px;
+        margin-right: 10px;
+        font-size: 2rem;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow : ellipsis;
+
+    }
+    .article3 img {
+        border-radius: 1px 50px 50px 1px;
+        margin-top: -60px;
+        height: 270px;
+        width: 400px;
+        border: 3px solid rgba(131, 131, 131,1) ;
+        box-shadow: -5px 1px 8px ;
+
+    }
+}
+/******************PAGE D'INSCRIPTION et DE CONNEXION************************/
+
+.inscription {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+form {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+
+form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    border-radius: 10px;
+    
+}
+
+
+label.inline-label {
+    display: inline-block;
+    
+}
+
+fieldset {
+    margin-bottom: 10px;
+    box-shadow: 0px 0px 20px;
+    border-radius: 5px;
+    border: 3px solid lightgray;
+    background-color: rgba(131, 131, 131,1);
+    text-align: center;
+}
+
+legend {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1.3em;
+    padding: 5px;
+    color:rgba(168, 57, 17, 0.74);
+}
+
+form input, form select, form textarea {
+    max-width: 300px;
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 80%;
+    border-radius: 5px;
+}
+
+form input[type="radio"],
+form input[type="checkbox"],
+form input[type="submit"] {
+    width: auto;
+    
+}
+
+button[type=submit] {
+    display: block;
+    padding: 10px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    
+}
+.btninscription {
+    display: block;
+    padding: 10px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    overflow: hidden;
+    
+}
+.btninscription a{
+    text-decoration: none;
+    color: black;
+}
+.btninscription a:link{
+    text-decoration: none;
+
+}
+.btninscription:hover{
+    background-color:rgba(168, 57, 17, 0.74);
+    color: white;
+    border: 2px solid white;
+}
+button:hover{
+    background-color:rgba(168, 57, 17, 0.74);
+    color: white;
+    border: 2px solid white;
+}
+
+/********************PAGE NOS GARAGES*************************/
+.article1 iframe{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 500px;
+}
+/********************PAGE PRESTATION*************************/
+.services{
+    display: flex;
+    flex-direction: column;
+}
+.services img{
+    margin: 30px;
+    
+    width: 300px;
+    height: auto;
+    border-radius: 5px;
+    clip-path: 50%, 50%;
+    box-shadow: 2px 2px 8px rgba(168, 57, 17, 1),
+            -2px -2px 8px rgba(131, 131, 131, 1);
 }
