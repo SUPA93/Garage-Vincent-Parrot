@@ -12,40 +12,31 @@ $articles = [/*Titre de fiche           Marque                  Modèle         
     ["title" => "Citroen DS",    "marque" => "Citroën DS", "modèle" => "DS9",     "année" => "2022",  "couleur" => "Gris",    "kilomètres" => "12800",  "finition/version" => "",           "image" => "occasions/ds9.jpg"],
 ];
 ?>
-<!DOCTYPE html>
-<html lang="en">
+<?php require_once __DIR__ . "/templates/header.php"; ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <title>OCASSIONS</title>
-</head>
+<section class="container">
+    <h1>L'occasion</h1>
+    <h2>Nos véhicules d'occasion sont vérifiés & remis en état par nos soins
+    </h2>
+    <div class="grid-container">
+        <?php foreach ($articles as $key => $article) { ?>
+            <div class="grid-item">
+                <img src="<?= $article["image"] ?>" alt="Peugeot 5008">
+                <h3><?= $article["title"] ?></h3>
+                <p>Marque: <?= $article["marque"] ?></p>
+                <p>Modèle: <?= $article["modèle"] ?></p>
+                <p>Année: <?= $article["année"] ?></p>
+                <p>Couleur: <?= $article["couleur"] ?></p>
+                <p>Kilomètrage: <?= $article["kilomètres"] ?>km</p>
+                <p>Version/finition: <?= $article["finition/version"] ?></p>
 
-<body>
-    <section class="container">
-        <h1>L'occasion</h1>
-        <h2>Nos véhicules d'occasion sont vérifiés & remis en état par nos soins
-        </h2>
-        <div class="grid-container">
-            <?php foreach ($articles as $key => $article) { ?>
-                <div class="grid-item">
-                    <img src="<?= $article["image"] ?>" alt="Peugeot 5008">
-                    <h3><?= $article["title"] ?></h3>
-                    <p>Marque: <?= $article["marque"] ?></p>
-                    <p>Modèle: <?= $article["modèle"] ?></p>
-                    <p>Année: <?= $article["année"] ?></p>
-                    <p>Couleur: <?= $article["couleur"] ?></p>
-                    <p>Kilomètrage: <?= $article["kilomètres"] ?>km</p>
-                    <p>Version/finition: <?= $article["finition/version"] ?></p>
+                <button type="submit" title="cliquez pour voir plus de détails">Plus de détails</button>
+            </div>
+        <?php } ?>
+    </div>
+</section>
+<script src="code.js" type="module"></script>
 
-                    <button type="submit" title="cliquez pour voir plus de détails">Plus de détails</button>
-                </div>
-            <?php } ?>
-        </div>
-    </section>
-    <script src="code.js" type="module"></script>
-</body>
 
-</html>
+<?php require_once __DIR__ . "/templates/footer.php"; ?>
+
