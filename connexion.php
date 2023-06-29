@@ -1,29 +1,6 @@
 <?php require_once __DIR__."/templates/header.php";?>
 
-<header><!--LOGO--------------------------------------->
-    <div class="logo">
-        <a href="index.html">
-            <img src=ressources/parrotimage.PNG alt="LOGO VPARROT" title="Garage Vincent Parrot">
-        </a>
-    </div><!--NAVBAR-->
-    <nav class="navbar">
-        <ul>
-            <li>
-                <a href="prestations.html">PRESTATIONS</a>
-            </li>
-            <li>
-                <a href="position.html">GARAGES</a>
-            </li>
-            <li>
-                <a href="occasions.html">OCCASIONS</a>
-            </li>
-            <li>
-                <a href="connexion.html">CONNECTEZ-VOUS</a>
-            </li>
 
-        </ul>
-    </nav>
-</header>
 <h1 class="inscription">Espace connexion</h1>
 <form action="inscription.php" method="post">
     <fieldset>
@@ -39,7 +16,7 @@
     <fieldset>
         <legend>Pas encore inscrit(e)?</legend>
         <button class="btninscription">
-            <a href="subscribe.html">Inscription</a>
+            <a href="subscribe.php">Inscription</a>
         </button>
     </fieldset>
 </form>
