@@ -10,19 +10,15 @@
     <ul>
         <li>
             <img src="assets/calendrier.png" alt="calendar icon" title="calendrier"></a>
-
         </li>
         <li>
             <img src="assets/badge-de-reduction.png" alt="discount icon" title="réduction"></a>
-
         </li>
         <li>
             <img src="assets/garantie.png" alt="waranty icon" title="garantie"></a>
-
         </li>
         <li>
             <img src="assets/la-satisfaction.png" alt="feedback icon" title="avis"></a>
-
         </li>
     </ul>
     <ul>
@@ -33,17 +29,14 @@
         <li>
             <p>Remises exclusives</p>
             <h3>Jusqu'à -40%</h3>
-
         </li>
         <li>
             <p>Pièces & main d'oeuvre</p>
             <h3>Garantie 5ans</h3>
-
         </li>
         <li>
             <p>Avis clients vérifiés</p>
             <h3>+50 000avis</h3>
-
         </li>
     </ul>
 </article>
