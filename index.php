@@ -53,7 +53,7 @@
         <input type="text" id="immat" name="fname" placeholder="ex: AB 123 CD "><br>
         <label for="reponse-selector">Type de préstation</label>
         <select name="reponse-selector" id="reponse-selector">
-            <option value="">Choisir un service</option>
+            <option value="">Service</option>
             <option value="rep1">Entretien</option>
             <option value="rep2">Diagnostique</option>
             <option value="rep3">Distribution</option>

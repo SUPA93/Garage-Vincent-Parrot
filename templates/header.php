@@ -8,7 +8,7 @@
     <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap" rel="stylesheet">
-    <?php  echo'<link rel="stylesheet" href="\assets\style\style.css">';?>
+    <?php  echo'<link rel="stylesheet" href="/assets/style/style.css">';?>
     
     <title>GARAGE PARROT</title>
 </head>
@@ -16,12 +16,15 @@
 <body>
     <header><!--LOGO--------------------------------------->
         <div class="logo">
-            <a href="index.html">
+            <a href="index.php">
                 <img src=../ressources/parrotimage.PNG alt="LOGO VPARROT" title="Garage Vincent Parrot">
             </a>
         </div><!--NAVBAR-->
         <nav class="navbar">
             <ul>
+                <li>
+                    <a href="index.php">ACCUEIL</a>
+                </li>
                 <li>
                     <a href="prestations.php">PRESTATIONS</a>
                 </li>
@@ -32,7 +35,10 @@
                     <a href="occasions.php">OCCASIONS</a>
                 </li>
                 <li>
-                    <a href="connexion.php">CONNECTEZ-VOUS</a>
+                    <a href="connexion.php">CONNECTION</a>
+                </li>
+                <li>
+                    <a href="contact.php">CONTACT</a>
                 </li>
             </ul>
         </nav>

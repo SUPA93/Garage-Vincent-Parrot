@@ -23,7 +23,7 @@
                 </ul>
                 <ul class="sociaux">
                     <li>
-                        <h5>Rerouvez-nous sur les reseaux sociaux</h5>
+                        <h5>Retrouvez-nous sur les reseaux sociaux</h5>
                     </li>
                     <li><i class="fa-brands fa-instagram"></i><a href="#">Insta </a></li>
                     <li><i class="fa-brands fa-facebook "></i><a href="#">Facebook</a></li>
@@ -31,7 +31,7 @@
                     <li><i class="fa-brands fa-snapchat"> </i><a href="#">Snap</a></li>
 
                 </ul>
-                <p>Copyrights 2023 licensed</p>
+                
             </footer>
             <!--Boostrap-->
             <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
