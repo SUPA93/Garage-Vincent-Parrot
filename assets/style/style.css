@@ -1248,7 +1248,7 @@ button:hover {
 
 .grid-item {
     display: flex;
-    height: 600px;
+    height: auto;
     width: 450px;
     flex-direction: column;
     padding: 5px;

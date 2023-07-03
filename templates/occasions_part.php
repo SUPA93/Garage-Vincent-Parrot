@@ -1,12 +1,14 @@
 <?php /*grille de véhicules d'occasion avec la boucle en php*/ ?>
 <div class="grid-item">
-    <img src="<?= $article["image"] ?>" alt="<?= $article["marque"]." ". $article["modèle"] ?>" title="<?= $article["marque"]." ". $article["modèle"] ?>">
+    <img src="<?= $article["image"] ?>" alt="<?= $article["Marque: "]." ". $article["Modèle: "] ?>" title="<?= $article["Marque: "]." ". $article["Modèle: "] ?>">
     <h3><?= $article["title"] ?></h3>
-    <p>Marque: <?= $article["marque"] ?></p>
-    <p>Modèle: <?= $article["modèle"] ?></p>
-    <p>Année: <?= $article["année"] ?></p>
-    <p>Couleur: <?= $article["couleur"] ?></p>
-    <p>Kilomètrage: <?= $article["kilomètres"] ?>km</p>
-    <p>Version/finition: <?= $article["finition/version"] ?></p>
-    <button type="submit" title="cliquez pour voir plus de détails">Plus de détails</button>
+    <p>Marque: <?= $article["Marque: "] ?></p>
+    <p>Modèle: <?= $article["Modèle: "] ?></p>
+    <p>Année: <?= $article["Année: "] ?></p>
+    <p>Couleur: <?= $article["Couleur: "] ?></p>
+    <p>Kilomètrage: <?= $article["Kilomètres: "] ?>km</p>
+    <p>Version/finition: <?= $article["Finition/version: "] ?></p>
+    <button type="button" title="cliquez pour voir plus de détails"class="btninscription">
+        <a href="occasion_detail.php?id=<?=$key;?>">Plus de détails</a>
+    </button>
 </div>

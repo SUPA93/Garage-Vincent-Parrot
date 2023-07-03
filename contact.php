@@ -2,7 +2,7 @@
 
 
 
-<div class="container">
+<div class="inscription">
     <h1>Formulaire de contact</h1>
     <form action="/action_page.php">
         <fieldset>
