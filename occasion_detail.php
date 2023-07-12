@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . "/lib/article.php";
 require_once __DIR__ . "/templates/header.php";
-
+// GESTION DU CAS D'ERREUR 
 $error = false;
 if (isset($_GET['id'])) {
     $id = $_GET["id"];
@@ -19,14 +19,17 @@ if (isset($_GET['id'])) {
 ?>
 
 <?php if (!$error) { ?>
-
     <section class="container">
         <div class="grid-item">
             <h1><?= $article["title"] ?></h1>
             <img src="<?= $article["image"] ?>" alt="<?= $article["Marque: "] . " " . $article["Modèle: "] ?>" title="<?= $article["Marque: "] . " " . $article["Modèle: "] ?>">
             <p><?php foreach ($article as $key => $detail) {
-                    echo $key . "   " . $detail . '<br>'; // Avec insertion d'un espace entre 2 valeurs
+                    echo $key . "   " . $detail . '<br>'; // Avec insertion d'un saut de ligne entre 2 valeurs
                 } ?></p>
+            <!-- Bouton de retour à la liste de résultats -->
+            <button type="button" title="Retour à la liste" class="btninscription">
+                <a href="occasions.php">Retour aux occasions</a>
+            </button>
         </div>
     </section>
 <?php } else { ?>
