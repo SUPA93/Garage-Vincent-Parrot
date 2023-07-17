@@ -1,4 +1,5 @@
-<?php require_once __DIR__ . "/templates/header.php"; ?>
+<?php require_once __DIR__ . "/templates/header.php";
+/* require_once __DIR__ . "/lib/menu.php"; */ ?>
 
 <article class="article1">
     <img src="ressources\VPARROTSANSFOND.png" alt="photo Vincent Parrot" title="Vincent Parrot">
@@ -41,6 +42,7 @@
     </ul>
 </article>
 <article class="clientele">
+    <h1>Trouvez votre service</h1>
     <form action="/action_page.php">
         <label for="immatriculation">Mon immatriculation</label><br>
         <input type="text" id="immat" name="fname" placeholder="ex: AB 123 CD "><br>
@@ -54,7 +56,7 @@
             <option value="rep5">Echapement</option>
             <option value="rep6">Carroserie</option>
         </select>
-        <button type="submit">Devis</button>
+        <button type="submit"><a href="templates/devis.php">Devis</a></button>
     </form>
 </article>
 <article class="article3">

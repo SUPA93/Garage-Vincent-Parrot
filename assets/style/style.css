@@ -6,6 +6,7 @@
 body {
     font-family: 'Inter', sans-serif;
     min-width: 201px;
+
 }
 
 h1,
@@ -161,12 +162,14 @@ h2 {
         box-shadow: -5px 1px 8px;
 
     }
+
     /*********** FORMULAIRE DE SERVICES****************/
 
     .clientele {
         background-image: url(../../ressources/fonddeform.png);
         background-repeat: no-repeat;
         background-size: cover;
+
         margin-top: 2px;
         border-radius: 5px;
         margin-left: auto;
@@ -174,7 +177,7 @@ h2 {
         box-shadow: 0px 0px 12px;
         padding: 5px;
         height: 100%;
-        
+
         text-align: center;
     }
 
@@ -188,11 +191,11 @@ h2 {
         font-size: 1.3rem;
         margin-bottom: 0px;
         padding-top: 0px;
-        text-shadow: 0px 2px 5px white ;
+        text-shadow: 0px 2px 5px white;
     }
 
     .clientele input {
-        height: 20px;
+        height: 40px;
         text-align: center;
         margin-top: -10px;
         margin-bottom: 0px;
@@ -203,7 +206,7 @@ h2 {
         margin-top: 0px;
         border: 2px solid rgb(3, 3, 3);
     }
-    
+
     .clientele button {
         box-shadow: 0px 0px 20px black;
         display: block;
@@ -214,6 +217,18 @@ h2 {
         border-radius: 5px;
         padding: 10px;
     }
+    .clientele button a:hover{
+        color: white;
+    }
+    .clientele a {
+        color: rgb(0, 0, 0);
+    }
+
+    .clientele a:link {
+        text-decoration: none;
+
+    }
+
     /**************** FOOTER **********************/
     .pied {
         margin-top: 10px;
@@ -223,12 +238,14 @@ h2 {
         justify-content: space-around;
         color: white
     }
+
     .pied ul {
         list-style: none;
         flex-direction: column;
         border: 1px solid yellow;
     }
-    .pied ul li{
+
+    .pied ul li {
         font-size: 0.7rem;
     }
 
@@ -251,7 +268,7 @@ h2 {
         text-align: center;
         line-height: 1.5;
         padding: 5px;
-        
+
     }
 
     .contact li a {
@@ -413,7 +430,6 @@ h2 {
 
     .clientele {
         background-image: url(../../ressources/fonddeform.png);
-        
         background-repeat: no-repeat;
         background-size: cover;
         margin-top: 2px;
@@ -423,13 +439,13 @@ h2 {
         box-shadow: 0px 0px 12px;
         padding: 5px;
         height: 100%;
-        
+
         text-align: center;
     }
 
     .clientele form {
         flex-direction: column;
-        
+
     }
 
     .clientele label {
@@ -437,7 +453,7 @@ h2 {
         font-size: 1.3rem;
         margin-bottom: 0px;
         padding-top: 0px;
-        text-shadow: 0px 2px 5px white ;
+        text-shadow: 0px 2px 5px white;
     }
 
     .clientele input {
@@ -452,7 +468,7 @@ h2 {
         margin-top: 0px;
         border: 2px solid rgb(3, 3, 3);
     }
-    
+
     .clientele button {
         box-shadow: 0px 0px 20px black;
         display: block;
@@ -462,6 +478,18 @@ h2 {
         margin-right: auto;
         border-radius: 5px;
         padding: 10px;
+        
+    }
+    .clientele button a:hover{
+        color: white;
+    }
+    .clientele a {
+        color: rgb(0, 0, 0);
+    }
+
+    .clientele a:link {
+        text-decoration: none;
+
     }
 
     /**************** FOOTER **********************/
@@ -473,12 +501,14 @@ h2 {
         justify-content: space-around;
         color: white
     }
+
     .pied ul {
         list-style: none;
         flex-direction: column;
         border: 1px solid yellow;
     }
-    .pied ul li{
+
+    .pied ul li {
         font-size: 0.7rem;
     }
 
@@ -501,7 +531,7 @@ h2 {
         text-align: center;
         line-height: 1.5;
         padding: 5px;
-        
+
     }
 
     .contact li a {
@@ -660,7 +690,7 @@ h2 {
         border: 3px solid rgba(131, 131, 131, 1);
         box-shadow: -5px 1px 8px;
     }
-    
+
     /*********** FORMULAIRE DE SERVICES****************/
     .clientele {
         display: block;
@@ -680,13 +710,13 @@ h2 {
 
     .clientele form {
         flex-direction: column;
-    
+
     }
 
     .clientele label {
         margin-top: 10px;
         font-size: 20px;
-        text-shadow: 0px 2px 5px white ;
+        text-shadow: 0px 2px 5px white;
     }
 
     .clientele input {
@@ -708,7 +738,7 @@ h2 {
     }
 
     .clientele button {
-        box-shadow: 0px 0px 20px black;
+        /* box-shadow: 0px 0px 20px black; */
         display: block;
         margin-top: auto;
         margin-bottom: auto;
@@ -716,7 +746,20 @@ h2 {
         margin-right: auto;
         border-radius: 5px;
         padding: 10px;
+
     }
+    .clientele button a:hover{
+        color: white;
+    }
+    .clientele a {
+        color: rgb(0, 0, 0);
+    }
+
+    .clientele a:link {
+        text-decoration: none;
+
+    }
+
     /**************** FOOTER **********************/
     .pied {
         margin-top: 10px;
@@ -726,12 +769,14 @@ h2 {
         justify-content: space-around;
         color: white
     }
+
     .pied ul {
         list-style: none;
         flex-direction: column;
         border: 1px solid yellow;
     }
-    .pied ul li{
+
+    .pied ul li {
         font-size: 0.7rem;
     }
 
@@ -754,7 +799,7 @@ h2 {
         text-align: center;
         line-height: 1.5;
         padding: 5px;
-        
+
     }
 
     .contact li a {
@@ -851,6 +896,12 @@ h2 {
         box-shadow: 1px 1px 5px rgb(168, 58, 17);
     }
 
+    .active {
+        background-color: rgb(168, 58, 17);
+        color: white;
+        box-shadow: 0px 0px 5px rgb(255, 255, 255);
+    }
+
     /*------banniere accueil------*/
     .article1 {
         height: 300px;
@@ -927,13 +978,13 @@ h2 {
         font-size: 1.5rem;
         text-align: center;
     }
-    
+
     .clientele {
         background-image: url(../../ressources/fonddeform.png);
         background-repeat: no-repeat;
         background-size: cover;
         width: 80%;
-        height: 150px;
+        height: 222px;
         margin-top: 20px;
         border-radius: 5px;
         display: flex;
@@ -942,7 +993,12 @@ h2 {
         box-shadow: 0px 0px 12px;
         justify-content: space-around;
         align-items: center;
+    }
 
+    .clientele h1 {
+        position: absolute;
+        margin-top: -150px;
+        font-size: 3rem;
     }
 
     .clientele form {
@@ -951,23 +1007,24 @@ h2 {
         flex-direction: row;
         justify-content: space-around;
         align-items: baseline;
-        border: 2px solid blue;
+        /* border: 2px solid blue; */
         overflow: hidden;
-        
+
     }
 
     .clientele label {
         margin-top: 10px;
         font-size: 20px;
         font-weight: bold;
-        text-shadow: 0px 2px 5px white ;
+        text-shadow: 0px 2px 5px white;
     }
 
     .clientele input {
         margin-top: 20px;
-        height: 20px;
+        height: 40px;
         text-align: center;
-
+        border: 2px solid rgb(3, 3, 3);
+        border-radius: 5px;
     }
 
     .clientele select {
@@ -986,10 +1043,23 @@ h2 {
         display: block;
         margin-top: auto;
         margin-bottom: auto;
-        margin-left: auto;
+        margin-left: 50px;
         border-radius: 5px;
         padding: 10px;
+        min-width: 80px;
     }
+    .clientele button a:hover{
+        color: white;
+    }
+    .clientele a {
+        color: rgb(0, 0, 0);
+    }
+
+    .clientele a:link {
+        text-decoration: none;
+
+    }
+
     /*----------ARTICLE 3 DISCOUNT MESSAGE--------*/
     .article3 {
         display: flex;
@@ -999,7 +1069,7 @@ h2 {
         margin-right: auto;
         font-size: 2rem;
         height: 150px;
-        margin-top: 150px;
+        margin-top: 50px;
         border: 2px solid rgba(168, 57, 17, 0.74);
         border-radius: 5px;
         width: 50%;
@@ -1083,6 +1153,7 @@ h2 {
         color: white;
     }
 }
+
 /******************PAGE D'INSCRIPTION et DE CONNEXION************************/
 
 .inscription {
@@ -1095,7 +1166,7 @@ h2 {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    
+
 }
 
 .inscription form label {
@@ -1103,13 +1174,13 @@ h2 {
     font-weight: bold;
     margin-bottom: 10px;
     padding-top: 10px;
-    
+
 }
 
 
 .inscription label.inline-label {
     display: inline-block;
-    
+
 }
 
 .inscription fieldset {
@@ -1156,7 +1227,7 @@ form input[type="submit"] {
     margin-right: auto;
     margin-bottom: 20px;
     border-radius: 5px;
-
+    
 }
 
 .btninscription {
@@ -1170,6 +1241,7 @@ form input[type="submit"] {
     text-decoration: none;
     overflow: hidden;
 
+
 }
 
 .btninscription a {
@@ -1180,6 +1252,10 @@ form input[type="submit"] {
 .btninscription a:link {
     text-decoration: none;
 
+}
+.button a:hover {
+    text-decoration: none;
+    color: white;
 }
 
 .btninscription:hover {
@@ -1195,17 +1271,36 @@ button:hover {
 }
 
 /********************PAGE NOS GARAGES*************************/
-.article1 iframe {
-    display: block;
+.frame {
     margin-left: auto;
     margin-right: auto;
-    margin-top: 500px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 8px rgba(168, 57, 17, 1),
+        -4px -4px 8px rgba(131, 131, 131, 1);
+    width: 40%;
+    height: 600px;
+
+}
+
+.frame iframe {
+    width: 100%;
+    height: 600px;
 }
 
 /********************PAGE PRESTATION*************************/
 .services {
     display: flex;
     flex-direction: column;
+    align-items: stretch;
+    border: 2px solid yellow;
+    width: 50%;
+    margin-left: 15%;
+}
+
+.services p {
+    border: 2px solid blueviolet;
 }
 
 .services img {
@@ -1216,6 +1311,7 @@ button:hover {
     clip-path: 50%, 50%;
     box-shadow: 2px 2px 8px rgba(168, 57, 17, 1),
         -2px -2px 8px rgba(131, 131, 131, 1);
+    border: 2px solid black;
 }
 
 /***********************GRID OCCASION***************************/
@@ -1226,7 +1322,7 @@ button:hover {
     margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
-    
+
 }
 
 .container h1 {
@@ -1242,14 +1338,14 @@ button:hover {
     border: 2px solid yellow;
     margin-top: 30px;
     margin-bottom: 20px;
-    
+
 
 }
 
 .grid-item {
     /* display: flex; */
     height: auto;
-    max-width:400px;
+    max-width: 400px;
     flex-direction: column;
     padding: 5px;
     border: 1px solid rgb(95, 95, 95);

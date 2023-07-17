@@ -1,24 +1,22 @@
 <?php
 require_once __DIR__ . "/lib/article.php";
 require_once __DIR__ . "/templates/header.php";
+
+
 // GESTION DU CAS D'ERREUR 
 $error = false;
 if (isset($_GET['id'])) {
     $id = $_GET["id"];
-
-
+    
     $article = getArticleById($articles, $id);
-
-
+    
     if (!$article) {
         $error = true;
     }
 } else {
     $error = true;
 }
-?>
-
-<?php if (!$error) { ?>
+if (!$error) { ?>
     <section class="container">
         <div class="grid-item">
             <h1><?= $article["title"] ?></h1>
