@@ -2,7 +2,7 @@
 require_once __DIR__ . "/../lib/menu.php";
 
 // RÉCUPERATION DU NOM DE SCRIPT SUIVANT LA PAGE EN COURS
-$currentPage = basename($_SERVER["SCRIPT_NAME"]);
+$currentPage = htmlentities(basename($_SERVER["SCRIPT_NAME"]));
 
 // MODIFICATION POUR LA PAGE DE VISUALISATION DES DEVIS 
 if ($currentPage === "devis.php") {
@@ -27,6 +27,7 @@ if ($currentPage === "devis.php") {
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap" rel="stylesheet">-->
     <?php echo '<link rel="stylesheet" href="/assets/style/style.css">'; ?>
     <title> <?= $main_menu[$currentPage]["head_title"] ?></title>
+    
 </head>
 
 <body>
@@ -36,7 +37,8 @@ if ($currentPage === "devis.php") {
                 <img src=../ressources/parrotimage.PNG alt="LOGO VPARROT" title="Garage Vincent Parrot">
             </a>
         </div><!--NAVBAR-->
-        <nav class="navbar">
+        <nav id="nav">
+            <p></p>
             <ul>
                 <?php
                 foreach ($main_menu as $key => $menu_item) {
@@ -46,9 +48,10 @@ if ($currentPage === "devis.php") {
                                 } ?>">
                         <a href="<?= $key; ?>"><?= $menu_item["title"] ?></a>
                     </li>
-                <?php }
+                    <?php }
                 } ?>
             </ul>
+            <div id="icons"></div>
         </nav>
     </header>
     <!--FIN DE L'ENTETE------------------------------------>

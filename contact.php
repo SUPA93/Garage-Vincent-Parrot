@@ -4,7 +4,7 @@
 
 <div class="inscription">
     <h1>Formulaire de contact</h1>
-    <form action="/action_page.php">
+    <form action="/action_page.php" method="post">
         <fieldset>
             <label for="fname">Nom & prénom</label>
             <input type="text" id="fname" name="firstname" placeholder="Votre nom et prénom">
@@ -25,3 +25,5 @@
         </fieldset>
     </form>
 </div>
+
+<?php require_once __DIR__ . "/templates/footer.php"; ?>

@@ -7,9 +7,9 @@ require_once __DIR__ . "/templates/header.php";
 $error = false;
 if (isset($_GET['id'])) {
     $id = $_GET["id"];
-    
+
     $article = getArticleById($articles, $id);
-    
+
     if (!$article) {
         $error = true;
     }
@@ -18,6 +18,7 @@ if (isset($_GET['id'])) {
 }
 if (!$error) { ?>
     <section class="container">
+        <h1>L'occasion</h1>
         <div class="grid-item">
             <h1><?= $article["title"] ?></h1>
             <img src="<?= $article["image"] ?>" alt="<?= $article["Marque: "] . " " . $article["Modèle: "] ?>" title="<?= $article["Marque: "] . " " . $article["Modèle: "] ?>">
@@ -36,8 +37,4 @@ if (!$error) { ?>
 <?php } ?>
 <script src="code.js" type="module"></script>
 
-
-<?php
-// ICI ON APPELLE LE FOOTER
-require_once __DIR__ . "/templates/footer.php";
-?>
+<?php require_once __DIR__ . "/templates/footer.php"; ?>

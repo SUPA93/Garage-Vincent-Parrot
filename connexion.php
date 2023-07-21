@@ -1,7 +1,9 @@
 <?php require_once __DIR__ . "/templates/header.php"; ?>
 
-<section class="inscription">
-    <h1 class="inscription">Espace connexion</h1>
+
+
+<div class="inscription">
+    <h1>Espace connexion</h1>
     <form action="inscription.php" method="post">
         <fieldset>
             <legend>Informations de connexion</legend>
@@ -20,4 +22,7 @@
             </button>
         </fieldset>
     </form>
-</section>
+</div>
+
+
+<?php require_once __DIR__ . "/templates/footer.php"; ?>

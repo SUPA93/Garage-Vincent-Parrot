@@ -1,15 +1,18 @@
 <?php require_once __DIR__ . "/templates/header.php"; ?>
 
-<article class="services">
+<div class="services">
     <img src="ressources/controle technique.png">
+    
+    <h2>Contrôle Technique <br> 50 points de contrôle</h2>
 
     <img src="ressources/diagnostique.png">
+    </h1>
+    <h2>Réparation Dépannage <br> Diagnostique sur mesure</h2>
 
     <img src="ressources/poignée de main.png">
-</article>
+    
+    <h2>Un coût sans surprise <br> Sur devis </h2>
+</div>
 <article>
-    <p>50 points de contrôle</p>
-    <p>Diagnostique sur mesure</p>
-    <p>Un devis </p>
 </article>
 <?php require_once __DIR__ . "/templates/footer.php"; ?>
