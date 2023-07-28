@@ -1,42 +1,41 @@
-<?php require __DIR__ . "/header.php" ?>
+<?php require_once __DIR__ . "/templates/header.php";?>
 
 
-<h1 class="article2">Votre Devis en ligne</h1>
+<h1 class="inscription">Votre Devis en ligne</h1>
 
 <style type="text/css">
     .tftable {
-        font-size: 12px;
         color: #333333;
         width: 50%;
         border-width: 2px;
-        border-color: #729ea5;
+        border-color: red;
         border-collapse: collapse;
         margin-top: center;
         margin-left: auto;
         margin-right: auto;
         font-weight: bold;
+        
     }
 
     .tftable th {
-        font-size: 12px;
-        background-color: #acc8cc;
-        /* border-width: 1px; */
+        font-size: 20px;
+        background-color: #838383;
         padding: 8px;
-        /* border-style: solid; */
-        /* border-color: #729ea5; */
         text-align: center;
     }
 
     .tftable tr {
-        background-color: #d4e3e5;
+        background-color:#959595;
     }
 
     .tftable td {
-        font-size: 12px;
+        font-size:15px;
         border-width: 2px;
-        padding: 20px;
         border-style: solid;
-        border-color: #729ea5;
+        border-color: #ffffff;
+        font-weight: bolder;
+        text-align: center;
+        padding: 20px;
     }
 
     .tftable tr:hover {
@@ -53,9 +52,9 @@
         <th>Tarif</th>
     </tr>
     <tr>
-        <td>Row:1 Cell:1</td>
-        <td>Row:1 Cell:2</td>
-        <td>Row:1 Cell:3</td>
+        <td>VIDANGE</td>
+        <td>1</td>
+        <td>132</td>
     </tr>
     <tr>
         <td>Row:2 Cell:1</td>
@@ -83,5 +82,6 @@
         <td>...</td>
     </tr>
 </table>
-
-<!-- <iframe width="640" height="360" frameborder="0" src="https://mega.nz/embed/wFxzEYZT#pdIfwbWPgkWtIgrdoSI4NZUV_7K1TmYmiNm5_kftf5c" allowfullscreen ></iframe> -->
+<script src="../index.js"></script>  
+</main>
+</body>

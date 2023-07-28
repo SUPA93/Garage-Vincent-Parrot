@@ -56,7 +56,7 @@
             <option value="rep5">Echapement</option>
             <option value="rep6">Carroserie</option>
         </select>
-        <button type="submit"><a href="templates/devis.php">Devis</a></button>
+        <button type="submit"><a href="devis.php">Devis</a></button>
     </form>
 </article>
 <article class="article3">
