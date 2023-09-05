@@ -14,11 +14,14 @@ $main_menu[$currentPage]["head_title"];
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?= $main_menu[$currentPage]["meta_description"] ?>">
+    
+    
     <!------------------------------------------ USING BOOTSTRAP  ------------>
     <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap" rel="stylesheet">-->
     <?php echo '<link rel="stylesheet" href="/assets/style/style.css">'; ?>
+    
     <title> <?= $main_menu[$currentPage]["head_title"] ?></title>
 
 </head>

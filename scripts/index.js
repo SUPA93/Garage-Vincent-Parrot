@@ -6,7 +6,8 @@ icons.addEventListener("click", () => {
 })
 
 links.forEach((link) => {
-    link.addEventListener('click', () => {
+    link.addEventListener("click", () => {
         nav.classList.remove("digit");
     });
 });
+
