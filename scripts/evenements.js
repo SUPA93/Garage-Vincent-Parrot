@@ -32,7 +32,7 @@ formulaire.formulaireHtml.addEventListener('submit',
     (event) => {
         event.preventDefault();
         formulaire.affAnswers();
-        console.log(formulaire.answers)
+        /* console.log(formulaire.answers) */
     }
 );
 

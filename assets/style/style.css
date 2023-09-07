@@ -54,10 +54,11 @@ a:hover {
     justify-content: center;
 }
 
-#thanks{
+#thanks {
     color: blue;
     padding-top: 0;
 }
+
 /*classes d'animations pour JavaScript*/
 
 .masque {
@@ -747,11 +748,35 @@ a:hover {
     .article2 ul li img {
         width: auto;
         height: 40px;
+        background: repeating-conic-gradient(from var(--a), #ff2770 0%, #ff2770 5%, transparent 5%, transparent 40%, #ff2770 50%);
+        animation: animate 4s linear infinite;
+    }
+
+    @property --a {
+        syntax: '<angle>';
+        inherits: false;
+        initial-value: 0deg;
+    }
+
+    @keyframes animate {
+        0% {
+            --a: 0deg;
+        }
+
+        100% {
+            --a: 360deg;
+        }
+    }
+
+    .article2 ul li img {
+        width: auto;
+        height: 40px;
         outline: none;
         border: none;
         border-radius: 5px;
         box-shadow: 2px 2px 8px rgba(168, 57, 17, 1),
             -2px -2px 8px rgba(131, 131, 131, 1);
+        animation: animate 4s linear infinite;
     }
 
     .article2 p {

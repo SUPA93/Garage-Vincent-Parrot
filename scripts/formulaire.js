@@ -73,11 +73,11 @@ export default class Formulaire {
     //MÉTHODE POUR AFFICHER DANS UN ALERT LES RÉSULTATS
 
     affAnswers() {
-        let chaine = ''
-            chaine = "Récapitulatif\n\n";
+        let chaine = 'Message envoyé!'
+            /* chaine = "Récapitulatif\n\n";
         for (let ligne of this.getAnswers()) {
-            chaine += `${ligne [0]} : ${ligne[1]}\n`
-        }
+            chaine += `${ligne [0]} : ${ligne[1]}\n `
+        } */
         alert(chaine);
     }
 }
