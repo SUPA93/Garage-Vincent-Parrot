@@ -35,6 +35,6 @@ if (!$error) { ?>
     <h4 class="article3">Article inconnu</h4>
 
 <?php } ?>
-<script src="code.js" type="module"></script>
+
 
 <?php require_once __DIR__ . "/templates/footer.php"; ?>

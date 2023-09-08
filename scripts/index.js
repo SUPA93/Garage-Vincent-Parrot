@@ -1,7 +1,8 @@
 //cible la navbar => nav
 const links = document.querySelectorAll('nav li');
-
+// listen onclick
 icons.addEventListener("click", () => {
+    //change on digit class 
     nav.classList.toggle("digit");
 })
 
