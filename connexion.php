@@ -1,10 +1,8 @@
 <?php require_once __DIR__ . "/templates/header.php"; ?>
 
-
-
 <div class="inscription">
     <h1>Espace connexion</h1>
-    <form action="inscription.php" method="post">
+    <form action="login.php" method="post">
         <fieldset>
             <legend>Informations de connexion</legend>
             <label for="email">Adresse e-mail</label>
@@ -14,15 +12,13 @@
             <button type="submit">Connexion</button>
         </fieldset>
     </form>
-    <form action="inscription.php" method="post">
-        <fieldset>
-            <legend>Pas encore inscrit(e)?</legend>
-            <button class="btninscription">
-                <a href="subscribe.php">Inscription</a>
-            </button>
-        </fieldset>
-    </form>
+    <form>
+    <fieldset>
+        <legend>Pas encore inscrit(e)?</legend>
+        <button class="btninscription">
+            <a href="subscribe.php">Inscription</a>
+        </button>
+    </fieldset>
 </div>
-
 
 <?php require_once __DIR__ . "/templates/footer.php"; ?>
