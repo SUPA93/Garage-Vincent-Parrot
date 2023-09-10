@@ -10,7 +10,8 @@ $main_menu = [
     "connexion.php" =>     ["title" => "CONNEXION",  "head_title"  => "Connectez-vous",     "meta_description" => "Portail d'accès aux services"],
     "occasion_detail.php"=>["title" => "DÉTAILS",    "head_title"  => "Détails du véhicule","meta_description" => "Votre véhicule d'occasion plus en détail","exclude" => true],
     "subscribe.php" =>     ["title" => "INSCRIPTION","head_title"  => "Insciption",         "meta_description" => "Portail d'inscription nouveau client","exclude" => true],
-    "devis.php" =>         ["title" => "VOTRE DEVIS","head_title"  => "Devis en ligne",     "meta_description" => "un devis en ligne adapté et garanti", "exclude" => true]
+    "devis.php" =>         ["title" => "VOTRE DEVIS","head_title"  => "Devis en ligne",     "meta_description" => "un devis en ligne adapté et garanti", "exclude" => true],
+    "admin.php" =>         ["title" => "Hello Patron","head_title"  => "Interface",         "meta_description" => "interface d'admnistration", "exclude" => true]
 ];
 
 /* $main_menu_2 = [

@@ -1,3 +1,5 @@
+-- Active: 1694362200871@@127.0.0.1@3306@vparrot
+
 DATABASE initialisation;
 
 CREATE DATABASE vparrot;
@@ -18,24 +20,25 @@ USE vparrot_bdd;
  ] */
 
 /* CREATE TABLE utilisateurs_parrot (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nom VARCHAR(255) NOT NULL,
-    prenom VARCHAR(255) NOT NULL,
-    email VARCHAR(255) NOT NULL,
-    mot_de_passe VARCHAR(255) NOT NULL,
-    role ENUM('admin', 'user') NOT NULL DEFAULT 'user'
-);
+ id INT AUTO_INCREMENT PRIMARY KEY,
+ nom VARCHAR(255) NOT NULL,
+ prenom VARCHAR(255) NOT NULL,
+ email VARCHAR(255) NOT NULL,
+ mot_de_passe VARCHAR(255) NOT NULL,
+ role ENUM('admin', 'user') NOT NULL DEFAULT 'user'
+ );
  */
-/*  CREATE TABLE utilisateurs (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    email VARCHAR(255) NOT NULL,
-    mot_de_passe VARCHAR(255) NOT NULL,
-    civilite ENUM('Mr', 'Mme') NOT NULL,
-    nom VARCHAR(255) NOT NULL,
-    prenom VARCHAR(255) NOT NULL,
-    ville VARCHAR(255),
-    code_postal VARCHAR(10),
-    adresse TEXT,
-    newsletter TINYINT(1) DEFAULT 0
-);
- */
+
+/* CREATE TABLE
+ utilisateurs (
+ id INT AUTO_INCREMENT PRIMARY KEY,
+ email VARCHAR(255) NOT NULL,
+ mot_de_passe VARCHAR(255) NOT NULL,
+ civilite ENUM('Mr', 'Mme') NOT NULL,
+ nom VARCHAR(255) NOT NULL,
+ prenom VARCHAR(255) NOT NULL,
+ ville VARCHAR(255),
+ code_postal VARCHAR(10),
+ adresse TEXT,
+ newsletter TINYINT(1) DEFAULT 0
+ ); */
