@@ -14,13 +14,13 @@
         </ul>
         <ul class="horaires">
             <li>Nos Horaires</li>
-            <li>Lundi: 9h - 18h</li>
-            <li>Mardi: 9h - 18h</li>
-            <li>Mercredi: 9h - 18h</li>
-            <li>Jeudi: 9h - 18h</li>
-            <li>Vendredi: 9h - 18h</li>
-            <li>Samedi: 9h - 13h</li>
-            <li>Dimanche: fermé</li>
+            <li id="lun">Lundi: 9h - 18h</li>
+            <li id="mar">Mardi: 9h - 18h</li>
+            <li id="mer">Mercredi: 9h - 18h</li>
+            <li id="jeu">Jeudi: 9h - 18h</li>
+            <li id="ven">Vendredi: 9h - 18h</li>
+            <li id="sam">Samedi: 9h - 13h</li>
+            <li id="dim">Dimanche: fermé</li>
         </ul>
         <ul class="sociaux">
             <li>
@@ -42,7 +42,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
     <script src="https://kit.fontawesome.com/ba77b5bf65.js" crossorigin="anonymous"></script>
     <script src="../scripts/index.js"></script>
-    <script src="../scripts/evenements.js" type="module"></script> 
+    <script src="../scripts/evenements.js" type="module"></script>
+    <script src="../scripts/password_handler.js"></script> 
     
     
 </body>

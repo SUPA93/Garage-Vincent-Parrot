@@ -9,7 +9,7 @@
 
             <label for="password">Mot de passe</label>
             <input type="password" name="password" id="password" required placeholder="Votre mot de passe">
-
+            <div id="passwordMessage"></div>
 
         </fieldset>
         <fieldset>
@@ -22,10 +22,10 @@
                 <input type="radio" id="Mme" name="civilite" value="Mme">
                 <label for="Mme" class="inline-label">Madame</label>
             </div>
-            
+
             <label for="lastName">Nom</label>
             <input type="text" name="lastName" id="lastName" required placeholder="Votre nom">
-            
+
             <label for="firstName">Prénom</label>
             <input type="text" name="firstName" id="firstName" required placeholder="Votre prénom">
         </fieldset>
