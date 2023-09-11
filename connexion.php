@@ -1,8 +1,14 @@
-<?php require_once __DIR__ . "/templates/header.php"; ?>
+<?php require_once __DIR__ . "/templates/header.php"; 
+
+
+include __DIR__."/connexion_handler.php";
+
+?>
 
 <div class="inscription">
+
     <h1>Espace connexion</h1>
-    <form action="login.php" method="post">
+    <form method="post"> <!-- Pointez vers le deuxième fichier -->
         <fieldset>
             <legend>Informations de connexion</legend>
             <label for="email">Adresse e-mail</label>
@@ -22,3 +28,5 @@
 </div>
 
 <?php require_once __DIR__ . "/templates/footer.php"; ?>
+
+

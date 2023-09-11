@@ -1,4 +1,10 @@
-<?php require_once __DIR__ . "/templates/header.php"; ?>
+<?php require_once __DIR__ . "/templates/header.php";
+
+include __DIR__."/connexion_handler.php";
+var_dump($_SESSION["user"]);
+
+?>
+
 <h1>Administration</h1>
 
 <!-- Gestion des utilisateurs -->
@@ -64,4 +70,6 @@
 <ul>
     <!-- Afficher ici la liste des annonces avec des liens pour les modifier/supprimer -->
 </ul>
+
+<a href="logout.php">Deconnexion</a>
 <?php require_once __DIR__ . "/templates/footer.php"; ?>

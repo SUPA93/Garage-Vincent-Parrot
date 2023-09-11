@@ -1,33 +1,57 @@
 <?php
-session_start();
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
-// Remplacez ces valeurs par vos informations de base de données
-$correctEmail = "votre_email@example.com";
-$correctPasswordHash = password_hash("votre_mot_de_passe", PASSWORD_DEFAULT);
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
+include __DIR__ . "../config/config.php"; // Inclure le fichier de configuration avec les informations de connexion
+
+if (isset($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] === "POST") {
     $email = $_POST["email"];
     $password = $_POST["password"];
 
-    // Vérifiez si les informations de connexion sont correctes
-    if ($email === $correctEmail && password_verify($password, $correctPasswordHash)) {
-        // Authentification réussie
-        $_SESSION["user_email"] = $email;
-        
-        // Vous pouvez définir le rôle ici en fonction de vos besoins
-        $userRole = "user"; // Par exemple, "user" ou "admin"
 
-        // Redirigez l'utilisateur en fonction de son rôle
-        if ($userRole === "admin") {
-            header("Location: admin.php");
-            exit();
+    try {
+        // Établir la connexion à la base de données avec PDO
+        $pdo = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUser, $dbPassword);
+
+        // Préparer la requête SQL pour récupérer le mot de passe haché associé à l'email
+        $sql = "SELECT * FROM utilisateurs_parrot WHERE email = :email";
+
+        // Préparer et exécuter la requête avec PDO
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindParam(':email', $email);
+        $stmt->execute();
+        $result = $stmt->fetch();
+        var_dump($result);
+        
+        if ($result && $password === $result['mot_de_passe']) {
+            // Authentification réussie
+            /* $_SESSION["user_email"] = $email; */
+            $_SESSION["user"] = ["name"=>$result["nom"],
+            "firstname"=>$result["prenom"],
+            "email"=>$result["email"],
+            "role"=>$result["role"]
+        ];
+        
+            // Récupérer le rôle de l'utilisateur depuis la base de données
+            $userRole = $result['role'];
+            
+            // Redirigez l'utilisateur en fonction de son rôle
+            if ($userRole === "admin") {
+                header("Location: admin.php");
+                exit();
+            } else {
+                header("Location: index.php");
+                exit();
+            }
         } else {
-            header("Location: user.php");
-            exit();
+            // Authentification échouée
+            $errorMessage = "Identifiants incorrects. Veuillez réessayer.";
         }
-    } else {
-        // Authentification échouée
-        $errorMessage = "Identifiants incorrects. Veuillez réessayer.";
+    } catch (PDOException $e) {
+        die("La connexion à la base de données a échoué : " . $e->getMessage());
     }
+
+    // Fermer la connexion à la base de données
+    $pdo = null;
 }
-?>
