@@ -1,39 +1,38 @@
-    
     <div class="bas">
-    <footer class="pied">
-        <ul class="contact">
-            <li>
-                <h4>Qui sommes nous ?</h4>
-            </li>
-            <li>Garage V Parrot</li>
-            <li>32 Av. Victor Hugo</li>
-            <li>75116 Paris</li>
-            <li>
-                <a href="tel: 01 42 42 42 42" title="cliquez pour appeler">Téléphone</a>
-            </li>
-        </ul>
-        <ul class="horaires">
-            <li>Nos Horaires</li>
-            <li id="lun">Lundi: 9h - 18h</li>
-            <li id="mar">Mardi: 9h - 18h</li>
-            <li id="mer">Mercredi: 9h - 18h</li>
-            <li id="jeu">Jeudi: 9h - 18h</li>
-            <li id="ven">Vendredi: 9h - 18h</li>
-            <li id="sam">Samedi: 9h - 13h</li>
-            <li id="dim">Dimanche: fermé</li>
-        </ul>
-        <ul class="sociaux">
-            <li>
-                <h5>Retrouvez-nous sur les reseaux sociaux</h5>
-            </li>
-            <li><i class="fa-brands fa-instagram"></i><a href="#">Insta </a></li>
-            <li><i class="fa-brands fa-facebook "></i><a href="#">Facebook</a></li>
-            <li><i class="fa-brands fa-discord"> </i><a href="#">Discord</a></li>
-            <li><i class="fa-brands fa-snapchat"> </i><a href="#">Snap</a></li>
+        <footer class="pied">
+            <ul class="contact">
+                <li>
+                    <h4>Qui sommes nous ?</h4>
+                </li>
+                <li>Garage V Parrot</li>
+                <li>32 Av. Victor Hugo</li>
+                <li>75116 Paris</li>
+                <li>
+                    <a href="tel: 01 42 42 42 42" title="cliquez pour appeler">Téléphone</a>
+                </li>
+            </ul>
+            <ul class="horaires">
+                <li>Nos Horaires</li>
+                <li id="lun">Lundi: 9h - 18h</li>
+                <li id="mar">Mardi: 9h - 18h</li>
+                <li id="mer">Mercredi: 9h - 18h</li>
+                <li id="jeu">Jeudi: 9h - 18h</li>
+                <li id="ven">Vendredi: 9h - 18h</li>
+                <li id="sam">Samedi: 9h - 13h</li>
+                <li id="dim">Dimanche: fermé</li>
+            </ul>
+            <ul class="sociaux">
+                <li>
+                    <h5>Retrouvez-nous sur les reseaux sociaux</h5>
+                </li>
+                <li><i class="fa-brands fa-instagram"></i><a href="#">Insta </a></li>
+                <li><i class="fa-brands fa-facebook "></i><a href="#">Facebook</a></li>
+                <li><i class="fa-brands fa-discord"> </i><a href="#">Discord</a></li>
+                <li><i class="fa-brands fa-snapchat"> </i><a href="#">Snap</a></li>
 
-        </ul>
+            </ul>
 
-    </footer>
+        </footer>
     </div>
     </main>
     <!--Boostrap-->
@@ -43,9 +42,8 @@
     <script src="https://kit.fontawesome.com/ba77b5bf65.js" crossorigin="anonymous"></script>
     <script src="../scripts/index.js"></script>
     <script src="../scripts/evenements.js" type="module"></script>
-    <script src="../scripts/password_handler.js"></script> 
-    
-    
-</body>
+
+
+    </body>
 
     </html>
