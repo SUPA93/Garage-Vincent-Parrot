@@ -4,6 +4,10 @@ include __DIR__ . "/connexion_handler.php";
 
 /* action="traitement_admin.php"  action form à modifier*/
 ?>
+<h1 class="inscription">Bonjour <?php $userRole?></h1>
+<button class="btninscription">
+        <a href="logout.php">Deconnexion</a>
+    </button>
 <section class="inscription">
     <h1>Administration</h1>
     <!-- Gestion des utilisateurs -->
@@ -112,8 +116,8 @@ include __DIR__ . "/connexion_handler.php";
             <button class="btninscription" type="submit" name="submit">Ajouter/Modifier Annonce</button>
 
         </fieldset>
-        <fieldset class="tftable">
-            <table  border="1" >
+        <fieldset id="feedBack">
+            <table  border="1" style="width: 100%;" >
                 <tbody>
                     <tr>
                         <th>Derniers Avis</th>
@@ -150,15 +154,15 @@ include __DIR__ . "/connexion_handler.php";
                     </tr>
                 </tbody>
             </table>
+            <button class="btninscription" type="submit" name="submit">Modérer</button>
         </fieldset>
     </form>
+    <div id="used_cars_list">
     <!-- Liste des annonces existantes -->
     <h2>Liste des Annonces</h2>
     <ul>
         <!-- Afficher ici la liste des annonces avec des liens pour les modifier/supprimer -->
     </ul>
-    <button class="btninscription">
-        <a href="logout.php">Deconnexion</a>
-    </button>
+    </div>
 </section>
 <?php require_once __DIR__ . "/templates/footer.php"; ?>

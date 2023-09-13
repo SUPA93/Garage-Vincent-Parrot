@@ -1,5 +1,5 @@
 <?php require_once __DIR__ . "/templates/header.php";
-/* require_once __DIR__ . "/lib/menu.php"; */ ?>
+?>
 
 <article class="article1">
     <img src="ressources\VPARROTSANSFOND.png" alt="photo Vincent Parrot" title="Vincent Parrot">
@@ -59,6 +59,25 @@
         <button type="submit"><a href="devis.php">Devis</a></button>
     </form>
 </article>
+<section class="inscription">
+    <form method="post">
+        <fieldset id="userFeedBack">
+            <h2> Laissez nous votre avis <h2>
+                    <label for="firstName">Prénom</label>
+                    <input type="text" id="firstName" name="firstName" placeholder="Prenom...">
+                    <label for="firstName">Votre Nom</label>
+                    <input type="text" id="famillyName" name="famillyName" placeholder="Votre nom">
+                    <label for="userMessage">Message</label>
+                    <textarea type="text" id="userMessage" name="userMessage" placeholder="Votre message..."></textarea>
+        </fieldset>
+        <div>
+            <h3>Déjà client? Dites-nous tout..</h3>
+            <button class="btninscription" id="notation" type="submit">Laissez nous un avis</button>
+        </div>
+        
+    </form>
+
+</section>
 <article class="article3">
     <h4>En ce moment: profitez de la recharge clim<br>
         a -15% !</h4>

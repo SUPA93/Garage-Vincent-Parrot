@@ -57,7 +57,7 @@
                 <input type="file" id="fichier" name="fichier" accept=".pdf, .doc, .docx" >
             </div>
             <div id="thanking">
-                <label for="thanks">Merci pour votre aide :</label>
+                <label for="thanks">Merci pour votre aide ❤</label>
             </div>
             <textarea name="message" id="messageField" cols="30" rows="10" placeholder="Message..."></textarea>
             <button type="submit">ENVOYER</button>

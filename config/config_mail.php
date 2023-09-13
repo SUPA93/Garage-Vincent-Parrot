@@ -1,6 +1,7 @@
 <?php 
+var_dump("config_mail_loaded");
+require "../../../vendor/autoload.php";
 
-require 'vendor/autoload.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 
@@ -24,7 +25,4 @@ if ($mail->send()) {
 } else {
     echo 'Erreur lors de l\'envoi de l\'e-mail : ' . $mail->ErrorInfo;
 }
-
-
-
 ?>

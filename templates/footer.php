@@ -42,6 +42,7 @@
     <script src="https://kit.fontawesome.com/ba77b5bf65.js" crossorigin="anonymous"></script>
     <script src="../scripts/index.js"></script>
     <script src="../scripts/evenements.js" type="module"></script>
+    <script src="../scripts/admin.js" type="module"></script>
 
 
     </body>

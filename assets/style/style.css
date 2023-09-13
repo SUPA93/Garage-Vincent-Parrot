@@ -54,37 +54,10 @@ a:hover {
     justify-content: center;
 }
 
-#thanks {
+#thanking {
     color: blue;
     padding-top: 0;
 }
-
-/* /*classes d'animations pour JavaScript
-
-.masque {
-    opacity: 100%;
-    margin-bottom: -4%;
-    display: none;
-}
-
-.app {
-    opacity: 100%;
-    transition-duration: 1s;
-    margin-bottom: 0%;
-    display: block;
-}
-
-.disp {
-    opacity: 0%;
-    transition-duration: 1s;
-    margin-bottom: -4%;
-    display: none;
-}
- */
-
-
-
-
 
 /*---------GALAXY FOLD LOGO DISPLAY---------*/
 @media screen and (max-width: 280px) {

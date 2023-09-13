@@ -13,7 +13,7 @@ formulaire.addEventListener("submit", function (event) {
 
     // Parcourez les paires clé-valeur dans l'objet FormData
     formData.forEach(function (value, key) {
-        // Ajoutez chaque valeur au tableau 
+        // Ajoutez chaque valeur au tableau
         formDataArray.push({ key, value });
     });
 
