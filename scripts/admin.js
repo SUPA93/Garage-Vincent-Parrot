@@ -40,11 +40,6 @@ function toggleFieldsets() {
         feedBackFieldset.style.display = "none";
     }
 }
-/* function toggleForm(){
-    var userFeedback = 
-} */
-
-
 // Écouteur d'événements pour le changement de la sélection d'action
 var actionSelect = document.getElementById("action");
 actionSelect.addEventListener("change", toggleFieldsets);

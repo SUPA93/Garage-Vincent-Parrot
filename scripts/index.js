@@ -1,3 +1,4 @@
+//SCRIPT POUR BOUTON BURGER
 //cible la navbar => nav
 const links = document.querySelectorAll('nav li');
 // listen onclick

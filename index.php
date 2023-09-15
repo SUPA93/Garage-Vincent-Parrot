@@ -1,4 +1,6 @@
 <?php require_once __DIR__ . "/templates/header.php";
+
+
 ?>
 
 <article class="article1">
@@ -59,24 +61,53 @@
         <button type="submit"><a href="devis.php">Devis</a></button>
     </form>
 </article>
+<h2 class="inscription">Les derniers avis</h2>
+<section class="derniers-avis">
+    <!-- Conteneur du carrousel -->
+    <div class="carousel-container">
+        <div class="carousel">
+            <?php foreach ($feedbacks as $index => $feedback) : ?>
+                <div class="avis-carte">
+                    <h3><?= $feedback['first_name'] ?> <?= $feedback['last_name'] ?></h3>
+                    <p>Note : <?= $feedback['note'] ?>/5</p>
+                    <p><?= $feedback['feedback'] ?></p>
+                    <?php if ($feedback['valide']) : ?>
+                        <p class="status">Avis vérifié</p>
+                    <?php else : ?>
+                        <p class="status attente">Avis non vérifié</p>
+                    <?php endif; ?>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</section>
+
+
+
 <section class="inscription">
-    <form method="post">
+    <form id="userFeedbackForm" method="post">
         <fieldset id="userFeedBack">
-            <h2> Laissez nous votre avis <h2>
-                    <label for="firstName">Prénom</label>
-                    <input type="text" id="firstName" name="firstName" placeholder="Prenom...">
-                    <label for="firstName">Votre Nom</label>
-                    <input type="text" id="famillyName" name="famillyName" placeholder="Votre nom">
-                    <label for="userMessage">Message</label>
-                    <textarea type="text" id="userMessage" name="userMessage" placeholder="Votre message..."></textarea>
+            <h2>Laissez-nous votre avis</h2>
+            <label for="firstName">Prénom*</label>
+            <input type="text" id="firstName" name="firstName" placeholder="Prénom..." required autocomplete="given-name">
+            <label for="famillyName">Votre Nom*</label>
+            <input type="text" id="famillyName" name="famillyName" placeholder="Votre nom" required autocomplete="family-name">
+            <label for="userMessage">Laissez un commentaire</label>
+            <textarea id="userMessage" name="userMessage" cols="15" rows="3" placeholder="Votre message..."></textarea>
+            <label for="userRating">Donnez nous une note (de 1 à 5)*</label>
+            <select id="userRating" name="userRating">
+                <option value="5">5 (Excellent)</option>
+                <option value="4">4 (Bien)</option>
+                <option value="3">3 (Passable)</option>
+                <option value="2">2 (Moyen)</option>
+                <option value="1">1 (Mauvais)</option>
+            </select>
         </fieldset>
         <div>
-            <h3>Déjà client? Dites-nous tout..</h3>
-            <button class="btninscription" id="notation" type="submit">Laissez nous un avis</button>
+            <h2>Déjà client ? Dites-nous tout...</h2>
+            <button class="btninscription" id="notation" type="submit">Laissez-nous un avis</button>
         </div>
-        
     </form>
-
 </section>
 <article class="article3">
     <h4>En ce moment: profitez de la recharge clim<br>

@@ -1,8 +1,9 @@
-<?php require_once __DIR__ . "./templates/header.php"; ?>
-
+<?php require_once __DIR__ . "/templates/header.php";
+include 'PDOmessages.php';
+?>
 <section class="inscription">
     <h1>Formulaire de contact</h1>
-    <form id="formulaire" method="post" action="contact_form_handler.php">
+    <form id="formulaire" method="post">
         <fieldset id="infos">
             <legend>
                 <h2>Informations</h2>
@@ -28,7 +29,7 @@
             </div>
             <div id="div_st">
                 <label for="societe">Société :</label>
-                <input type="text" name="societe" placeholder="Nom de la société" id="societe" >
+                <input type="text" name="societe" placeholder="Nom de la société" id="societe">
             </div>
         </fieldset>
         <fieldset id="message">
@@ -46,7 +47,7 @@
             </div>
             <div id="mailing">
                 <label for="email">Email :</label>
-                <input type="email" id="email" name="email" placeholder="email@mail.com"  autocomplete="email">
+                <input type="email" id="email" name="email" placeholder="email@mail.com" autocomplete="email">
             </div>
             <div id="adressing">
                 <label for="adress">Votre adresse postale :</label>
@@ -54,7 +55,7 @@
             </div>
             <div id="filing">
                 <label for="fichier">Envoyez-nous votre CV :</label>
-                <input type="file" id="fichier" name="fichier" accept=".pdf, .doc, .docx" >
+                <input type="file" id="fichier" name="fichier" accept=".pdf, .doc, .docx">
             </div>
             <div id="thanking">
                 <label for="thanks">Merci pour votre aide ❤</label>

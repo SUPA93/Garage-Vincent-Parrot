@@ -1,26 +1,26 @@
 <?php require_once __DIR__ . "/templates/header.php";
 
 include __DIR__ . "/connexion_handler.php";
-
+include __DIR__ . "/PDOfeedback.php";
 /* action="traitement_admin.php"  action form à modifier*/
 ?>
-<h1 class="inscription">Bonjour <?php $userRole?></h1>
+<h1 class="inscription">Bonjour <?php $userRole ?></h1>
 <button class="btninscription">
-        <a href="logout.php">Deconnexion</a>
-    </button>
+    <a href="logout.php">Deconnexion</a>
+</button>
 <section class="inscription">
     <h1>Administration</h1>
     <!-- Gestion des utilisateurs -->
     <form method="post">
         <div>
-        <!-- Champs pour ajouter un nouvel utilisateur -->
-        <label for="action">Action</label>
-        <select type="text" name="action" id="action" required>
-            <option value="gestion_utilisateur">Gérer les utilsateurs</option>
-            <option value="gestion_occasions">Gérer les annonces</option>
-            <option value="gestion_avis">Gérer les avis</option>
-            <option value="gestion_horaires">Gérer les horaires</option>
-        </select>
+            <!-- Champs pour ajouter un nouvel utilisateur -->
+            <label for="action">Action</label>
+            <select type="text" name="action" id="action" required>
+                <option value="gestion_utilisateur">Gérer les utilsateurs</option>
+                <option value="gestion_occasions">Gérer les annonces</option>
+                <option value="gestion_avis">Gérer les avis</option>
+                <option value="gestion_horaires">Gérer les horaires</option>
+            </select>
         </div>
         <fieldset id="gestion_users">
             <!-- Ajout suppression modifiacation d'utilisateurs-->
@@ -54,23 +54,34 @@ include __DIR__ . "/connexion_handler.php";
             </select>
             <button class="btninscription" type="submit">Valider</button>
         </fieldset>
-        <fieldset id="open_time">
-            <!-- Modification des horaires d'ouverture -->
-            <h2>Horaires d'ouverture</h2>
-            <select type="text" name="day" id="day" required>
-                <option value="lun">Lundi</option>
-                <option value="mar">Mardi</option>
-                <option value="mer">Mercredi</option>
-                <option value="jeu">Jeudi</option>
-                <option value="ven">Vendredi</option>
-                <option value="sam">Samedi</option>
-            </select>
-            <label for="time">Heure d'Ouverture :</label>
-            <input type="text" id="time" name="time" placeholder="HH:MM" required>
+        <form method="post" action="PDOhoraires.php">
+            <fieldset id="open_time">
+                <!-- Modification des horaires d'ouverture -->
+                <h2>Horaires d'ouverture et de fermeture</h2>
 
-            <button class="btninscription" type="submit">Modifier Horaires</button>
+                <!-- Menu déroulant avec les horaires existants -->
+                <label for="day">Jour de la semaine :</label>
+                <select name="day" id="day" required>
+                    <option value="lun">Lundi</option>
+                    <option value="mar">Mardi</option>
+                    <option value="mer">Mercredi</option>
+                    <option value="jeu">Jeudi</option>
+                    <option value="ven">Vendredi</option>
+                    <option value="sam">Samedi</option>
+                </select>
 
-        </fieldset>
+                <!-- Champ de saisie pour l'heure d'ouverture -->
+                <label for="opening_time">Heure d'Ouverture :</label>
+                <input type="text" id="opening_time" name="opening_time" placeholder="HH:MM" required>
+
+                <!-- Champ de saisie pour l'heure de fermeture -->
+                <label for="closing_time">Heure de Fermeture :</label>
+                <input type="text" id="closing_time" name="closing_time" placeholder="HH:MM" required>
+
+                <!-- Bouton pour modifier les horaires -->
+                <button class="btninscription" type="submit">Modifier Horaires</button>
+            </fieldset>
+        </form>
         <fieldset id="gestion_used">
             <h2>Gestion des Véhicules d'Occasion</h2>
 
@@ -117,52 +128,49 @@ include __DIR__ . "/connexion_handler.php";
 
         </fieldset>
         <fieldset id="feedBack">
-            <table  border="1" style="width: 100%;" >
-                <tbody>
-                    <tr>
-                        <th>Derniers Avis</th>
-                    </tr>
-                    <tr>
-                        <td>ID</td>
-                        <td>Nom</td>
-                        <td>Prénom</td>
-                    </tr>
-                    <tr>
-                        <td>Row:2 Cell:1</td>
-                        <td>Row:2 Cell:2</td>
-                        <td>Row:2 Cell:3</td>
-                    </tr>
-                    <tr>
-                        <td>Row:3 Cell:1</td>
-                        <td>Row:3 Cell:2</td>
-                        <td>Row:3 Cell:3</td>
-                    </tr>
-                    <tr>
-                        <td>Row:4 Cell:1</td>
-                        <td>Row:4 Cell:2</td>
-                        <td>Row:4 Cell:3</td>
-                    </tr>
-                    <tr>
-                        <td>Row:5 Cell:1</td>
-                        <td>Row:5 Cell:2</td>
-                        <td>Row:5 Cell:3</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>TOTAL</td>
-                        <td>...</td>
-                    </tr>
-                </tbody>
-            </table>
-            <button class="btninscription" type="submit" name="submit">Modérer</button>
+            <h2>Liste des avis</h2>
+            <form method="post">
+                <table class="tftable" border="1">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Prénom</th>
+                            <th>Nom</th>
+                            <th>Message</th>
+                            <th>Note</th>
+                            <th>Valider</th>
+                            <th>Supprimer</th>
+                        </tr>
+                        <?php
+                        foreach ($feedbacks as $feedback) {
+                            echo "<tr>";
+                            echo "<td>{$feedback['id']}</td>";
+                            echo "<td>{$feedback['first_name']}</td>";
+                            echo "<td>{$feedback['last_name']}</td>";
+                            echo "<td>{$feedback['feedback']}</td>";
+                            echo "<td>{$feedback['note']}</td>";
+                            echo "<td>";
+                            if ($feedback['valide']) {
+                                echo "<a href='valider_comment.php?id={$feedback['id']}'>Désafficher</a>";
+                            } else {
+                                echo "<a href='valider_comment.php?id={$feedback['id']}'>Afficher</a>";
+                            }
+                            echo "</td>";
+                            echo "<td><a href='delete_comment.php?id={$feedback['id']}'>Supprimer</a></td>";
+                            echo "</tr>";
+                        }
+                        ?>
+                    </thead>
+                </table>
+            </form>
         </fieldset>
     </form>
     <div id="used_cars_list">
-    <!-- Liste des annonces existantes -->
-    <h2>Liste des Annonces</h2>
-    <ul>
-        <!-- Afficher ici la liste des annonces avec des liens pour les modifier/supprimer -->
-    </ul>
+        <!-- Liste des annonces existantes -->
+        <h2>Liste des Annonces</h2>
+        <ul>
+            <!-- Afficher ici la liste des annonces avec des liens pour les modifier/supprimer -->
+        </ul>
     </div>
 </section>
 <?php require_once __DIR__ . "/templates/footer.php"; ?>

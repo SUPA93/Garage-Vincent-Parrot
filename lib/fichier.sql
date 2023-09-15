@@ -73,6 +73,28 @@ USE vparrot_bdd;
     message TEXT NOT NULL,
     date_submission TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 ); */
--- Insérer le premier utilisateur
+
+
+
+-- Insérer le premier contact form message--
 /* INSERT INTO formulaire_contact (nom, prenom, statut, societe, objet, email, adress, fichier, message)
-VALUES ('Doe', 'John', 'particulier', 'XYZ Inc', 'Demande d\'information', 'john.doe@example.com', '123 Rue de la Rue', 'fichier1.pdf', 'Merci de me donner plus d'informations.' */
+VALUES ('Doe', 'John', 'particulier', 'XYZ Inc', 'Demande dinformation', 'john.doe@example.com', '123 Rue de la Rue', 'fichier1.pdf', 'Merci de me donner plus dinformations.'); */
+
+-- Insérer le second contact form message --
+/*INSERT INTO formulaire_contact (nom, prenom, statut, societe, objet, email, adress, fichier, message)VALUES
+    -> ('Potter', 'Harry', 'particulier', 'XYZ', 'report_bug', 'Harrygrandh@exemple.com', 'voie 9 un quart', 'pdf1.pdf', 'Windgardium leviossa');*/
+/* 
+CREATE TABLE horaires (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    jour_semaine VARCHAR(10) NOT NULL,
+    heure_ouverture TIME NOT NULL,
+    heure_fermeture TIME NOT NULL
+);
+INSERT INTO horaires (jour_semaine, heure_ouverture, heure_fermeture)
+VALUES
+    ('Lundi', '09:00:00', '18:00:00'),
+    ('Mardi', '09:00:00', '18:00:00'),
+    ('Mercredi', '09:00:00', '18:00:00'),
+    ('Jeudi', '09:00:00', '18:00:00'),
+    ('Vendredi', '09:00:00', '18:00:00'),
+    ('Samedi', '9:00:00', '13:00:00'); */
