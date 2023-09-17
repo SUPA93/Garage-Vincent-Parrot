@@ -4,17 +4,17 @@ include __DIR__ . "/connexion_handler.php";
 include __DIR__ . "/PDOfeedback.php";
 /* action="traitement_admin.php"  action form à modifier*/
 ?>
-<h1 class="inscription">Bonjour <?php $userRole ?></h1>
+<h1 class="inscription">Bonjour <?php /* echo */ $userRole; ?></h1>
+
 <button class="btninscription">
     <a href="logout.php">Deconnexion</a>
 </button>
 <section class="inscription">
-    <h1>Administration</h1>
+    <h2>Administration</h2>
     <!-- Gestion des utilisateurs -->
     <form method="post">
         <div>
-            <!-- Champs pour ajouter un nouvel utilisateur -->
-            <label for="action">Action</label>
+            <label for="action"></label>
             <select type="text" name="action" id="action" required>
                 <option value="gestion_utilisateur">Gérer les utilsateurs</option>
                 <option value="gestion_occasions">Gérer les annonces</option>
@@ -54,117 +54,71 @@ include __DIR__ . "/PDOfeedback.php";
             </select>
             <button class="btninscription" type="submit">Valider</button>
         </fieldset>
-        <form method="post" action="PDOhoraires.php">
-            <fieldset id="open_time">
-                <!-- Modification des horaires d'ouverture -->
-                <h2>Horaires d'ouverture et de fermeture</h2>
+    </form>
+    <!-- Formulaire pour la mise à jour des horaires -->
+    <form method="post" action="PDOhoraires.php">
+        <fieldset id="open_time">
+            <!-- Modification des horaires d'ouverture -->
+            <h2>Modifier les Horaires</h2>
 
-                <!-- Menu déroulant avec les horaires existants -->
-                <label for="day">Jour de la semaine :</label>
-                <select name="day" id="day" required>
-                    <option value="lun">Lundi</option>
-                    <option value="mar">Mardi</option>
-                    <option value="mer">Mercredi</option>
-                    <option value="jeu">Jeudi</option>
-                    <option value="ven">Vendredi</option>
-                    <option value="sam">Samedi</option>
-                </select>
+            <!-- Menu déroulant avec les jours de la semaine -->
+            <label for="day">Sélectionnez le jour :</label>
+            <select name="day" id="day" required>
+                <?php foreach ($horaires as $jour => $horaire) { ?>
+                    <option value="<?php echo $jour; ?>"><?php echo ucfirst($jour); ?></option>
+                <?php } ?>
+            </select>
 
-                <!-- Champ de saisie pour l'heure d'ouverture -->
-                <label for="opening_time">Heure d'Ouverture :</label>
-                <input type="text" id="opening_time" name="opening_time" placeholder="HH:MM" required>
+            <!-- Champ de saisie pour l'ouverture -->
+            <label for="opening_time">Heure d'Ouverture :</label>
+            <input type="text" id="opening_time" name="opening_time" placeholder="HH:MM" required>
 
-                <!-- Champ de saisie pour l'heure de fermeture -->
-                <label for="closing_time">Heure de Fermeture :</label>
-                <input type="text" id="closing_time" name="closing_time" placeholder="HH:MM" required>
+            <!-- Champ de saisie pour la fermeture -->
+            <label for="closing_time">Heure de Fermeture :</label>
+            <input type="text" id="closing_time" name="closing_time" placeholder="HH:MM" required>
 
-                <!-- Bouton pour modifier les horaires -->
-                <button class="btninscription" type="submit">Modifier Horaires</button>
-            </fieldset>
-        </form>
-        <fieldset id="gestion_used">
-            <h2>Gestion des Véhicules d'Occasion</h2>
-
-            <label for="brand">Marque :</label>
-            <input type="text" id="brand" name="brand" required>
-
-            <label for="model">Modèle :</label>
-            <input type="text" id="model" name="model" required>
-
-            <label for="color">Couleur :</label>
-            <input type="text" id="color" name="color" required>
-
-            <label for="mileage">Kilométrage :</label>
-            <input type="number" id="mileage" name="mileage" required>
-
-            <label for="year">Année :</label>
-            <input type="number" id="year" name="year" required>
-
-            <label for="fuel_type">Type de carburant :</label>
-            <input type="text" id="fuel_type" name="fuel_type" required>
-
-            <label for="gearbox">Boîte de vitesses :</label>
-            <input type="text" id="gearbox" name="gearbox" required>
-
-            <label for="warranty">Garantie :</label>
-            <input type="text" id="warranty" name="warranty" required>
-
-            <label for="price">Prix :</label>
-            <input type="number" id="price" name="price" required>
-
-            <label for="finish">Finition :</label>
-            <input type="text" id="finish" name="finish" required>
-
-            <label for="pictures">Ajouter une photo :</label>
-            <input type="file" id="pictures" name="pictures[]" accept="image/*" multiple required>
-
-            <label for="location">Emplacement :</label>
-            <input type="text" id="location" name="location" required>
-
-            <label for="dept">Département :</label>
-            <input type="text" id="dept" name="dept" required>
-
-            <button class="btninscription" type="submit" name="submit">Ajouter/Modifier Annonce</button>
-
-        </fieldset>
-        <fieldset id="feedBack">
-            <h2>Liste des avis</h2>
-            <form method="post">
-                <table class="tftable" border="1">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>Prénom</th>
-                            <th>Nom</th>
-                            <th>Message</th>
-                            <th>Note</th>
-                            <th>Valider</th>
-                            <th>Supprimer</th>
-                        </tr>
-                        <?php
-                        foreach ($feedbacks as $feedback) {
-                            echo "<tr>";
-                            echo "<td>{$feedback['id']}</td>";
-                            echo "<td>{$feedback['first_name']}</td>";
-                            echo "<td>{$feedback['last_name']}</td>";
-                            echo "<td>{$feedback['feedback']}</td>";
-                            echo "<td>{$feedback['note']}</td>";
-                            echo "<td>";
-                            if ($feedback['valide']) {
-                                echo "<a href='valider_comment.php?id={$feedback['id']}'>Désafficher</a>";
-                            } else {
-                                echo "<a href='valider_comment.php?id={$feedback['id']}'>Afficher</a>";
-                            }
-                            echo "</td>";
-                            echo "<td><a href='delete_comment.php?id={$feedback['id']}'>Supprimer</a></td>";
-                            echo "</tr>";
-                        }
-                        ?>
-                    </thead>
-                </table>
-            </form>
+            <!-- Bouton pour modifier les horaires -->
+            <button class="btninscription" type="submit">Modifier Horaires</button>
         </fieldset>
     </form>
+    <form method="post">
+        <fieldset id="feedBack">
+            <h2>Liste des avis</h2>
+            <table class="tftable" border="1">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Prénom</th>
+                        <th>Nom</th>
+                        <th>Message</th>
+                        <th>Note</th>
+                        <th>Valider</th>
+                        <th>Supprimer</th>
+                    </tr>
+                    <?php
+                    foreach ($feedbacks as $feedback) {
+                        echo "<tr>";
+                        echo "<td>{$feedback['id']}</td>";
+                        echo "<td>{$feedback['first_name']}</td>";
+                        echo "<td>{$feedback['last_name']}</td>";
+                        echo "<td>{$feedback['feedback']}</td>";
+                        echo "<td>{$feedback['note']}</td>";
+                        echo "<td>";
+                        if ($feedback['valide']) {
+                            echo "<a href='valider_comment.php?id={$feedback['id']}'>Désafficher</a>";
+                        } else {
+                            echo "<a href='valider_comment.php?id={$feedback['id']}'>Afficher</a>";
+                        }
+                        echo "</td>";
+                        echo "<td><a href='delete_comment.php?id={$feedback['id']}'>Supprimer</a></td>";
+                        echo "</tr>";
+                    }
+                    ?>
+                </thead>
+            </table>
+        </fieldset>
+    </form>
+
     <div id="used_cars_list">
         <!-- Liste des annonces existantes -->
         <h2>Liste des Annonces</h2>

@@ -46,7 +46,7 @@
 <article class="clientele">
     <h1>Trouvez votre service</h1>
     <form action="/action_page.php">
-        <label for="immatriculation">Mon immatriculation</label><br>
+        <label for="immatriculation">Votre immatriculation</label><br>
         <input type="text" id="immat" name="fname" placeholder="ex: AB 123 CD "><br>
         <label for="reponse-selector">Type de préstation</label>
         <select name="reponse-selector" id="reponse-selector">
@@ -88,10 +88,11 @@
     <form id="userFeedbackForm" method="post">
         <fieldset id="userFeedBack">
             <h2>Laissez-nous votre avis</h2>
+            <input type="hidden" name="my_form_identifier" value="my_unique_value">
             <label for="firstName">Prénom*</label>
-            <input type="text" id="firstName" name="firstName" placeholder="Prénom..." required autocomplete="given-name">
-            <label for="famillyName">Votre Nom*</label>
-            <input type="text" id="famillyName" name="famillyName" placeholder="Votre nom" required autocomplete="family-name">
+            <input type="text" id="firstName" name="firstName" placeholder="Prénom..."  autocomplete="given-name">
+            <label for="familyName">Votre Nom*</label>
+            <input type="text" id="famillyName" name="famillyName" placeholder="Votre nom"  autocomplete="family-name">
             <label for="userMessage">Laissez un commentaire</label>
             <textarea id="userMessage" name="userMessage" cols="15" rows="3" placeholder="Votre message..."></textarea>
             <label for="userRating">Donnez nous une note (de 1 à 5)*</label>
@@ -102,9 +103,10 @@
                 <option value="2">2 (Moyen)</option>
                 <option value="1">1 (Mauvais)</option>
             </select>
+            
         </fieldset>
         <div>
-            <h2>Déjà client ? Dites-nous tout...</h2>
+            <h2>Déjà client ? Dites-nous tout!</h2>
             <button class="btninscription" id="notation" type="submit">Laissez-nous un avis</button>
         </div>
     </form>

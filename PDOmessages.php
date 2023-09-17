@@ -44,7 +44,10 @@ try {
         // Exécution de la requête
         $stmt->execute();
 
-        echo "Le message a été inséré avec succès dans la base de données.";
+        /* echo "le code php"; */
+        
+        header('Location: index.php');
+        
     }
 } catch (PDOException $e) {
     echo "Erreur : " . $e->getMessage();

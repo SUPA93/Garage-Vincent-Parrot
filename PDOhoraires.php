@@ -24,13 +24,13 @@ try {
 }
 
 // Vérifier si le formulaire a été soumis
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["day"])) {
     // Récupérer les données du formulaire
-    $day = $_POST["day"];
-    $opening_time = $_POST["opening_time"]; // Heure d'ouverture
-    $closing_time = $_POST["closing_time"]; // Heure de fermeture
+    $day = ucfirst(strtolower($_POST["day"]));
+    $opening_time = $_POST["opening_time"];
+    $closing_time = $_POST["closing_time"];
 
-    // Préparer la requête SQL pour mettre à jour les horaires (à la fois ouverture et fermeture)
+    // Préparer la requête SQL pour mettre à jour les horaires
     $sql = "UPDATE horaires SET heure_ouverture = :heure_ouverture, heure_fermeture = :heure_fermeture WHERE jour_semaine = :jour_semaine";
 
     try {
@@ -45,8 +45,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Exécution de la requête
         $stmt->execute();
 
-        echo "Horaires mis à jour avec succès.";
+        // Rediriger vers admin.php après la mise à jour réussie
+        header("Location: admin.php");
+        exit(); // Assurez-vous de quitter le script après la redirection
     } catch (PDOException $e) {
-        echo "Erreur lors de la mise à jour des horaires : " . $e->getMessage();
+        // En cas d'erreur, vous pouvez gérer l'erreur ici
+        $errorMessage = "Erreur lors de la mise à jour des horaires : " . $e->getMessage();
     }
 }

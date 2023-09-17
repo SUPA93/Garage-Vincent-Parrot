@@ -1,11 +1,13 @@
 <?php require_once __DIR__ . "/../lib/menu.php";
 require __DIR__ . "../../config/config.php";
 require __DIR__ . "../../PDOhoraires.php";
+require __DIR__ . "../../PDOoccasions.php";
 require __DIR__ . "../../PDOfeedback.php";
 
-if (session_status() === PHP_SESSION_NONE) {
+
+/* if (session_status() === PHP_SESSION_NONE) {
     session_start();
-}
+} */
 // GET THE CURRENT PAGE
 $currentPage = htmlentities(basename($_SERVER["SCRIPT_NAME"]));
 // 

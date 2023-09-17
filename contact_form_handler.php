@@ -2,7 +2,7 @@
 
 /* use PHPMailer\PHPMailer\PHPMailer; */
 
-/* require __DIR__."/config/config_mail.php"; */
+/* require __DIR__."/config/config_mail.php"; 
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $nom = $_POST["nom"];
@@ -37,3 +37,4 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         echo "Erreur lors de l'envoi du message.";
     }
 }
+*/

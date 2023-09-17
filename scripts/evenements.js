@@ -1,33 +1,36 @@
-/* document.addEventListener("DOMContentLoaded", function () {
-    // Fonction générique de gestion de la soumission formulaire
-    function handleSubmit(event, successMessage) {
-        event.preventDefault();
+document.addEventListener("DOMContentLoaded", function () {
+    const formulaire = document.getElementById("formulaire");
 
-        const formData = new FormData(event.target);
+    if (formulaire) {
+        
+        formulaire.addEventListener("submit", function (event) {
+            event.preventDefault();
 
-        if (confirm('Voulez-vous vraiment envoyer ce formulaire?')) {
-            const successMessageElement = document.createElement('div');
-            successMessageElement.textContent = successMessage;
-            successMessageElement.style.backgroundColor = 'green';
-            successMessageElement.style.color = 'white';
-            successMessageElement.style.padding = '10px';
-            successMessageElement.style.position = 'fixed';
-            successMessageElement.style.top = '0';
-            successMessageElement.style.left = '0';
-            successMessageElement.style.width = '100%';
-            successMessageElement.style.textAlign = 'center';
-            document.body.appendChild(successMessageElement);
+            const formData = new FormData(event.target);
 
-            event.target.reset();
+            if (confirm('Voulez-vous vraiment envoyer ce formulaire?')) {
+                const successMessageElement = document.createElement('div');
+                successMessageElement.textContent = "Message envoyé avec succès";
+                successMessageElement.style.backgroundColor = 'green';
+                successMessageElement.style.color = 'white';
+                successMessageElement.style.padding = '10px';
+                successMessageElement.style.position = 'fixed';
+                successMessageElement.style.top = '0';
+                successMessageElement.style.left = '0';
+                successMessageElement.style.width = '100%';
+                successMessageElement.style.textAlign = 'center';
+                document.body.appendChild(successMessageElement);
 
-            setTimeout(() => {
-                successMessageElement.style.display = 'none';
-                window.location.href = 'index.php';
-            }, 2000);
-        }
+                event.target.reset();
+
+                setTimeout(() => {
+                    successMessageElement.style.display = 'none';
+                    window.location.href = 'index.php';
+                }, 2000);
+            }
+        });
     }
 
-    const greeting = "Message envoyé avec succès";
 
     // Fonction pour afficher ou masquer les champs en fonction de objet dans le form
     function toggleChamps() {
@@ -106,4 +109,3 @@
     toggleSocieteLabel();
     hideSocieteLabel();
 });
- */

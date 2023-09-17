@@ -42,7 +42,7 @@ USE vparrot_bdd;
     newsletter TINYINT(1) DEFAULT 0
  ); */
 
-/* CREATE TABLE used_vehicles (
+/* CREATE TABLE used_vehicules (
     id INT PRIMARY KEY AUTO_INCREMENT,
     brand VARCHAR(255),
     model VARCHAR(255),
@@ -59,6 +59,10 @@ USE vparrot_bdd;
     dept VARCHAR(255),
     ads_date DATE
 ); */
+
+/* INSERT INTO used_vehicules (brand, model, color, mileage, year, fuel_type, gearbox,warranty,price,finish,pictures,location,dept)
+VALUES('Peugeot','5008','blanc perle',29800,2022,'essence','automatique',TRUE,32500,'GT BLACK PACK','occasions/5008_1.PNG','ile de france','75'); */
+
 
 /* CREATE TABLE formulaire_contact (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -79,6 +83,20 @@ USE vparrot_bdd;
 -- Insérer le premier contact form message--
 /* INSERT INTO formulaire_contact (nom, prenom, statut, societe, objet, email, adress, fichier, message)
 VALUES ('Doe', 'John', 'particulier', 'XYZ Inc', 'Demande dinformation', 'john.doe@example.com', '123 Rue de la Rue', 'fichier1.pdf', 'Merci de me donner plus dinformations.'); */
+
+/*
+INSERT INTO used_vehicules (brand, model, color, mileage, year, fuel_type, gearbox, warranty, price, finish, pictures, location, dept, ads_date)
+VALUES
+    ('Fiat', '500', 'Rouge', FLOOR(RAND() * 20000), '2018', 'Essence', 'Automatique', CASE WHEN RAND() > 0.5 THEN TRUE ELSE FALSE END, ROUND(RAND() * 20000, 2), '', 'occasions/500_1.jpg', 'Marseille', '13', '2023-09-16'),
+    ('Opel', 'Corsa', 'Gris', FLOOR(RAND() * 25000), '2017', 'Diesel', 'Manuelle', CASE WHEN RAND() > 0.5 THEN TRUE ELSE FALSE END, ROUND(RAND() * 25000, 2), 'ecoflex', 'occasions/opel_1.PNG', 'Lyon', '69', '2023-09-16'),
+    ('Peugeot', '2008', 'Noire', FLOOR(RAND() * 40000), '2019', 'Essence', 'Automatique', CASE WHEN RAND() > 0.5 THEN TRUE ELSE FALSE END, ROUND(RAND() * 40000, 2), 'style', 'occasions/2008.jpg', 'Paris', '75', '2023-09-16'),
+    ('Seat', 'Leon', 'Gris', FLOOR(RAND() * 30000), '2017', 'Essence', 'Manuelle', CASE WHEN RAND() > 0.5 THEN TRUE ELSE FALSE END, ROUND(RAND() * 30000, 2), 'fr', 'occasions/LEON.jpg', 'Toulouse', '31', '2023-09-16'),
+    ('Nissan', 'Qashqai', 'Marron', FLOOR(RAND() * 10000), '2021', 'Essence', 'Automatique', CASE WHEN RAND() > 0.5 THEN TRUE ELSE FALSE END, ROUND(RAND() * 20000, 2), '', 'occasions/nissan.jpg', 'Lille', '59', '2023-09-16'),
+    ('Citroën', 'C3', 'Gris', FLOOR(RAND() * 30000), '2022', 'Essence', 'Manuelle', CASE WHEN RAND() > 0.5 THEN TRUE ELSE FALSE END, ROUND(RAND() * 30000, 2), 'city', 'occasions/C3.jpg', 'Marseille', '13', '2023-09-16'),
+    ('Seat', 'Cupra', 'Noire', FLOOR(RAND() * 20000), '2020', 'Essence', 'Automatique', CASE WHEN RAND() > 0.5 THEN TRUE ELSE FALSE END, ROUND(RAND() * 20000, 2), 'R', 'occasions/cupra.jpg', 'Lyon', '69', '2023-09-16'),
+    ('Dacia', 'Sandero', 'Rouge', FLOOR(RAND() * 15000), '2022', 'Essence', 'Manuelle', CASE WHEN RAND() > 0.5 THEN TRUE ELSE FALSE END, ROUND(RAND() * 15000, 2), '', 'occasions/dacia.jpg', 'Paris', '75', '2023-09-16'),
+    ('Citroën DS', 'DS9', 'Gris', FLOOR(RAND() * 10000), '2022', 'Essence', 'Automatique', CASE WHEN RAND() > 0.5 THEN TRUE ELSE FALSE END, ROUND(RAND() * 10000, 2), '', 'occasions/ds9.jpg', 'Toulouse', '31', '2023-09-16');
+*/
 
 -- Insérer le second contact form message --
 /*INSERT INTO formulaire_contact (nom, prenom, statut, societe, objet, email, adress, fichier, message)VALUES
