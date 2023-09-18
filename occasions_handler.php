@@ -12,7 +12,7 @@ require __DIR__ . "/templates/header.php";
             <a href="occasions_display.php">Afficher les annonces</a>
         </button>
     </div>
-    <form method="post" action="occasions_handler.php" id="add_used_form">
+    <form method="post" action="occasions_handler.php" id="add_used_form" enctype="multipart/form-data">
         <fieldset id="gestion_used">
             <h2>Ajouter un véhicule</h2>
 

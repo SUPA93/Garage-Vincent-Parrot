@@ -19,6 +19,7 @@ include __DIR__ . "/PDOfeedback.php";
                 <option value="gestion_utilisateur">Gérer les utilsateurs</option>
                 <option value="gestion_occasions">Gérer les annonces</option>
                 <option value="gestion_avis">Gérer les avis</option>
+                <option value="gestion_contact">Gérer les messages</option>
                 <option value="gestion_horaires">Gérer les horaires</option>
             </select>
         </div>
@@ -96,6 +97,9 @@ include __DIR__ . "/PDOfeedback.php";
                         <th>Supprimer</th>
                     </tr>
                     <?php
+                    usort($feedbacks, function ($a, $b) {
+                        return $a['id'] - $b['id'];
+                    });
                     foreach ($feedbacks as $feedback) {
                         echo "<tr>";
                         echo "<td>{$feedback['id']}</td>";
