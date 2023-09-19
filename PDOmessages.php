@@ -1,31 +1,28 @@
 <?php
 //Insèrer les messages users dans la table.
-include_once __DIR__.'/config/config.php';
+include __DIR__ . '/config/config.php';
 
-try {
-    // Établir la connexion à la base de données avec PDO
-    $pdo = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUser, $dbPassword);
-    // Définition du mode d'erreur PDO à exception
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // Vérifie si le formulaire a été soumis
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Récupération des données du formulaire
-        $nom = $_POST["nom"];
-        $prenom = $_POST["prenom"];
-        $statut = $_POST["statut"];
-        $societe = $_POST["societe"];
-        $objet = $_POST["objet"];
-        $email = $_POST["email"];
-        $adress = $_POST["adress"];
-        $fichier = $_POST["fichier"]; 
-        $message = $_POST["message"];
-        $date_submission = date("Y-m-d H:i:s");
 
-        // Requête SQL pour l'insertion des données
-        $sql = "INSERT INTO formulaire_contact (nom, prenom, statut, societe, objet, email, adress, fichier, message, date_submission) 
-                VALUES (:nom, :prenom, :statut, :societe, :objet, :email, :adress, :fichier, :message, :date_submission)";
 
+// Vérifie si le formulaire a été soumis
+if (isset($_POST['send_contact_form'])) {
+    // Récupération des données du formulaire
+    $nom = $_POST["nom"];
+    $prenom = $_POST["prenom"];
+    $statut = $_POST["statut"];
+    $societe = $_POST["societe"];
+    $objet = $_POST["objet"];
+    $email = $_POST["email"];
+    $adress = $_POST["adress"];
+    $fichier = $_POST["fichier"];
+    $message = $_POST["message"];
+    $date_submission = date("Y-m-d H:i:s");
+
+    // Requête SQL pour l'insertion des données
+    $sql = "INSERT INTO formulaire_contact (nom, prenom, statut, societe, objet, email, adress, fichier, message, date_submission) 
+            VALUES (:nom, :prenom, :statut, :societe, :objet, :email, :adress, :fichier, :message, :date_submission)";
+    try {
         // Préparation de la requête
         $stmt = $pdo->prepare($sql);
 
@@ -43,17 +40,21 @@ try {
 
         // Exécution de la requête
         $stmt->execute();
-
-        /* echo "le code php"; */
-        
-        header('Location: index.php');
-        
+        //redirection        
+    } catch (PDOException $e) {
+        echo "Erreur : " . $e->getMessage();
     }
-} catch (PDOException $e) {
-    echo "Erreur : " . $e->getMessage();
 }
+try {
 
-// Fermeture de la connexion à la base de données
-$pdo = null;
-
-?>
+    // Établir la connexion à la base de données avec PDO
+    $pdo = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUser, $dbPassword);
+    // Définition du mode d'erreur PDO à exception
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    // Récupération des messages depuis la table formulaire_contact
+    $sql = "SELECT * FROM formulaire_contact";
+    $stmt = $pdo->query($sql);
+    $messages = $stmt->fetchAll(PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    echo "Erreur lors de la récupération des données : " . $e->getMessage();
+}

@@ -1,4 +1,4 @@
-<?php /*grille de véhicules d'occasion avec la boucle en php*/ ?>
+<?php /*grille de véhicules d'occasion avec la boucle en php
 <div class="grid-item">
     <img src="<?= $article["image"] ?>" alt="<?= $article["Marque: "]." ". $article["Modèle: "] ?>" title="<?= $article["Marque: "]." ". $article["Modèle: "] ?>">
     <h3><?= $article["title"] ?></h3>
@@ -12,3 +12,4 @@
         <a href="occasion_detail.php?id=<?=$key;?>">Plus de détails</a>
     </button>
 </div>
+?>*/

@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const formulaire = document.getElementById("userFeedbackForm");
+    /* const formulaire = document.getElementById("formulaire");
 
     if (formulaire) {
         
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
-
+ */
 
     // Fonction pour afficher ou masquer les champs en fonction de objet dans le form
     function toggleChamps() {

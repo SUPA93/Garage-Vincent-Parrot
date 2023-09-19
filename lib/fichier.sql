@@ -84,6 +84,10 @@ VALUES('Peugeot','5008','blanc perle',29800,2022,'essence','automatique',TRUE,32
 /* INSERT INTO formulaire_contact (nom, prenom, statut, societe, objet, email, adress, fichier, message)
 VALUES ('Doe', 'John', 'particulier', 'XYZ Inc', 'Demande dinformation', 'john.doe@example.com', '123 Rue de la Rue', 'fichier1.pdf', 'Merci de me donner plus dinformations.'); */
 
+-- Insérer le second contact form message --
+/*INSERT INTO formulaire_contact (nom, prenom, statut, societe, objet, email, adress, fichier, message)VALUES
+    -> ('Potter', 'Harry', 'particulier', 'XYZ', 'report_bug', 'Harrygrandh@exemple.com', 'voie 9 un quart', 'pdf1.pdf', 'Windgardium leviossa');*/
+/* 
 /*
 INSERT INTO used_vehicules (brand, model, color, mileage, year, fuel_type, gearbox, warranty, price, finish, pictures, location, dept, ads_date)
 VALUES
@@ -98,21 +102,17 @@ VALUES
     ('Citroën DS', 'DS9', 'Gris', FLOOR(RAND() * 10000), '2022', 'Essence', 'Automatique', CASE WHEN RAND() > 0.5 THEN TRUE ELSE FALSE END, ROUND(RAND() * 10000, 2), '', 'occasions/ds9.jpg', 'Toulouse', '31', '2023-09-16');
 */
 
--- Insérer le second contact form message --
-/*INSERT INTO formulaire_contact (nom, prenom, statut, societe, objet, email, adress, fichier, message)VALUES
-    -> ('Potter', 'Harry', 'particulier', 'XYZ', 'report_bug', 'Harrygrandh@exemple.com', 'voie 9 un quart', 'pdf1.pdf', 'Windgardium leviossa');*/
-/* 
-CREATE TABLE horaires (
+/* CREATE TABLE horaires (
     id INT AUTO_INCREMENT PRIMARY KEY,
     jour_semaine VARCHAR(10) NOT NULL,
     heure_ouverture TIME NOT NULL,
     heure_fermeture TIME NOT NULL
-);
-INSERT INTO horaires (jour_semaine, heure_ouverture, heure_fermeture)
+); */
+/* INSERT INTO horaires (jour_semaine, heure_ouverture, heure_fermeture)
 VALUES
     ('Lundi', '09:00:00', '18:00:00'),
     ('Mardi', '09:00:00', '18:00:00'),
     ('Mercredi', '09:00:00', '18:00:00'),
     ('Jeudi', '09:00:00', '18:00:00'),
     ('Vendredi', '09:00:00', '18:00:00'),
-    ('Samedi', '9:00:00', '13:00:00'); */
+    ('Samedi', '9:00:00', '13:00:00');  */

@@ -8,12 +8,11 @@ require __DIR__ . "/templates/header.php";
         <button type="button" title="Retour administration" class="btninscription">
             <a href="admin.php">Retour</a>
         </button>
-        <button type="button" title="afficher la liste des annonces" class="btninscription">
-            <a href="occasions_display.php">Afficher les annonces</a>
-        </button>
+
     </div>
     <form method="post" action="occasions_handler.php" id="add_used_form" enctype="multipart/form-data">
         <fieldset id="gestion_used">
+            <input type="hidden" name="my_form_occasion" value="form_occasion_handler">
             <h2>Ajouter un véhicule</h2>
 
             <label for="brand">Marque :</label>
@@ -40,7 +39,6 @@ require __DIR__ . "/templates/header.php";
             <label for="warranty">Garantie :</label>
             <input type="radio" id="warranty" name="warranty" value="1" required> Oui
             <input type="radio" id="warranty" name="warranty" value="0" required> Non
-
 
             <label for="price">Prix :</label>
             <input type="number" id="price" name="price" required>

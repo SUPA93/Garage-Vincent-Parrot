@@ -2,12 +2,12 @@
 // Insérer les avis des utilisateurs dans la table.
 include_once __DIR__ . '/config/config.php';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    /* // Vérifiez si le champ caché 'my_form_identifier' est défini
-    if (isset($_POST['my_form_identifier']) && $_POST['my_form_identifier'] === 'my_unique_value') { */
+
+// Vérifiez si le champ caché 'my_form_identifier' est défini
+if (isset($_POST['send_feedback'])) {
     $firstName = $_POST['firstName'];
-    $lastName = $_POST['famillyName'];
+    $lastName = $_POST['familyName'];
     $feedback = $_POST['userMessage'];
     $note = $_POST['userRating'];
     $valide = false; // false par défaut
@@ -22,10 +22,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->bindParam(':note', $note);
         $stmt->bindParam(':valide', $valide);
         $stmt->execute();
+
+        header('Location: index.php');
     } catch (PDOException $e) {
         echo "Erreur lors de l'enregistrement de l'avis : " . $e->getMessage();
     }
 }
+
 
 
 $sql = "SELECT id, first_name, last_name, feedback, note, valide FROM user_feedback";

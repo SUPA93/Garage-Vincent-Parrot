@@ -1,9 +1,9 @@
 <?php require_once __DIR__ . "/templates/header.php";
-include 'PDOmessages.php';
+
 ?>
 <section class="inscription">
     <h1>Formulaire de contact</h1>
-    <form id="formulaire" method="post">
+    <form  method="post"  id="formulaire">
         <fieldset id="infos">
             <legend>
                 <h2>Informations</h2>
@@ -61,7 +61,7 @@ include 'PDOmessages.php';
                 <label for="thanks">Merci pour votre aide ❤</label>
             </div>
             <textarea name="message" id="messageField" cols="30" rows="10" placeholder="Message..."></textarea>
-            <button type="submit">ENVOYER</button>
+            <button type="submit" name="send_contact_form" >ENVOYER</button>
         </fieldset>
     </form>
 </section>

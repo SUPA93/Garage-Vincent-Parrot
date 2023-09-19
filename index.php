@@ -86,14 +86,14 @@
     </div>
 </section>
 <section class="inscription">
-    <form id="userFeedbackForm" method="post">
+    <form id="userFeedbackForm" method="post" >
         <fieldset id="userFeedBack">
             <h2>Laissez-nous votre avis</h2>
-            <input type="hidden" name="my_form_identifier" value="my_unique_value">
+            <input type="hidden" name="my_form_feedback" value="my_unique_value">
             <label for="firstName">Prénom*</label>
             <input type="text" id="firstName" name="firstName" placeholder="Prénom..." autocomplete="given-name">
             <label for="familyName">Votre Nom*</label>
-            <input type="text" id="famillyName" name="famillyName" placeholder="Votre nom" autocomplete="family-name">
+            <input type="text" id="familyName" name="familyName" placeholder="Votre nom" autocomplete="family-name">
             <label for="userMessage">Laissez un commentaire</label>
             <textarea id="userMessage" name="userMessage" cols="15" rows="3" placeholder="Votre message..."></textarea>
             <label for="userRating">Donnez nous une note (de 1 à 5)*</label>
@@ -107,7 +107,7 @@
         </fieldset>
         <div>
             <h2>Déjà client ? Dites-nous tout!</h2>
-            <button class="btninscription" id="notation" type="submit">Laissez-nous un avis</button>
+            <button class="btninscription" name="send_feedback" type="submit">Laissez-nous un avis</button>
         </div>
     </form>
 </section>
