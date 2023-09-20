@@ -3,7 +3,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 
-include __DIR__ . "../config/config.php"; // Inclure le fichier de configuration avec les informations de connexion
+include __DIR__ . "../config/config.php"; 
 
 if (isset($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] === "POST") {
     $email = $_POST["email"];
@@ -22,7 +22,7 @@ if (isset($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] === "POST") 
         $stmt->bindParam(':email', $email);
         $stmt->execute();
         $result = $stmt->fetch();
-        var_dump($result);
+        
         
         if ($result && $password === $result['mot_de_passe']) {
             // Authentification réussie
@@ -47,6 +47,8 @@ if (isset($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] === "POST") 
         } else {
             // Authentification échouée
             $errorMessage = "Identifiants incorrects. Veuillez réessayer.";
+
+            echo "<div class=\"inscription\" style=\" height:10px\", \"max-width:400px\";><fieldset ><label>$errorMessage</label></fieldset></div>";
         }
     } catch (PDOException $e) {
         die("La connexion à la base de données a échoué : " . $e->getMessage());

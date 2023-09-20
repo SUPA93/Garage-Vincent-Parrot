@@ -1,5 +1,5 @@
 <?php require_once __DIR__ . "/templates/header.php";
-include __DIR__ . "/connexion_handler.php";
+include __DIR__ . "/PDOconnexion.php";
 
 ?>
 <h1 class="inscription">Bonjour <?php /* echo */ $userRole; ?></h1>
@@ -25,7 +25,7 @@ include __DIR__ . "/connexion_handler.php";
         </div>
         <fieldset id="gestion_users">
             <!-- Ajout suppression modifiacation d'utilisateurs-->
-            <h2>Gestion des Utilisateurs</h2>
+            <h2>Création d'utilisateur</h2>
             <label for="nom">Nom :</label>
             <input type="text" id="nom" name="nom" required>
 
@@ -43,17 +43,17 @@ include __DIR__ . "/connexion_handler.php";
                 <option value="admin">Admin</option>
                 <option value="user">Utilisateur</option>
             </select>
-            <label for="type">Type :</label>
+            <!-- <label for="type">Type :</label>
             <select id="type" name="type">
                 <option value="intern">Interne</option>
                 <option value="extern">Externe</option>
-            </select>
-            <select id="wish" name="type">
+            </select> -->
+            <!-- <select id="wish" name="type">
                 <option value="add">Ajouter</option>
                 <option value="change">Modifier</option>
                 <option value="sup">Supprimer</option>
-            </select>
-            <button class="btninscription" type="submit">Valider</button>
+            </select> -->
+            <button class="btninscription" type="submit" name="add_user">Valider</button>
         </fieldset>
     </form>
     <!-- Formulaire pour la mise à jour des horaires -->

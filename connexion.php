@@ -1,7 +1,7 @@
 <?php require_once __DIR__ . "/templates/header.php";
 
 
-include __DIR__ . "/connexion_handler.php"; /* Pointez vers le deuxième fichier */
+include __DIR__ . "/PDOconnexion.php"; /* Pointez vers le deuxième fichier */
 
 ?>
 
@@ -16,6 +16,7 @@ include __DIR__ . "/connexion_handler.php"; /* Pointez vers le deuxième fichier
             <label for="password">Mot de passe</label>
             <input type="password" name="password" id="password" required placeholder="Votre mot de passe">
             <button type="submit">Connexion</button>
+            
         </fieldset>
     </form>
 </div>

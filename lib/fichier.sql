@@ -13,7 +13,7 @@ USE vparrot_bdd;
     ["page" => "prestations.php", "title" => "Services", "meta_description"=> "Découvrez nos services"],
     ["page" => "garages.php", "title" => "Garages", "meta_description"=> "Nos Garages près de chez vous"],
     ["page" => "occasions.php", "title" => "Occasions", "meta_description"=> "Véhicules vérifiés remis en état et garantis!"],
-    ["page" => "connexion.php", "title" => "Connexion", "meta_description"=> "Portail d'accès aux services"],
+    ["page" => "PDOconnexion.php", "title" => "Connexion", "meta_description"=> "Portail d'accès aux services"],
     ["page" => "contact.php", "title" => "Contactez-nous", "meta_description"=> "N'hésitez pas à nous solliciter"],
     ["page" => "occasion_detail.php", "title" => "Détails", "meta_description"=> "Votre véhicule d'occasion plus en détail"],
     ["page" => "subscribe.php", "title" => "Inscription", "meta_description"=> "Portail d'inscription nouveau client"],
