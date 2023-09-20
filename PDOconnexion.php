@@ -3,12 +3,12 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 
+
 include __DIR__ . "../config/config.php"; 
 
-if (isset($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] === "POST") {
+if (isset($_POST["send_connexion"])){
     $email = $_POST["email"];
     $password = $_POST["password"];
-
 
     try {
         // Établir la connexion à la base de données avec PDO
@@ -23,15 +23,14 @@ if (isset($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] === "POST") 
         $stmt->execute();
         $result = $stmt->fetch();
         
-        
-        if ($result && $password === $result['mot_de_passe']) {
+        if ($result && password_verify($password, $result['mot_de_passe'])) {
             // Authentification réussie
-            /* $_SESSION["user_email"] = $email; */
-            $_SESSION["user"] = ["name"=>$result["nom"],
-            "firstname"=>$result["prenom"],
-            "email"=>$result["email"],
-            "role"=>$result["role"]
-        ];
+            $_SESSION["user"] = [
+                "name" => $result["nom"],
+                "firstname" => $result["prenom"],
+                "email" => $result["email"],
+                "role" => $result["role"]
+            ];
         
             // Récupérer le rôle de l'utilisateur depuis la base de données
             $userRole = $result['role'];
@@ -41,14 +40,14 @@ if (isset($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] === "POST") 
                 header("Location: admin.php");
                 exit();
             } else {
-                header("Location: index.php");
+                header("Location: admin.php");
                 exit();
             }
         } else {
             // Authentification échouée
             $errorMessage = "Identifiants incorrects. Veuillez réessayer.";
 
-            echo "<div class=\"inscription\" style=\" height:10px\", \"max-width:400px\";><fieldset ><label>$errorMessage</label></fieldset></div>";
+            echo "<div class=\"inscription\" style=\" height:10px; max-width:400px;\"><fieldset><label>$errorMessage</label></fieldset></div>";
         }
     } catch (PDOException $e) {
         die("La connexion à la base de données a échoué : " . $e->getMessage());
@@ -57,3 +56,4 @@ if (isset($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] === "POST") 
     // Fermer la connexion à la base de données
     $pdo = null;
 }
+?>

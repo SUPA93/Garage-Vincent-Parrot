@@ -2,9 +2,23 @@
 
 require_once __DIR__ . "/templates/header.php";
 ?>
+
 <section class="container">
     <h1>L'occasion</h1>
     <h2>Nos véhicules d'occasion sont vérifiés & remis en état par nos soins</h2>
+    <form id="filterForm" class="inscription">
+        <label for="sortBy">Trier par :</label>
+        <select id="sortBy" name="sortBy">
+            <option value="year-asc">Année croissante</option>
+            <option value="year-desc">Année décroissante</option>
+            <option value="mileage-asc">Kilométrage croissant</option>
+            <option value="mileage-desc">Kilométrage décroissant</option>
+            <option value="price-asc">Prix croissant</option>
+            <option value="price-desc">Prix décroissant</option>
+        </select>
+
+        <button type="submit" class="inscription" name="filet_btn">Filtrer</button>
+    </form>
     <div class="grid-container">
         <?php foreach ($articles as $key => $article) { ?>
             <div class="grid-item">

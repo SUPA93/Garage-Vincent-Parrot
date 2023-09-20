@@ -5,12 +5,14 @@ require __DIR__ . "../../PDOoccasions.php";
 require __DIR__ . "../../PDOfeedback.php";
 require __DIR__ . "../../PDOmessages.php";
 require __DIR__ . "../../PDOservice.php";
+require __DIR__ . "../../PDOaddUser.php";
+require __DIR__ . "../../occasion_sort.php";
 
 
 
-/* if (session_status() === PHP_SESSION_NONE) {
+if (session_status() === PHP_SESSION_NONE) {
     session_start();
-} */
+}
 // GET THE CURRENT PAGE
 $currentPage = htmlentities(basename($_SERVER["SCRIPT_NAME"]));
 // 

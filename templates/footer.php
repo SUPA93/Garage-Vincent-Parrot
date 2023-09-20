@@ -19,8 +19,8 @@
             <?php foreach ($horaires as $jour => $horaire) { ?>
                 <li id="<?php echo $jour; ?>">
                     <?php
-                    $heureOuverture = substr($horaire['ouverture'], 0, 5); 
-                    $heureFermeture = substr($horaire['fermeture'], 0, 5);  
+                    $heureOuverture = substr($horaire['ouverture'], 0, 5);
+                    $heureFermeture = substr($horaire['fermeture'], 0, 5);
                     echo ucfirst(substr($jour, 0, 3)) . ': ' . $heureOuverture . ' - ' . $heureFermeture; ?>
                 </li>
             <?php } ?>
@@ -49,6 +49,9 @@
 <script src="../scripts/evenements.js" type="module"></script>
 <script src="../scripts/caroussel.js" type="module"></script>
 <script src="../scripts/admin.js" type="module"></script>
+<!--requêtes Jquery-->
+
+<script src="../scripts/sort_filter.js"></script>
 
 
 

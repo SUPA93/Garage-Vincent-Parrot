@@ -2,7 +2,7 @@
 include __DIR__ . "/PDOconnexion.php";
 
 ?>
-<h1 class="inscription">Bonjour <?php /* echo */ $userRole; ?></h1>
+<h1 class="inscription">Bonjour:  <?php echo $_SESSION["user"]["firstname"]; ?></h1>
 
 <button class="btninscription">
     <a href="logout.php">Deconnexion</a>
@@ -26,33 +26,25 @@ include __DIR__ . "/PDOconnexion.php";
         <fieldset id="gestion_users">
             <!-- Ajout suppression modifiacation d'utilisateurs-->
             <h2>Création d'utilisateur</h2>
+            <div id="errorMessageContainer"></div>
             <label for="nom">Nom :</label>
             <input type="text" id="nom" name="nom" required>
-
+            
             <label for="prenom">Prénom :</label>
             <input type="text" id="prenom" name="prenom" required>
-
+            
             <label for="email">Email :</label>
             <input type="email" id="email" name="email" required>
-
+            
             <label for="mot_de_passe">Mot de passe :</label>
             <input type="password" id="mot_de_passe" name="mot_de_passe" required>
-
+            
             <label for="role">Rôle :</label>
             <select id="role" name="role">
                 <option value="admin">Admin</option>
                 <option value="user">Utilisateur</option>
             </select>
-            <!-- <label for="type">Type :</label>
-            <select id="type" name="type">
-                <option value="intern">Interne</option>
-                <option value="extern">Externe</option>
-            </select> -->
-            <!-- <select id="wish" name="type">
-                <option value="add">Ajouter</option>
-                <option value="change">Modifier</option>
-                <option value="sup">Supprimer</option>
-            </select> -->
+            
             <button class="btninscription" type="submit" name="add_user">Valider</button>
         </fieldset>
     </form>
