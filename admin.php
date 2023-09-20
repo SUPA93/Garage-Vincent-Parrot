@@ -20,6 +20,7 @@ include __DIR__ . "/connexion_handler.php";
                 <option value="gestion_contact">Gérer les messages</option>
                 <option value="gestion_horaires">Gérer les horaires</option>
                 <option value="used_cars_list">Liste des véhicules</option>
+                <option value="gestion_services">Gérer les services</option>
             </select>
         </div>
         <fieldset id="gestion_users">
@@ -107,6 +108,7 @@ include __DIR__ . "/connexion_handler.php";
                         echo "<td>{$feedback['feedback']}</td>";
                         echo "<td>{$feedback['note']}</td>";
                         echo "<td>";
+                        //Pour l'instant je n'ai pas géré l'affichage en dur...seulement l'option colorée.
                         if ($feedback['valide']) {
                             echo "<a href='valider_comment.php?id={$feedback['id']}'>Désafficher</a>";
                         } else {
@@ -127,28 +129,63 @@ include __DIR__ . "/connexion_handler.php";
             <table class="tftable" border="1">
                 <thead>
                     <tr>
-                        <th></th>
                         <th>Nom</th>
                         <th>Objet</th>
                         <th>Message</th>
                         <th>société</th>
-                        <th>email</th>
                         <th>Supprimer</th>
                     </tr>
                     <?php
                     foreach ($messages as $message) : ?>
                         <tr>
-                            <td><?= $message['id'] ?></td>
                             <td><?= $message['nom'] ?></td>
                             <td><?= $message['objet'] ?></td>
                             <td><?= $message['message'] ?></td>
                             <td><?= $message['societe'] ?></td>
-                            <td><?= $message['email'] ?></td>
                             <td><a href='delete_message.php?id=<?= $message['id'] ?>'>Supprimer</a></td>
                         </tr>
                     <?php endforeach; ?>
                 </thead>
             </table>
+        </fieldset>
+    </form>
+    <form method="post">
+        <fieldset id="service_table">
+            <h2>Liste des services</h2>
+            <table class="tftable" border="1">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Service</th>
+                        <th>Tarif</th>
+                        <th>Durée</th>
+                        <th>Supprimer</th>
+                    </tr>
+                    <?php
+                    foreach ($services as $service) {
+                        echo "<tr>";
+                        echo "<td>{$service['id']}</td>"; // ID du service
+                        echo "<td>{$service['svc_name']}</td>"; // Nom du service
+                        echo "<td>{$service['svc_price']}</td>"; // Tarif
+                        echo "<td>{$service['svc_time']}</td>"; // Durée
+                        echo "<td><a href='delete_service.php?id={$service['id']}'>Supprimer</a></td>";
+                        echo "</tr>";
+                    }
+                    ?>
+                </thead>
+            </table>
+
+            <h2>Ajouter un service</h2>
+            <label for="svc_name">Nom du service:</label>
+            <input type="text" name="svc_name" required autocomplete="svc_name"><br>
+
+            <label for="svc_price">Prix du service:</label>
+            <input type="text" name="svc_price" required><br>
+
+            <label for="svc_time">Durée du service:</label>
+            <input type="text" name="svc_time" required><br>
+
+            <button type="submit" name="add_service_btn">Ajouter Service</button>
         </fieldset>
     </form>
     <form method="post" name="used_cars_display">
@@ -176,7 +213,7 @@ include __DIR__ . "/connexion_handler.php";
                             <td><?= $article['year'] ?></td>
                             <td><?= $article['color'] ?></td>
                             <td><?= $article['price'] ?></td>
-                            <td><img style="max-width:50px"; src="<?= $article["pictures"] ?>" alt="<?= $article["brand"] . " " . $article["model"] ?>" title="<?= $article["brand"] . " " . $article["model"] ?>"></td>
+                            <td><img style="max-width:50px" ; src="<?= $article["pictures"] ?>" alt="<?= $article["brand"] . " " . $article["model"] ?>" title="<?= $article["brand"] . " " . $article["model"] ?>"></td>
                             <td><a href='delete_used_cars.php?id=<?= $article['id'] ?>'>Supprimer</a></td>
                         </tr>
                     <?php endforeach; ?>

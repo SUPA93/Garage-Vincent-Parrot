@@ -4,7 +4,7 @@ include_once __DIR__ . '/config/config.php';
 
 
 
-// Vérifiez si le champ caché 'my_form_identifier' est défini
+
 if (isset($_POST['send_feedback'])) {
     $firstName = $_POST['firstName'];
     $lastName = $_POST['familyName'];

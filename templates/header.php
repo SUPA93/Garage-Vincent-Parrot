@@ -4,6 +4,7 @@ require __DIR__ . "../../PDOhoraires.php";
 require __DIR__ . "../../PDOoccasions.php";
 require __DIR__ . "../../PDOfeedback.php";
 require __DIR__ . "../../PDOmessages.php";
+require __DIR__ . "../../PDOservice.php";
 
 
 

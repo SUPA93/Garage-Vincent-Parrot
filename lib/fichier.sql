@@ -116,3 +116,23 @@ VALUES
     ('Jeudi', '09:00:00', '18:00:00'),
     ('Vendredi', '09:00:00', '18:00:00'),
     ('Samedi', '9:00:00', '13:00:00');  */
+
+
+/* CREATE TABLE services (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    svc_name VARCHAR(50) NOT NULL,
+    svc_price DECIMAL(10,2) NOT NULL,
+    svc_time TIME NOT NULL
+); */
+
+/* INSERT INTO services(svc_name, svc_price, svc_time)
+VALUES('Entretien', '190','2,5'  ),
+      ('Diagnostique', '90','0,45'  ),
+      ('Distribution', '490','4'  ),
+      ('Freinage', '120','2'  ),
+      ('Echapement', '210','2,5'  ),
+      ('Carrosserie', '250','8'  ),
+      ('Climatisation', '45','0,15'  ),
+      ('Reprogrammation', '490','4'  ),
+      ('Sonorisation', '350','3'  ),
+      ('Pneumatiques', '90','2,5'  ); */

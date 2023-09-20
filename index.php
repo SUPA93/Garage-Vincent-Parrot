@@ -50,13 +50,11 @@
         <input type="text" id="immat" name="fname" placeholder="ex: AB 123 CD "><br>
         <label for="reponse-selector">Type de préstation</label>
         <select name="reponse-selector" id="reponse-selector">
-            <option value="">Service</option>
-            <option value="rep1">Entretien</option>
-            <option value="rep2">Diagnostique</option>
-            <option value="rep3">Distribution</option>
-            <option value="rep4">Freinage</option>
-            <option value="rep5">Echapement</option>
-            <option value="rep6">Carroserie</option>
+
+            <?php
+            foreach ($services as $service) {
+                echo "<option value='" . $service['svc_name'] . "'>" . $service['svc_name'] . "</option>";
+            } ?>
         </select>
         <button type="submit"><a href="devis.php">Devis</a></button>
     </form>
@@ -73,8 +71,8 @@
             foreach ($feedbacks as $index => $feedback) : ?>
                 <div class="avis-carte">
                     <h3><?= $feedback['first_name'] ?> <?= $feedback['last_name'] ?></h3>
-                    <p>Note : <?= $feedback['note'] ?>/5</p>
                     <p><?= $feedback['feedback'] ?></p>
+                    <p>Note : <?= $feedback['note'] ?>/5</p>
                     <?php if ($feedback['valide']) : ?>
                         <p class="status">Avis vérifié</p>
                     <?php else : ?>
@@ -86,29 +84,28 @@
     </div>
 </section>
 <section class="inscription">
-    <form id="userFeedbackForm" method="post" >
+    <form id="userFeedbackForm" method="post">
         <fieldset id="userFeedBack">
-            <h2>Laissez-nous votre avis</h2>
+            <h2>Déjà client ? Dites-nous tout!</h2>
             <input type="hidden" name="my_form_feedback" value="my_unique_value">
             <label for="firstName">Prénom*</label>
-            <input type="text" id="firstName" name="firstName" placeholder="Prénom..." autocomplete="given-name">
+            <input type="text" id="firstName" name="firstName" placeholder="Prénom..." required autocomplete="given-name">
             <label for="familyName">Votre Nom*</label>
-            <input type="text" id="familyName" name="familyName" placeholder="Votre nom" autocomplete="family-name">
+            <input type="text" id="familyName" name="familyName" placeholder="Votre nom" required autocomplete="family-name">
             <label for="userMessage">Laissez un commentaire</label>
             <textarea id="userMessage" name="userMessage" cols="15" rows="3" placeholder="Votre message..."></textarea>
-            <label for="userRating">Donnez nous une note (de 1 à 5)*</label>
-            <select id="userRating" name="userRating">
+            <label for="userRating" required>Donnez nous une note (de 1 à 5)*</label>
+            <select id="userRating" name="userRating" required>
                 <option value="5">5 (Excellent)</option>
                 <option value="4">4 (Bien)</option>
                 <option value="3">3 (Passable)</option>
                 <option value="2">2 (Moyen)</option>
                 <option value="1">1 (Mauvais)</option>
             </select>
+            <div>
+                <button class="btninscription" name="send_feedback" type="submit">Laisser un avis</button>
+            </div>
         </fieldset>
-        <div>
-            <h2>Déjà client ? Dites-nous tout!</h2>
-            <button class="btninscription" name="send_feedback" type="submit">Laissez-nous un avis</button>
-        </div>
     </form>
 </section>
 <article class="article3">

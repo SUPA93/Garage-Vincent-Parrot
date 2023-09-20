@@ -36,6 +36,7 @@
         font-weight: bolder;
         text-align: center;
         padding: 20px;
+        white-space: nowrap;
     }
 
     .tftable tr:hover {

@@ -139,13 +139,21 @@ a:hover {
     display: flex;
     justify-content: center;
 }
+.inscription .tftable{
+    margin-right: auto;
+    margin-right: auto;
+}
 
-
-
+#service_table{
+    display: inline-block;
+    padding: 5px;
+    justify-content: space-around;
+    
+}
 
 
 /*---------GALAXY FOLD LOGO DISPLAY---------*/
-@media screen and (max-width: 280px) {
+@media (max-width: 280px) {
 
     /*-----------LOGO ET ENTETE----------*/
     .logo {
@@ -366,7 +374,7 @@ a:hover {
         list-style: none;
         flex-direction: column;
         line-height: 0.8;
-        
+
     }
 
     .pied ul li {
@@ -630,7 +638,7 @@ a:hover {
     .pied ul {
         list-style: none;
         flex-direction: column;
-        
+
     }
 
     .pied ul li {
@@ -959,7 +967,7 @@ a:hover {
         list-style: none;
         flex-direction: column;
         flex-wrap: wrap;
-        
+
     }
 
     .pied ul li {
@@ -986,7 +994,7 @@ a:hover {
         line-height: 1;
         padding: 5px;
         text-shadow: 1px 3px 2px black;
-        
+
     }
 
     .contact li a {
@@ -1336,7 +1344,7 @@ a:hover {
     .pied ul {
         list-style: none;
         flex-direction: column;
-        
+
 
     }
 
@@ -1392,7 +1400,6 @@ a:hover {
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
-    max-width: 600px;
 }
 
 .inscription form label {
@@ -1415,6 +1422,7 @@ a:hover {
     background-color: rgba(131, 131, 131, 1);
     text-align: center;
     padding-bottom: 20px;
+    min-height: 400px;
 }
 
 .inscription legend {
@@ -1490,17 +1498,19 @@ button:hover {
     color: white;
     border: 2px solid white;
 }
-.inscription select#action{
-    background-color:  rgb(131, 131, 131);
+
+.inscription select#action {
+    background-color: rgb(131, 131, 131);
     color: rgb(0, 0, 0);
     font-size: 1rem;
     font-weight: bold;
     text-shadow: 1px 0px 1px white;
     border: 2px solid rgb(255, 255, 255);
-    box-shadow: 2px 2px 8px rgba(131,131,131,1),
+    box-shadow: 2px 2px 8px rgba(131, 131, 131, 1),
         -2px -2px 8px rgba(131, 131, 131, 1);
     text-align: center;
 }
+
 /* .inscription::selection {
     background-color: red;
     color: black;
@@ -1571,7 +1581,7 @@ button:hover {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 50px;
-    
+
 }
 
 .container h1 {
