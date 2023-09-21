@@ -1,5 +1,5 @@
 <?php
-// Assurez-vous d'inclure le fichier de configuration de la base de données ici
+
 require_once __DIR__ . "/config/config.php";
 
 // tableau vide
@@ -101,9 +101,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt->bindParam(':location', $location);
             $stmt->bindParam(':dept', $dept);
             $stmt->bindParam(':ads_date', $ads_date);
-
             $stmt->execute();
-
             // Redirection après l'insertion des données
             header("Location: occasions_handler.php");
         } catch (PDOException $e) {

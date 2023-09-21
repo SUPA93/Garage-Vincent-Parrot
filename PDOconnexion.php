@@ -11,13 +11,13 @@ if (isset($_POST["send_connexion"])){
     $password = $_POST["password"];
 
     try {
-        // Établir la connexion à la base de données avec PDO
+        // New pdo
         $pdo = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUser, $dbPassword);
 
-        // Préparer la requête SQL pour récupérer le mot de passe haché associé à l'email
+        //  mot de passe haché 
         $sql = "SELECT * FROM utilisateurs_parrot WHERE email = :email";
 
-        // Préparer et exécuter la requête avec PDO
+        // requête avec PDO
         $stmt = $pdo->prepare($sql);
         $stmt->bindParam(':email', $email);
         $stmt->execute();
@@ -25,6 +25,9 @@ if (isset($_POST["send_connexion"])){
         
         if ($result && password_verify($password, $result['mot_de_passe'])) {
             // Authentification réussie
+            // Création d'un session de connexion
+            $_SESSION["loggedin"] = true;
+            
             $_SESSION["user"] = [
                 "name" => $result["nom"],
                 "firstname" => $result["prenom"],
@@ -32,10 +35,10 @@ if (isset($_POST["send_connexion"])){
                 "role" => $result["role"]
             ];
         
-            // Récupérer le rôle de l'utilisateur depuis la base de données
+            // le rôle de l'utilisateur 
             $userRole = $result['role'];
             
-            // Redirigez l'utilisateur en fonction de son rôle
+            // Redirection en fonction du rôle
             if ($userRole === "admin") {
                 header("Location: admin.php");
                 exit();

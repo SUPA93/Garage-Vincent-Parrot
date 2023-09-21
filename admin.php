@@ -1,6 +1,11 @@
 <?php require_once __DIR__ . "/templates/header.php";
 include __DIR__ . "/PDOconnexion.php";
 
+if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+    // L'utilisateur n'est pas connecté, redirigez-le vers la page de connexion
+    header("Location: connexion.php");
+    exit();
+}
 ?>
 <h1 class="inscription">Bonjour:  <?php echo $_SESSION["user"]["firstname"]; ?></h1>
 
