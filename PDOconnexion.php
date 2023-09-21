@@ -4,7 +4,7 @@ ini_set('display_errors', 1);
 
 
 
-include __DIR__ . "../config/config.php"; 
+include "../config/config.php"; 
 
 if (isset($_POST["send_connexion"])){
     $email = $_POST["email"];

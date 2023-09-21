@@ -33,6 +33,6 @@ if (isset($_POST["filter_btn"])) {
     $stmt->execute();
     
 } else {
-    echo ('🚨Le fitre de tri de fonctionne pas, nos équipes sont sur le coup, pardon pour la gène occasionnée.🚨') ;
+    echo ('🚨Le fitre ne fonctionne pas, nos équipes sont sur le coup, pardon pour la gène occasionnée.🚨') ;
 }
 return $sortedCars = $stmt->fetchAll(PDO::FETCH_ASSOC);

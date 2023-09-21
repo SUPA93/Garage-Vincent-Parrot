@@ -11,3 +11,12 @@ pour le back : ● PHP 8.2 sous PDO ● MySQL
 
 Installation
 
+1/ git clone https://github.com/SUPA93/Garage-Vincent-Parrot.git
+2/ installer wampsever64
+3/ Modifier les fichiers .ini pour définir votre localhost.
+Si vous n'avez pas l'expérience, retrouvez vous dans l'arboréscence windows le chemin doit ressmebler à cela:
+C:\wamp64\www et coller y le dossier. 
+5/ Démarrer les services wampserver64
+4/ Ouvrez votre navigateur et taper localhost/admin.php
+5/ Tapez l' adresse mail vparrot@gmail.com et le mot de passe 
+vp1. Vous êtes connecté en Admin. Bonne navigation.
