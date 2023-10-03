@@ -1,6 +1,6 @@
 <?php require_once __DIR__ . "/templates/header.php";
+      require __DIR__ . "/PDOconnexion.php";
 
-include __DIR__ . "/PDOconnexion.php";
 
 ?>
 

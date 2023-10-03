@@ -40,7 +40,8 @@ if (isset($_POST['send_contact_form'])) {
 
         // Exécution de la requête
         $stmt->execute();
-        //redirection        
+        //redirection
+        header('Location: index.php');       
     } catch (PDOException $e) {
         echo "Erreur : " . $e->getMessage();
     }

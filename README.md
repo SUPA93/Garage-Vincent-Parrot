@@ -20,3 +20,7 @@ C:\wamp64\www et coller y le dossier.
 4/ Ouvrez votre navigateur et taper localhost/admin.php
 5/ Tapez l' adresse mail vparrot@gmail.com et le mot de passe 
 vp1. Vous êtes connecté en Admin. Bonne navigation.
+il existe un compte salarié. Adresse mail Tparrot@exemple.com mot de passe tp1. 
+6/ Rendez vous dans le fichier SQL sous lib pour décommenter et retrouver toutes les commandes pour la création de la base de donnée nécessaire.
+
+Ce fût un plaisir.

@@ -20,7 +20,7 @@ require __DIR__ . "/occasion_sort.php";
             <option value="price-desc">Prix décroissant</option>
         </select>
 
-        <button type="submit" class="inscription" id="filter_btn" name="filter_btn">Trier</button>
+        <!-- <button type="submit" class="inscription" id="filter_btn" name="filter_btn">Trier</button> -->
     </form>
 
     <div class="grid-container">

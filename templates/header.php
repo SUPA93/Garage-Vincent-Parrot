@@ -1,25 +1,41 @@
-<?php require_once __DIR__ . "/../lib/menu.php";
-      require __DIR__ . "../../config/config.php";
-      require __DIR__ . "../../PDOhoraires.php";
-      require __DIR__ . "../../PDOoccasions.php";
-      require __DIR__ . "../../PDOfeedback.php";
-      require __DIR__ . "../../PDOmessages.php";
-      require __DIR__ . "../../PDOservice.php";
-      require __DIR__ . "../../PDOaddUser.php";
-      
+<?php
+require_once __DIR__ . "/../lib/menu.php";
+require __DIR__ . "../../config/config.php";
+require __DIR__ . "../../PDOhoraires.php";
+require __DIR__ . "../../PDOoccasions.php";
+require __DIR__ . "../../PDOfeedback.php";
+require __DIR__ . "../../PDOmessages.php";
+require __DIR__ . "../../PDOservice.php";
+require __DIR__ . "../../PDOaddUser.php";
+
 
 
 
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
-    
 }
+$isAdminOrUser = false; 
+
+if (isset($_SESSION["user"]["role"])) {
+    $userRole = $_SESSION["user"]["role"];
+    /* echo $_SESSION["user"]["role"]; */
+
+    if ($userRole === "admin" || $userRole === "user") {
+        $isAdminOrUser = true;
+    }
+}
+
 // GET THE CURRENT PAGE
 $currentPage = htmlentities(basename($_SERVER["SCRIPT_NAME"]));
-// 
 $main_menu[$currentPage]["head_title"];
 
+if ($isAdminOrUser) {
+    // On modifie les valeurs du tableau pour l'affichage dans la nav
+    $main_menu["contact_form.php"]["exclude"] = true;
+    $main_menu["admin.php"]["exclude"] = false;
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -29,40 +45,38 @@ $main_menu[$currentPage]["head_title"];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?= $main_menu[$currentPage]["meta_description"] ?>">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    
-    <!------------------------------------------ USING BOOTSTRAP  ------------>
-    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap" rel="stylesheet">-->
     <?php echo '<link rel="stylesheet" href="/assets/style/style.css">'; ?>
-
     <title> <?= $main_menu[$currentPage]["head_title"] ?></title>
-
 </head>
 
 <body>
-    <header><!--LOGO--------------------------------------->
+    <header>
         <div class="logo">
             <a href="../index.php">
                 <img src=../ressources/parrotimage.PNG alt="LOGO VPARROT" title="Garage Vincent Parrot">
             </a>
-        </div><!--NAVBAR-->
+        </div>
         <nav id="nav">
             <p></p>
             <ul>
                 <?php
                 foreach ($main_menu as $key => $menu_item) {
-                    if (!array_key_exists("exclude", $menu_item)) { ?>
-                        <li class="<?php if ($key === $currentPage) {
-                                        echo "active";
-                                    } ?>">
+                    $isActive = "";
+                    if ($key === $currentPage) {
+                        $isActive = "active";
+                    }
+                    $shouldExclude = isset($menu_item["exclude"]) && $menu_item["exclude"];
+                    // Ne pas afficher les éléments exclus
+                    if (!$shouldExclude) {
+                ?>
+                        <li class="<?= $isActive; ?>">
                             <a href="<?= $key; ?>"><?= $menu_item["title"] ?></a>
                         </li>
-                <?php }
-                } ?>
+                <?php
+                    }
+                }
+                ?>
             </ul>
             <div id="icons"></div>
         </nav>
     </header>
-    <!--END OF HEADER------------------------------------>
-    <main>

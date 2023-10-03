@@ -1,10 +1,11 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+/* error_reporting(E_ALL);
+ini_set('display_errors', 1); */
 
 
 
-include "../config/config.php"; 
+include __dir__."../config/config.php"; 
+
 
 if (isset($_POST["send_connexion"])){
     $email = $_POST["email"];
@@ -44,12 +45,12 @@ if (isset($_POST["send_connexion"])){
                 exit();
             } else {
                 header("Location: admin.php");
+                
                 exit();
             }
         } else {
             // Authentification échouée
             $errorMessage = "Identifiants incorrects. Veuillez réessayer.";
-
             echo "<div class=\"inscription\" style=\" height:10px; max-width:400px;\"><fieldset><label>$errorMessage</label></fieldset></div>";
         }
     } catch (PDOException $e) {

@@ -7,7 +7,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     exit();
 }
 ?>
-<h1 class="inscription">Bonjour:  <?php echo $_SESSION["user"]["firstname"]; ?></h1>
+<h1 class="inscription">Bonjour:  <?php echo $_SESSION["user"]['firstname']; ?></h1>
 
 <button class="btninscription">
     <a href="logout.php">Deconnexion</a>

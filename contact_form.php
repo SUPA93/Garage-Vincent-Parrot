@@ -29,7 +29,7 @@
             </div>
             <div id="div_st">
                 <label for="societe">Société :</label>
-                <input type="text" name="societe" placeholder="Nom de la société" id="societe">
+                <input type="text" name="societe" placeholder="Nom de la société" id="societe"  autocomplete="société">
             </div>
         </fieldset>
         <fieldset id="message">
@@ -47,11 +47,11 @@
             </div>
             <div id="mailing">
                 <label for="email">Email :</label>
-                <input type="email" id="email" name="email" placeholder="email@mail.com" autocomplete="email">
+                <input type="email" id="email" name="email" placeholder="email@mail.com"  autocomplete="email">
             </div>
             <div id="adressing">
                 <label for="adress">Votre adresse postale :</label>
-                <input type="text" id="adress" name="adress" placeholder="n°, rue, code postal" autocomplete="address-line1">
+                <input type="text" id="adress" name="adress" placeholder="n°, rue, code postal"  autocomplete="address-line1">
             </div>
             <div id="filing">
                 <label for="fichier">Envoyez-nous votre CV :</label>
@@ -60,7 +60,7 @@
             <div id="thanking">
                 <label for="thanks">Merci pour votre aide ❤</label>
             </div>
-            <textarea name="message" id="messageField" cols="30" rows="10" placeholder="Message..."></textarea>
+            <textarea name="message" id="messageField" cols="30" rows="10" placeholder="Message..." required ></textarea>
             <button type="submit" name="send_contact_form" >ENVOYER</button>
         </fieldset>
     </form>
