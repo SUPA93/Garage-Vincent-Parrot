@@ -2,9 +2,6 @@
 //Insèrer les messages users dans la table.
 include __DIR__ . '/config/config.php';
 
-
-
-
 // Vérifie si le formulaire a été soumis
 if (isset($_POST['send_contact_form'])) {
     // Récupération des données du formulaire
@@ -47,10 +44,6 @@ if (isset($_POST['send_contact_form'])) {
     }
 }
 try {
-
-    // Établir la connexion à la base de données avec PDO
-    $pdo = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUser, $dbPassword);
-    // Définition du mode d'erreur PDO à exception
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     // Récupération des messages depuis la table formulaire_contact
     $sql = "SELECT * FROM formulaire_contact";

@@ -67,9 +67,8 @@ function toggleFieldsets() {
         gestionServiceFieldset.style.display = "none";
     }
 }
-    // Écouteur d'événements pour le changement de la sélection d'action
+    // Écouteur pour le changement de la sélection d'action
     var actionSelect = document.getElementById("action");
     actionSelect.addEventListener("change", toggleFieldsets);
-
-    // Appelez la fonction initiale pour définir l'état initial des fieldsets
+    
     toggleFieldsets();

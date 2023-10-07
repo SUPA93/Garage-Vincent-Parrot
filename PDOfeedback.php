@@ -2,9 +2,6 @@
 // Insérer les avis des utilisateurs dans la table.
 include_once __DIR__ . '/config/config.php';
 
-
-
-
 if (isset($_POST['send_feedback'])) {
     $firstName = $_POST['firstName'];
     $lastName = $_POST['familyName'];
@@ -28,8 +25,6 @@ if (isset($_POST['send_feedback'])) {
         echo "Erreur lors de l'enregistrement de l'avis : " . $e->getMessage();
     }
 }
-
-
 
 $sql = "SELECT id, first_name, last_name, feedback, note, valide FROM user_feedback";
 $feedbacks = $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);

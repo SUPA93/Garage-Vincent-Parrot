@@ -56,8 +56,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $finish = $_POST['finish'];
             $location = $_POST['location'];
             $dept = $_POST['dept'];
-
-            // date d'ajout 
             $ads_date = date("Y-m-d");
 
             // image par défaut

@@ -1,30 +1,15 @@
-$(document).ready(function () {
-    // Tri par défaut de la page
-    /* const defaultSortBy = 'year-asc'; */
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('sortBy').addEventListener('change', function (event) {
+        event.preventDefault();
 
-    $.ajax({
-        type: 'POST',
-        url: 'occasions.php', 
-        data: { sortBy: defaultSortBy },
-        success: function (data) {
-            $('.grid-container').html(data);
-        }
-    });
+        const sortBy = event.target.value;
 
-    $('#filter_btn').click(function (e) {
-        e.preventDefault();
-
-        const sortBy = $('#sortBy').val();
-
-        $.ajax({
-            type: 'POST',
-            url: 'occasions.php', 
-            data: { sortBy: sortBy },
-            success: function (data) {
-                $('.grid-container').html(data);
-            }
-        });
+        fetch(`occasion_sort.php?sortBy=${sortBy}`)
+            .then(response => response.text())
+            .then(data => {
+                const gridContainer = document.querySelector('.grid-container');
+                gridContainer.innerHTML = data;
+            })
+            .catch(error => console.error('Erreur :', error));
     });
 });
-
-
