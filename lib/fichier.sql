@@ -4,7 +4,7 @@ DATABASE initialisation;
 
 CREATE DATABASE vparrot;
 
-USE vparrot_bdd;
+USE vparrot;
 
 --table a creér pour les meta données et le header.
 

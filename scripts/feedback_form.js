@@ -32,42 +32,43 @@ userRatingSelect.style.display = "none";
 sendFeedbackButton.style.display = "none";
 hideFormButton.style.display = "none";
 // Ajoutez un gestionnaire d'événements sur le bouton "show_form"
-showFormButton.addEventListener("click", function() {
+showFormButton.addEventListener("click", function () {
     // Affichez les éléments du formulaire lorsque le bouton "show_form" est cliqué
     firstNameLabel.style.display = "block";
     firstNameInput.style.display = "block";
-    
+
     familyNameLabel.style.display = "block";
     familyNameInput.style.display = "block";
-    
+
     familyNameLabel.style.display = "block";
     userMessageInput.style.display = "block";
-    
+
     userMessageLabel.style.display = "block";
     userRatingSelect.style.display = "block";
-    
+
     sendFeedbackButton.style.display = "block";
     hideFormButton.style.display = "block";
     // Cachez le bouton "show_form"
     showFormButton.style.display = "none";
-    
+    window.location.hash = "#feedbackSection";
 });
 
-hideFormButton.addEventListener("click", function(){
+hideFormButton.addEventListener("click", function () {
     firstNameLabel.style.display = "none";
-firstNameInput.style.display = "none";
-
-familyNameLabel.style.display = "none";
-familyNameInput.style.display = "none";
-
-userMessageLabel.style.display = "none";
-userMessageInput.style.display = "none";
-
-userRatingLabel.style.display = "none";
-userRatingSelect.style.display = "none";
-
-sendFeedbackButton.style.display = "none";
-hideFormButton.style.display = "none";
-
-showFormButton.style.display = "block";
+    firstNameInput.style.display = "none";
+    
+    familyNameLabel.style.display = "none";
+    familyNameInput.style.display = "none";
+    
+    userMessageLabel.style.display = "none";
+    userMessageInput.style.display = "none";
+    
+    userRatingLabel.style.display = "none";
+    userRatingSelect.style.display = "none";
+    
+    sendFeedbackButton.style.display = "none";
+    hideFormButton.style.display = "none";
+    
+    showFormButton.style.display = "block";
+    window.scrollTo(0, 0);
 });

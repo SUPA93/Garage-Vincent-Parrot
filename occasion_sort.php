@@ -11,7 +11,7 @@ if (isset($_GET["sortBy"])) {
     $sql = "SELECT * FROM used_vehicules";
 
     switch ($sortBy) {
-        // Utilisez des requêtes préparées pour chaque cas pour sécuriser les données
+            // Utilisez des requêtes préparées pour chaque cas pour sécuriser les données
         case 'year-asc':
             $sql .= " ORDER BY year ASC";
             break;
@@ -46,18 +46,20 @@ if (isset($_GET["sortBy"])) {
 
     if (!empty($sortedCars)) {
         foreach ($sortedCars as $car) {
-            ?>
+?>
             <div class="grid-item">
-                <img src="<?php echo $car['pictures']; ?>" alt="Image du véhicule">
+                <a href="occasion_detail.php?id=<?= $car['id'] ?>" title="Plus de détails">
+                    <img src="<?php echo $car['pictures']; ?>" alt="Image du véhicule" href="occasion_detail.php?id=<?= $car['id'] ?>" title="Plus de détails" />
+                </a>
                 <h3><?php echo $car['brand'] . ' ' . $car['model']; ?></h3>
                 <p>Année : <?php echo $car['year']; ?></p>
                 <p>Kilométrage : <?php echo $car['mileage']; ?> km</p>
                 <p>Energie : <?php echo $car['fuel_type']; ?></p>
                 <p>Couleur : <?php echo $car['color']; ?></p>
                 <p>Prix: <?php echo $car['price']; ?></p>
-                <button class="btninscription"><a  href="occasion_detail.php?id=<?= $car['id'] ?>" title="Cliquez pour voir plus de détails" >Plus de détails</a></button>
+                <button class="btninscription"><a href="occasion_detail.php?id=<?= $car['id'] ?>" title="Cliquez pour voir plus de détails">Plus de détails</a></button>
             </div>
-            <?php
+<?php
         }
     } else {
         echo ('Pas de véhicules trouvés selon le critère de tri sélectionné.');

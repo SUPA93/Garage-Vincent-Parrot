@@ -48,7 +48,6 @@
         <input type="text" id="immat" name="fname" placeholder="ex: AB 123 CD "><br>
         <label for="reponse-selector">Type de préstation</label>
         <select name="reponse-selector" id="reponse-selector">
-
             <?php
             foreach ($services as $service) {
                 echo "<option value='" . $service['svc_name'] . "'>" . $service['svc_name'] . "</option>";
@@ -116,8 +115,7 @@
             <div>
                 <button class="btninscription" id="showFormButton" name="show_form">Laisser un avis</button>
                 <button class="btninscription" name="send_feedback" type="submit">Envoyer</button>
-                <button class="btninscription" id="hideFormButton" name="hide_form">Annuler</button>
-
+                <button class="btninscription" id="hideFormButton" name="hide_form" type="button">Annuler</button>
             </div>
         </fieldset>
     </form>

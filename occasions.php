@@ -17,6 +17,8 @@ require __DIR__ . "/occasion_sort.php";
             <option value="mileage-desc">Kilométrage décroissant</option>
             <option value="price-asc">Prix croissant</option>
             <option value="price-desc">Prix décroissant</option>
+            <option value="date-desc">Plus récent</option>
+            <option value="date-asc">Moins récent</option>
         </select>
     </form>
     <?php
@@ -31,7 +33,9 @@ require __DIR__ . "/occasion_sort.php";
             foreach ($sortedCars as $car) {
         ?>
                 <div class="grid-item">
-                    <img src="<?php echo $car['pictures']; ?>" alt="Image du véhicule">
+                    <a href="occasion_detail.php?id=<?= $car['id'] ?>" title="Plus de détails">
+                        <img src="<?php echo $car['pictures']; ?>" alt="Image du véhicule" href="occasion_detail.php?id=<?= $car['id'] ?>" title="Plus de détails" />
+                    </a>
                     <h3><?php echo $car['brand'] . ' ' . $car['model']; ?></h3>
                     <p>Année : <?php echo $car['year']; ?></p>
                     <p>Kilométrage : <?php echo $car['mileage']; ?> km</p>
@@ -42,7 +46,7 @@ require __DIR__ . "/occasion_sort.php";
                 </div>
         <?php
             }
-        } 
+        }
         ?>
     </div>
 </section>

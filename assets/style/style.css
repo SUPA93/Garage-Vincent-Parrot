@@ -1,12 +1,18 @@
 * {
     padding: 0;
     margin: 0;
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: 'Inter', sans-serif;
     min-width: 201px;
     font-size: calc(0.5rem + 1.5vwS);
+    min-height: 100vh;
+    max-width: 1920px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
 }
 
 main {
@@ -1029,7 +1035,7 @@ a:hover {
         width: 100%;
         max-width: 900px;
         min-width: 280px;
-        height: 150px;
+        height: 100px;
         margin: auto;
         display: flex;
         background-color: RGB(168, 58, 17);
@@ -1132,7 +1138,7 @@ a:hover {
         box-shadow: 1px 1px 8px;
         text-align: center;
     }
-
+    
     .article2 h2 {
         text-align: center;
         font-size: 2.5rem;
@@ -1522,9 +1528,8 @@ button:hover {
 #userFeedBack textarea,
 #userFeedBack select {
     width: 80%;
-    /* Adaptez selon vos besoins */
     max-width: 400px;
-    /* Exemple de largeur maximale */
+    
 }
 
 /********************PAGE NOS GARAGES*************************/

@@ -78,3 +78,4 @@ $main_menu[$currentPage]["head_title"];
             <div id="icons"></div>
         </nav>
     </header>
+<main>

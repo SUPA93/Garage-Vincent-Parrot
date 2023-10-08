@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var particulierRadio = document.getElementById("particulier");
     particulierRadio.addEventListener("change", hideSocieteLabel);
 
-    // Appelez les fonctions initiales pour définir l'état initial des champs, du label "Société" et du bouton radio "Particulier"
+    // Appeldes fonctions "Société" et du bouton radio "Particulier"
     toggleChamps();
     toggleSocieteLabel();
     hideSocieteLabel();
