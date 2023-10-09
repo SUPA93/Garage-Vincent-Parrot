@@ -9,10 +9,8 @@ body {
     min-width: 201px;
     font-size: calc(0.5rem + 1.5vwS);
     min-height: 100vh;
-    max-width: 1920px;
     margin-left: auto;
     margin-right: auto;
-    height: 100%;
 }
 
 main {
@@ -69,7 +67,7 @@ a:hover {
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
-    /* width: auto; */
+    width: auto;
     margin-top: 5px;
     padding-bottom: 10px;
     margin-left: 20px;
@@ -79,10 +77,11 @@ a:hover {
 
 /* Style pour chaque carte d'avis */
 .avis-carte {
-    min-width: 200px;
+    min-width: 250px;
     min-height: 150px;
     display: flex;
     flex-direction: column;
+    position: relative;
     border: 1px solid #ccc;
     box-shadow: 2px 2px 10px rgba(168, 57, 17, 1),
         -2px -2px 10px rgb(0, 0, 0);
@@ -92,7 +91,7 @@ a:hover {
     margin-right: 20px;
     margin-top: 2px;
     margin-bottom: 2px;
-    
+
 
 }
 
@@ -113,33 +112,37 @@ a:hover {
     font-weight: bold;
 }
 
-/* Style pour le statut (validé ou en attente de validation) */
+/* Style pour le statut (validé) */
 .avis-carte p.status {
     color: #008000;
     font-size: 0.8rem;
     margin-top: 4px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    /* text-align: center; */
+    padding: 10px;
 }
 
 /* Style pour les avis en attente de validation */
 .avis-carte p.status.attente {
     color: #FF0000;
-
-
 }
 
 /* Masquer les avis hors de la vue */
 .carousel-container {
     overflow: hidden;
+    width: 80%;
 }
 
 /* Animation du carrousel */
 .carousel {
     display: flex;
+
     transition: transform 3s linear;
-    width: calc(100% * 2); 
+    width: calc(100% * 2);
 }
-
-
 
 .navigation_admin {
     display: flex;
@@ -156,7 +159,6 @@ a:hover {
     padding: 5px;
     justify-content: space-around;
 }
-
 
 /*---------GALAXY FOLD LOGO DISPLAY---------*/
 @media (max-width: 280px) {
@@ -594,11 +596,9 @@ a:hover {
     }
 
     .clientele input {
-        height: 20px;
         text-align: center;
-        margin-top: -10px;
         margin-bottom: 0px;
-        padding: 5px;
+        
     }
 
     .clientele select {
@@ -893,7 +893,7 @@ a:hover {
         background-image: url(../../ressources/fonddeform.png);
         background-repeat: no-repeat;
         background-size: cover;
-        margin-top: 20px;
+        margin-top: 2px;
         border-radius: 5px;
         margin-left: auto;
         margin-right: auto;
@@ -917,11 +917,14 @@ a:hover {
 
     .clientele input {
         margin-top: 20px;
-        height: 20px;
         text-align: center;
-
     }
-
+    #immat{
+        height: 30px;
+        border-radius: 5px;
+        border: 2px solid black;
+        padding: 5px;
+    }
     .clientele select {
         margin-top: 20px;
         border: 2px solid rgb(3, 3, 3);
@@ -1138,7 +1141,7 @@ a:hover {
         box-shadow: 1px 1px 8px;
         text-align: center;
     }
-    
+
     .article2 h2 {
         text-align: center;
         font-size: 2.5rem;
@@ -1198,25 +1201,26 @@ a:hover {
     }
 
     .clientele {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        height: 150px;
         background-image: url(../../ressources/fonddeform.png);
         background-repeat: no-repeat;
         background-size: cover;
-        width: 100%;
-        height: 222px;
-        margin-top: 20px;
+        margin-top: 2px;
         border-radius: 5px;
-        display: flex;
         margin-left: auto;
         margin-right: auto;
         box-shadow: 0px 0px 12px;
-        justify-content: space-around;
-        align-items: center;
     }
 
     .clientele h1 {
-        position: absolute;
-        margin-top: -150px;
+        margin-top: 0px;
         font-size: 3rem;
+        z-index: 2;
     }
 
     .clientele form {
@@ -1239,7 +1243,7 @@ a:hover {
     }
 
     .clientele input {
-        margin-top: 20px;
+        /* margin-top: 20px; */
         height: 40px;
         text-align: center;
         border: 2px solid rgb(3, 3, 3);
@@ -1396,14 +1400,18 @@ a:hover {
     margin-top: 10px;
     padding-top: 0;
     padding-bottom: 10px;
-    height: auto;
+    height: 100%;
 }
 
 .inscription form {
     max-width: 600px;
+
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .inscription form label {
@@ -1419,6 +1427,7 @@ a:hover {
 }
 
 .inscription fieldset {
+    width: 100%;
     margin-bottom: 10px;
     box-shadow: 0px 0px 20px;
     border-radius: 5px;
@@ -1507,6 +1516,7 @@ button:hover {
 }
 
 .inscription select#action {
+    width: 100%;
     background-color: rgb(131, 131, 131);
     color: rgb(0, 0, 0);
     font-size: 1rem;
@@ -1516,6 +1526,11 @@ button:hover {
     box-shadow: 2px 2px 8px rgba(131, 131, 131, 1),
         -2px -2px 8px rgba(131, 131, 131, 1);
     text-align: center;
+}
+
+.inscription .tftable {
+    margin: auto;
+    width: 100%;
 }
 
 #userFeedBack {
@@ -1529,15 +1544,15 @@ button:hover {
 #userFeedBack select {
     width: 80%;
     max-width: 400px;
-    
+
 }
 
 /********************PAGE NOS GARAGES*************************/
 .frame {
     margin-left: auto;
     margin-right: auto;
-    margin-top: 20px;
-    margin-bottom: 80px;
+    margin-top: 50px;
+    margin-bottom: 180px;
     border-radius: 15px;
     box-shadow: 2px 2px 8px rgba(168, 57, 17, 1),
         -4px -4px 8px rgba(131, 131, 131, 1);

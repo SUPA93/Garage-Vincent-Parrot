@@ -24,5 +24,16 @@ if (isset($_POST['add_service_btn'])) {
         echo "Erreur lors de l'ajout du service : " . $e->getMessage();
     }
 }
+$selectedService = [];
+if (isset($_POST['reponse-selector'])) {
+    $selectedServiceName = $_POST['reponse-selector'];
 
+    // Trouver le service dans les services récupérés
+    foreach ($services as $service) {
+        if ($service['svc_name'] == $selectedServiceName) {
+            $selectedService = $service;
+            break;
+        }
+    }
+}
 ?>

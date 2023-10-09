@@ -43,9 +43,9 @@
 </article>
 <article class="clientele">
     <h1>Trouvez votre service</h1>
-    <form action="/action_page.php">
+    <form action="devis.php" method="post">
         <label for="immatriculation">Votre immatriculation</label><br>
-        <input type="text" id="immat" name="fname" placeholder="ex: AB 123 CD "><br>
+        <input type="text" id="immat" name="immatriculation" placeholder="ex: AB 123 CD "><br>
         <label for="reponse-selector">Type de préstation</label>
         <select name="reponse-selector" id="reponse-selector">
             <?php
@@ -53,9 +53,10 @@
                 echo "<option value='" . $service['svc_name'] . "'>" . $service['svc_name'] . "</option>";
             } ?>
         </select>
-        <a href="devis.php" class="btninscription">Devis</a>
+        <input type="submit" class="btninscription" value="Devis">
     </form>
 </article>
+
 <h2 class="inscription">Les derniers avis</h2>
 <section class="derniers-avis">
     <!-- Conteneur du carrousel -->
@@ -65,33 +66,23 @@
             usort($feedbacks, function ($a, $b) {
                 return $a['id'] - $b['id'];
             });
-            foreach ($feedbacks as $index => $feedback) : ?>
-                <div class="avis-carte">
-                    <h3><?= $feedback['first_name'] ?> <?= $feedback['last_name'] ?></h3>
-                    <p><?= $feedback['feedback'] ?></p>
-                    <p>Note : <?= $feedback['note'] ?>/5</p>
-                    <?php if ($feedback['valide']) : ?>
+            foreach ($feedbacks as $index => $feedback) :
+                if ($feedback['valide']) :
+            ?>
+                    <div class="avis-carte">
+                        <h3><?= $feedback['first_name'] ?> <?= $feedback['last_name'] ?></h3>
+                        <p><?= $feedback['feedback'] ?></p>
+                        <p>Note : <?= $feedback['note'] ?>/5</p>
                         <p class="status">Avis vérifié</p>
-                    <?php else : ?>
-                        <p class="status attente">Avis non vérifié</p>
-                    <?php endif; ?>
-                </div>
-            <?php endforeach;
-            foreach ($feedbacks as $index => $feedback) : ?>
-                <div class="avis-carte">
-                    <h3><?= $feedback['first_name'] ?> <?= $feedback['last_name'] ?></h3>
-                    <p><?= $feedback['feedback'] ?></p>
-                    <p>Note : <?= $feedback['note'] ?>/5</p>
-                    <?php if ($feedback['valide']) : ?>
-                        <p class="status">Avis vérifié</p>
-                    <?php else : ?>
-                        <p class="status attente">Avis non vérifié</p>
-                    <?php endif; ?>
-                </div>
-            <?php endforeach; ?>
+                    </div>
+            <?php
+                endif;
+            endforeach;
+            ?>
         </div>
     </div>
 </section>
+
 
 <section class="inscription" id="feedbackSection">
     <form id="userFeedbackForm" method="post">

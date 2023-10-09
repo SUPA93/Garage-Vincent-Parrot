@@ -9,9 +9,9 @@
             </li>
             <li>Garage V Parrot</li>
             <li>32 Av. Victor Hugo</li>
-            <li>75116 Paris</li>
+            <li>31000 Toulouse</li>
             <li>
-                <a href="tel: 01 42 42 42 42" title="cliquez pour appeler">Téléphone</a>
+                <a href="tel: 05 42 42 42 42" title="cliquez pour appeler">Téléphone</a>
             </li>
         </ul>
         <ul class="horaires">

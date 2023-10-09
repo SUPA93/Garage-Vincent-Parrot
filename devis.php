@@ -1,4 +1,4 @@
-<?php require_once __DIR__ . "/templates/header.php";?>
+<?php require_once __DIR__ . "/templates/header.php"; ?>
 
 
 <h1 class="inscription">Votre Devis en ligne</h1>
@@ -10,11 +10,9 @@
         border-width: 2px;
         border-color: red;
         border-collapse: collapse;
-        margin-top: center;
         margin-left: auto;
         margin-right: auto;
         font-weight: bold;
-        
     }
 
     .tftable th {
@@ -25,11 +23,11 @@
     }
 
     .tftable tr {
-        background-color:#959595;
+        background-color: #959595;
     }
 
     .tftable td {
-        font-size:15px;
+        font-size: 15px;
         border-width: 2px;
         border-style: solid;
         border-color: #ffffff;
@@ -52,37 +50,20 @@
         <th>Quantité</th>
         <th>Tarif</th>
     </tr>
-    <tr>
-        <td>VIDANGE</td>
-        <td>1</td>
-        <td>132</td>
-    </tr>
-    <tr>
-        <td>Row:2 Cell:1</td>
-        <td>Row:2 Cell:2</td>
-        <td>Row:2 Cell:3</td>
-    </tr>
-    <tr>
-        <td>Row:3 Cell:1</td>
-        <td>Row:3 Cell:2</td>
-        <td>Row:3 Cell:3</td>
-    </tr>
-    <tr>
-        <td>Row:4 Cell:1</td>
-        <td>Row:4 Cell:2</td>
-        <td>Row:4 Cell:3</td>
-    </tr>
-    <tr>
-        <td>Row:5 Cell:1</td>
-        <td>Row:5 Cell:2</td>
-        <td>Row:5 Cell:3</td>
-    </tr>
-    <tr>
-        <td></td>
-        <td>TOTAL</td>
-        <td>...</td>
-    </tr>
+    <?php if (!empty($selectedService)) : ?>
+        <tr>
+            <td><?= $selectedService['svc_name'] ?></td>
+            <td>1</td>
+            <td><?= $selectedService['svc_price'] ?></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>TOTAL</td>
+            <td><?= $selectedService['svc_price'] ?></td>
+        </tr>
+    <?php endif; ?>
 </table>
-<script src="../index.js"></script>  
-</main>
-</body>
+<h2 class="inscription" style="margin-bottom: 1000px;">Tous nos prix sont affichés TTC la TVA est déja appliquée</h2>
+
+
+<?php require_once __DIR__ . "/templates/footer.php"; ?>
