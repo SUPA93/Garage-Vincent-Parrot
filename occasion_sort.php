@@ -1,13 +1,11 @@
 <?php
 
 require __DIR__ . "/config/config.php";
-
 // Vérifie si la variable GET "sortBy" est définie
 if (isset($_GET["sortBy"])) {
-    // Assainissez la valeur de "sortBy" pour éviter les attaques SQL
+    //la valeur de "sortBy" pour éviter les attaques SQL
     $sortBy = $_GET["sortBy"];
-
-    // Utilisez une requête préparée pour sécuriser la requête SQL
+    //requête préparée pour sécuriser la requête SQL
     $sql = "SELECT * FROM used_vehicules";
 
     switch ($sortBy) {

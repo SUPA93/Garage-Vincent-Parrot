@@ -61,9 +61,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // image par défaut
             $defaultImage = 'assets/images/default_cars.png';
 
-            // Vérifiez si des fichiers ont été téléchargés
+            // Vérifier si des fichiers ont été téléchargés et vérification du nombre d'images.
             $uploadedImages = [];
-            if (isset($_FILES['pictures'])) {
+            if (isset($_FILES['pictures']) && count($_FILES['pictures']['tmp_name']) <= 5) {
                 $pictures = $_FILES['pictures'];
 
                 foreach ($pictures['tmp_name'] as $key => $tmpName) {
@@ -73,11 +73,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         $destination = './occasions/' . $uniqueFileName;
 
                         if (move_uploaded_file($tmpName, $destination)) {
-                            // Le fichier a été téléchargé avec succès, ajoutez le chemin relatif à la liste des images téléchargées
+                            // Le fichier a été téléchargé avec succès
                             $uploadedImages[] = $destination;
                         }
                     }
                 }
+            } else {
+                echo "Vous ne pouvez ajouter que 5 images maximum.";
+                exit;
             }
             // Construisez une chaîne de chemins d'images séparés par des virgules
             $imagesString = !empty($uploadedImages) ? implode(',', $uploadedImages) : $defaultImage;

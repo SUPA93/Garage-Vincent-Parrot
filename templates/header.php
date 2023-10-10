@@ -42,6 +42,7 @@ $main_menu[$currentPage]["head_title"];
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?= $main_menu[$currentPage]["meta_description"] ?>">
+    <link rel="manifest" href="../manifest.json">
     <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
     <?php echo '<link rel="stylesheet" href="/assets/style/style.css">'; ?>
     <title> <?= $main_menu[$currentPage]["head_title"] ?></title>
@@ -51,7 +52,7 @@ $main_menu[$currentPage]["head_title"];
     <header>
         <div class="logo">
             <a href="../index.php">
-                <img src=../ressources/parrotimage.PNG alt="LOGO VPARROT" title="Garage Vincent Parrot">
+                <img src=../ressources/parrotimage.jpg alt="LOGO VPARROT" title="Garage Vincent Parrot">
             </a>
         </div>
         <nav id="nav">

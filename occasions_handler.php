@@ -46,8 +46,9 @@ require __DIR__ . "/templates/header.php";
             <label for="finish">Finition :</label>
             <input type="text" id="finish" name="finish" required>
 
-            <label for="pictures">Ajouter une photo :</label>
-            <input type="file" id="pictures" name="pictures[]" accept="image/*">
+            <label for="pictures">Ajouter des photos (max 5) :</label>
+            <input type="file" id="pictures" name="pictures[]" accept="image/*" multiple>
+
 
             <label for="location">Emplacement :</label>
             <input type="text" id="location" name="location" required>

@@ -3,7 +3,6 @@
     margin: 0;
     scroll-behavior: smooth;
 }
-
 body {
     font-family: 'Inter', sans-serif;
     min-width: 201px;
@@ -12,11 +11,9 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
-
 main {
     min-height: 90vh;
 }
-
 h1,
 h3,
 h2 {
@@ -27,26 +24,21 @@ h2 {
     color: transparent;
     /* text-shadow:1px 2px 2px rgba(0, 0, 0, 0.2); */
 }
-
 li {
     list-style: none;
 }
-
 a,
 a:visited {
     color: rgb(255, 255, 255);
     text-decoration: none;
 }
-
 a:hover {
     color: rgb(131, 131, 131);
 }
-
 #icons {
     cursor: pointer;
     display: none;
 }
-
 /* Gestion JS du formulaire de contact*/
 #choiceStatut div {
     font-size: 1em;
@@ -55,13 +47,10 @@ a:hover {
     flex-direction: row;
     justify-content: center;
 }
-
 #thanking {
     color: blue;
     padding-top: 0;
 }
-
-
 /* Style pour la section des avis */
 .derniers-avis {
     display: flex;
@@ -74,7 +63,6 @@ a:hover {
     margin-right: auto;
     overflow: hidden;
 }
-
 /* Style pour chaque carte d'avis */
 .avis-carte {
     min-width: 250px;
@@ -83,7 +71,7 @@ a:hover {
     flex-direction: column;
     position: relative;
     border: 1px solid #ccc;
-    box-shadow: 2px 2px 10px rgba(168, 57, 17, 1),
+    box-shadow: 2px 2px 10px #a83911,
         -2px -2px 10px rgb(0, 0, 0);
     background-color: #fff;
     border-radius: 5px;
@@ -91,17 +79,12 @@ a:hover {
     margin-right: 20px;
     margin-top: 2px;
     margin-bottom: 2px;
-
-
 }
-
 /* Style pour le titre de l'avis */
 .avis-carte h3 {
     font-size: 1.1rem;
     margin-bottom: 5px;
-
 }
-
 /* Style pour la note */
 .avis-carte p {
     font-size: 1rem;
@@ -111,7 +94,6 @@ a:hover {
     text-overflow: ellipsis;
     font-weight: bold;
 }
-
 /* Style pour le statut (validé) */
 .avis-carte p.status {
     color: #008000;
@@ -124,52 +106,42 @@ a:hover {
     /* text-align: center; */
     padding: 10px;
 }
-
 /* Style pour les avis en attente de validation */
 .avis-carte p.status.attente {
     color: #FF0000;
 }
-
 /* Masquer les avis hors de la vue */
 .carousel-container {
     overflow: hidden;
     width: 80%;
 }
-
 /* Animation du carrousel */
 .carousel {
     display: flex;
-
     transition: transform 3s linear;
     width: calc(100% * 2);
 }
-
 .navigation_admin {
     display: flex;
     justify-content: center;
 }
-
 .inscription .tftable {
     margin-right: auto;
     margin-right: auto;
 }
-
 #service_table {
     display: inline-block;
     padding: 5px;
     justify-content: space-around;
 }
-
 /*---------GALAXY FOLD LOGO DISPLAY---------*/
 @media (max-width: 280px) {
-
     /*-----------LOGO ET ENTETE----------*/
     .logo {
         width: 100%;
         margin-left: auto;
         margin-right: auto;
     }
-
     .logo img {
         width: 100%;
         max-width: 900px;
@@ -181,7 +153,6 @@ a:hover {
         border: none;
         outline: none;
     }
-
     /*----------NAVABAR--------*/
     nav {
         width: 280px;
@@ -194,7 +165,6 @@ a:hover {
         box-shadow: 0px 0px px;
         justify-content: space-between;
     }
-
     /*---------ARTICLE1------*/
     .article1 {
         height: 100px;
@@ -203,23 +173,18 @@ a:hover {
         position: relative;
         justify-content: center;
     }
-
     .article1 img {
         margin-top: 4px;
         width: auto;
         height: 90px;
     }
-
     .article1 h1 {
         font-size: 1.1rem;
         padding-top: 5px;
         width: 50%;
         padding-left: 10px;
         overflow: hidden;
-
-
     }
-
     /*---------ARTICLE2-------*/
     .article2 {
         height: 80px;
@@ -229,24 +194,20 @@ a:hover {
         box-shadow: 1px 1px 8px;
         text-align: center;
     }
-
     .article2 h2 {
         font-size: 0.8rem;
         padding-top: 3px;
         margin-bottom: 5px;
     }
-
     .article2 ul {
         display: flex;
         justify-content: space-around;
         list-style: none;
         margin: 0px;
     }
-
     .article2 ul li {
         display: block;
     }
-
     .article2 ul li img {
         width: auto;
         height: 30px;
@@ -256,16 +217,13 @@ a:hover {
         box-shadow: 2px 2px 8px rgba(168, 57, 17, 1),
             -2px -2px 8px rgba(131, 131, 131, 1);
     }
-
     .article2 p {
         display: none;
     }
-
     .article2 h3 {
         font-size: 0.5rem;
         text-align: center;
     }
-
     /*---------ARTICLE3------*/
     .article3 {
         display: flex;
@@ -278,10 +236,8 @@ a:hover {
         border: 2px solid rgba(168, 57, 17, 0.74);
         border-radius: 15px;
         width: 90%;
-
     }
-
-    .article3 h4 {
+    .article3 h3 {
         margin-top: 1vw;
         text-align: center;
         text-shadow: 0px 0px 10px white;
@@ -289,7 +245,6 @@ a:hover {
         margin-right: 10px;
         font-size: 1rem;
     }
-
     .article3 img {
         border-radius: 1px 50px 50px 1px;
         margin-top: -3px;
@@ -297,13 +252,10 @@ a:hover {
         width: auto;
         border: 3px solid rgba(131, 131, 131, 1);
         box-shadow: -5px 1px 8px;
-
     }
-
     /*********** FORMULAIRE DE SERVICES****************/
-
     .clientele {
-        background-image: url(../../ressources/fonddeform.png);
+        background-image: url(../../ressources/fonddeform.jpg);
         background-repeat: no-repeat;
         background-size: cover;
         margin-top: 2px;
@@ -313,15 +265,12 @@ a:hover {
         box-shadow: 0px 0px 12px;
         padding: 5px;
         height: 100%;
-
         text-align: center;
     }
-
     .clientele form {
         flex-direction: column;
         width: 100%;
     }
-
     .clientele label {
         margin-top: 0px;
         font-size: 1.3rem;
@@ -329,7 +278,6 @@ a:hover {
         padding-top: 0px;
         text-shadow: 0px 2px 5px white;
     }
-
     .clientele input {
         height: 40px;
         text-align: center;
@@ -337,12 +285,10 @@ a:hover {
         margin-bottom: 0px;
         padding: 5px;
     }
-
     .clientele select {
         margin-top: 0px;
         border: 2px solid rgb(3, 3, 3);
     }
-
     .clientele button {
         box-shadow: 0px 0px 20px black;
         display: block;
@@ -353,20 +299,15 @@ a:hover {
         border-radius: 5px;
         padding: 10px;
     }
-
     .clientele button a:hover {
         color: white;
     }
-
     .clientele a {
         color: rgb(0, 0, 0);
     }
-
     .clientele a:link {
         text-decoration: none;
-
     }
-
     /**************** FOOTER **********************/
     .pied {
         margin-top: auto;
@@ -377,63 +318,46 @@ a:hover {
         color: white;
         margin-bottom: 0px;
     }
-
     .pied ul {
         list-style: none;
         flex-direction: column;
         line-height: 0.8;
-
     }
-
     .pied ul li {
         font-size: 0.7rem;
     }
-
     .pied ul li i {
-
         margin: 5px;
         font-size: 1rem;
     }
-
     .pied ul li h5 {
         font-size: 0.7rem;
     }
-
-
-
     .contact,
     .horaires,
     .sociaux {
         width: 300px;
         text-align: center;
         padding: 5px;
-
     }
-
     .contact li a {
         color: white;
     }
-
     .sociaux {
         font-size: larger;
     }
-
     .sociaux li a {
         text-decoration: none;
         color: white;
     }
-
 }
-
 @media screen and (min-width: 281px) and (max-width: 380px) {
-
     /*-----------LOGO ET ENTETE----------*/
     .logo {
         width: 100%;
         margin-left: auto;
         margin-right: auto;
     }
-
     .logo img {
         width: 100%;
         max-width: 900px;
@@ -445,7 +369,6 @@ a:hover {
         border: none;
         outline: none;
     }
-
     /*----------NAVABAR--------*/
     nav {
         width: 100%;
@@ -457,11 +380,6 @@ a:hover {
         padding: 0px;
         box-shadow: 0px 0px px;
     }
-
-    /*  nav ul {
-        display: none;
-    } */
-
     /*---------ARTICLE1------*/
     .article1 {
         height: 100px;
@@ -470,13 +388,11 @@ a:hover {
         position: relative;
         justify-content: center;
     }
-
     .article1 img {
         margin-top: 4px;
         width: auto;
         height: 90px;
     }
-
     .article1 h1 {
         font-size: 1.1rem;
         padding-top: 5px;
@@ -485,7 +401,6 @@ a:hover {
         overflow: hidden;
         text-transform: uppercase;
     }
-
     /*---------ARTICLE2-------*/
     .article2 {
         height: 80px;
@@ -494,24 +409,20 @@ a:hover {
         box-shadow: 1px 1px 8px;
         text-align: center;
     }
-
     .article2 h2 {
         font-size: 0.8rem;
         padding-top: 3px;
         margin-bottom: 5px;
     }
-
     .article2 ul {
         display: flex;
         justify-content: space-around;
         list-style: none;
         margin: 0px;
     }
-
     .article2 ul li {
         display: block;
     }
-
     .article2 ul li img {
         width: auto;
         height: 30px;
@@ -521,16 +432,13 @@ a:hover {
         box-shadow: 2px 2px 8px rgba(168, 57, 17, 1),
             -2px -2px 8px rgba(131, 131, 131, 1);
     }
-
     .article2 p {
         display: none;
     }
-
     .article2 h3 {
         font-size: 0.6rem;
         text-align: center;
     }
-
     /*---------ARTICLE3------*/
     .article3 {
         display: flex;
@@ -543,10 +451,8 @@ a:hover {
         border: 2px solid rgba(168, 57, 17, 0.74);
         border-radius: 15px;
         width: 90%;
-
     }
-
-    .article3 h4 {
+    .article3 h3 {
         margin-top: 1vw;
         text-align: center;
         text-shadow: 0px 0px 10px white;
@@ -554,7 +460,6 @@ a:hover {
         margin-right: 10px;
         font-size: 1rem;
     }
-
     .article3 img {
         border-radius: 1px 50px 50px 1px;
         margin-top: -3px;
@@ -562,13 +467,10 @@ a:hover {
         width: auto;
         border: 3px solid rgba(131, 131, 131, 1);
         box-shadow: -5px 1px 8px;
-
     }
-
     /*********** FORMULAIRE DE SERVICES****************/
-
     .clientele {
-        background-image: url(../../ressources/fonddeform.png);
+        background-image: url(../../ressources/fonddeform.jpg);
         background-repeat: no-repeat;
         background-size: cover;
         margin-top: 2px;
@@ -578,15 +480,11 @@ a:hover {
         box-shadow: 0px 0px 12px;
         padding: 5px;
         height: 100%;
-
         text-align: center;
     }
-
     .clientele form {
         flex-direction: column;
-
     }
-
     .clientele label {
         margin-top: 0px;
         font-size: 1.3rem;
@@ -594,18 +492,14 @@ a:hover {
         padding-top: 0px;
         text-shadow: 0px 2px 5px white;
     }
-
     .clientele input {
         text-align: center;
         margin-bottom: 0px;
-        
     }
-
     .clientele select {
         margin-top: 0px;
         border: 2px solid rgb(3, 3, 3);
     }
-
     .clientele button {
         box-shadow: 0px 0px 20px black;
         display: block;
@@ -615,22 +509,16 @@ a:hover {
         margin-right: auto;
         border-radius: 5px;
         padding: 10px;
-
     }
-
     .clientele button a:hover {
         color: white;
     }
-
     .clientele a {
         color: rgb(0, 0, 0);
     }
-
     .clientele a:link {
         text-decoration: none;
-
     }
-
     /**************** FOOTER **********************/
     .pied {
         margin-top: 10px;
@@ -640,29 +528,20 @@ a:hover {
         justify-content: space-around;
         color: white;
     }
-
     .pied ul {
         list-style: none;
         flex-direction: column;
-
     }
-
     .pied ul li {
         font-size: 0.7rem;
     }
-
     .pied ul li i {
-
         margin: 5px;
         font-size: 1rem;
     }
-
     .pied ul li h5 {
         font-size: 0.7rem;
     }
-
-
-
     .contact,
     .horaires,
     .sociaux {
@@ -670,28 +549,20 @@ a:hover {
         text-align: center;
         line-height: 1.5;
         padding: 5px;
-
     }
-
     .contact li a {
         color: white;
     }
-
     .sociaux {
         font-size: larger;
     }
-
     .sociaux li a {
         text-decoration: none;
         color: white;
     }
-
 }
-
 /*----------MOBILE DISPLAY----------*/
-
 @media (max-width: 632px) {
-
     /*-----------LOGO ET ENTETE----------*/
     .logo {
         width: 100%;
@@ -699,7 +570,6 @@ a:hover {
         margin-left: auto;
         margin-right: auto;
     }
-
     .logo img {
         width: 100%;
         max-width: 900px;
@@ -711,7 +581,6 @@ a:hover {
         border-radius: 5px;
         box-shadow: 1px 1px 50px rgba(84, 84, 84, 1);
     }
-
     /*----------NAVBAR--------*/
     nav {
         width: 100%;
@@ -720,24 +589,19 @@ a:hover {
         display: flex;
         box-shadow: 0px 0px 10px;
         justify-content: space-between;
-
     }
-
     #icons {
         display: block;
         font-size: 30px;
         justify-content: center;
         width: 50px;
     }
-
     #icons:before {
         content: "\2630";
     }
-
     .digit #icons:before {
         content: "\2715";
     }
-
     nav ul {
         left: -110%;
         margin-top: 80px;
@@ -748,40 +612,33 @@ a:hover {
         text-align: center;
         transition: 0.25s;
         z-index: 1;
-
     }
-
     nav li {
         background-color: rgb(84, 84, 84);
         box-shadow: 5px 5px 8px rgba(131, 131, 131, 1),
             -5px 5px 8px rgba(131, 131, 131, 1);
         padding: 20px;
     }
-
     nav li:hover {
         background-color: rgb(128, 128, 128);
         ;
     }
-
     .digit ul {
         left: 0%;
     }
-
     /*---------ARTICLE1------*/
     .article1 {
         height: 160px;
-        background-color: rgba(131, 131, 131, 0.479);
+        background-color: rgba(131, 131, 131, 0.233);
         display: flex;
         position: relative;
         justify-content: center;
     }
-
     .article1 img {
         margin-top: 4px;
         width: auto;
         height: 150px;
     }
-
     .article1 h1 {
         font-size: 1.8rem;
         padding-top: 20px;
@@ -789,9 +646,7 @@ a:hover {
         padding-left: 15px;
         overflow: hidden;
         text-transform: uppercase;
-
     }
-
     /*---------ARTICLE2-------*/
     .article2 {
         background-color: rgba(131, 131, 131, 0.479);
@@ -801,20 +656,17 @@ a:hover {
         height: 100px;
         text-align: center;
     }
-
     .article2 h2 {
         font-size: 1rem;
         padding-top: 3px;
         margin-bottom: 5px;
     }
-
     .article2 ul {
         display: flex;
         justify-content: space-around;
         margin-top: 0px;
         list-style: none;
     }
-
     .article2 ul li img {
         width: auto;
         height: 40px;
@@ -826,33 +678,27 @@ a:hover {
         background: repeating-conic-gradient(from var(--a), #ff2770 0%, #ff2770 5%, transparent 5%, transparent 40%, #ff2770 50%);
         animation: animate 4s linear infinite;
     }
-
     @property --a {
         syntax: '<angle>';
         inherits: false;
         initial-value: 0deg;
     }
-
     @keyframes animate {
         0% {
             --a: 0deg;
         }
-
         100% {
             --a: 360deg;
         }
     }
-
     .article2 p {
         display: none;
     }
-
     .article2 h3 {
         font-size: 0.9rem;
         text-align: center;
         overflow: hidden;
     }
-
     /*---------ARTICLE3------*/
     .article3 {
         display: flex;
@@ -866,10 +712,8 @@ a:hover {
         border: 2px solid rgba(168, 57, 17, 0.74);
         border-radius: 15px;
         width: 90%;
-
     }
-
-    .article3 h4 {
+    .article3 h3 {
         margin-top: 1vw;
         text-align: center;
         text-shadow: 0px 0px 10px white;
@@ -890,7 +734,7 @@ a:hover {
     /*********** FORMULAIRE DE SERVICES****************/
     .clientele {
         display: block;
-        background-image: url(../../ressources/fonddeform.png);
+        background-image: url(../../ressources/fonddeform.jpg);
         background-repeat: no-repeat;
         background-size: cover;
         margin-top: 2px;
@@ -1207,7 +1051,7 @@ a:hover {
         align-items: center;
         width: 100%;
         height: 150px;
-        background-image: url(../../ressources/fonddeform.png);
+        background-image: url(../../ressources/fonddeform.jpg);
         background-repeat: no-repeat;
         background-size: cover;
         margin-top: 2px;
@@ -1302,10 +1146,10 @@ a:hover {
             -2px -2px 8px rgba(131, 131, 131, 1);
     }
 
-    .article3 h4 {
+    .article3 h3 {
         margin-top: 10px;
         text-align: center;
-        text-shadow: 0px 0px 10px white;
+        /* text-shadow: 0px 0px 10px white; */
         margin-left: 10px;
         margin-right: 10px;
         font-size: clamp(1.2rem, 2vw, 2rem);

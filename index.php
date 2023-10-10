@@ -112,9 +112,9 @@
     </form>
 </section>
 <article class="article3">
-    <h4>En ce moment: profitez de la recharge clim<br>
-        a -15% !</h4>
-    <img src="ressources/clim.png" alt="climatisation" title="climatisation">
+    <h3>En ce moment: profitez de la recharge clim<br>
+        a -15% !</h3>
+    <img src="ressources/clim3.jpg" alt="climatisation" title="climatisation">
 </article>
 
 <?php require_once __DIR__ . "/templates/footer.php"; ?>
