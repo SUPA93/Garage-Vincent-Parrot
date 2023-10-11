@@ -1,8 +1,14 @@
 <?php require_once __DIR__ . "/templates/header.php";
 ?>
 
+<div class="iconlink">
+    <a href="connexion.php">
+        <img src="/ressources/iconlink.png" alt="icone de connexion" title="Connectez-vous">
+    </a>
+</div>
+
 <article class="article1">
-    <img src="ressources\VPARROTSANSFOND.png" alt="photo Vincent Parrot" title="Vincent Parrot">
+    <img src="ressources/VPARROTSANSFOND.png" alt="photo Vincent Parrot" title="Vincent Parrot">
     <h1>Comparez,<br> réservez en toute confiance.</h1>
 </article>
 <!--SECTION ICONS -->
