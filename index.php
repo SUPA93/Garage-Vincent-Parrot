@@ -4,8 +4,10 @@
 <div class="iconlink">
     <a href="connexion.php">
         <img src="/ressources/iconlink.png" alt="icone de connexion" title="Connectez-vous">
+        <span>connexion</span>
     </a>
 </div>
+
 
 <article class="article1">
     <img src="ressources/VPARROTSANSFOND.png" alt="photo Vincent Parrot" title="Vincent Parrot">

@@ -3,6 +3,7 @@
     margin: 0;
     scroll-behavior: smooth;
 }
+
 body {
     font-family: 'Inter', sans-serif;
     min-width: 201px;
@@ -11,9 +12,11 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
+
 main {
     min-height: 90vh;
 }
+
 h1,
 h3,
 h2 {
@@ -24,21 +27,26 @@ h2 {
     color: transparent;
     /* text-shadow:1px 2px 2px rgba(0, 0, 0, 0.2); */
 }
+
 li {
     list-style: none;
 }
+
 a,
 a:visited {
     color: rgb(255, 255, 255);
     text-decoration: none;
 }
+
 a:hover {
     color: rgb(131, 131, 131);
 }
+
 #icons {
     cursor: pointer;
     display: none;
 }
+
 /* Gestion JS du formulaire de contact*/
 #choiceStatut div {
     font-size: 1em;
@@ -47,10 +55,12 @@ a:hover {
     flex-direction: row;
     justify-content: center;
 }
+
 #thanking {
     color: blue;
     padding-top: 0;
 }
+
 /* Style pour la section des avis */
 .derniers-avis {
     display: flex;
@@ -59,10 +69,11 @@ a:hover {
     width: auto;
     margin-top: 5px;
     padding-bottom: 10px;
-    margin-left: 20px;
+    /* margin-left: 20px; */
     margin-right: auto;
     overflow: hidden;
 }
+
 /* Style pour chaque carte d'avis */
 .avis-carte {
     max-width: 273px;
@@ -82,11 +93,13 @@ a:hover {
     margin-bottom: 2px;
     word-wrap: break-word;
 }
+
 /* Style pour le titre de l'avis */
 .avis-carte h3 {
     font-size: 1.1rem;
     margin-bottom: 5px;
 }
+
 /* Style pour la note */
 .avis-carte p {
     font-size: 1rem;
@@ -97,6 +110,7 @@ a:hover {
     font-weight: bold;
     flex-wrap: wrap;
 }
+
 /* Style pour le statut (validé) */
 .avis-carte p.status {
     color: #008000;
@@ -109,42 +123,51 @@ a:hover {
     /* text-align: center; */
     padding: 10px;
 }
+
 /* Style pour les avis en attente de validation */
 .avis-carte p.status.attente {
     color: #FF0000;
 }
+
 /* Masquer les avis hors de la vue */
 .carousel-container {
     overflow: hidden;
     width: 80%;
 }
+
 /* Animation du carrousel */
 .carousel {
     display: flex;
     transition: transform 3s linear;
     width: calc(100% * 2);
 }
+
 .navigation_admin {
     display: flex;
     justify-content: center;
 }
+
 .inscription .tftable {
     margin-right: auto;
     margin-right: auto;
 }
+
 #service_table {
     display: inline-block;
     padding: 5px;
     justify-content: space-around;
 }
+
 /*---------GALAXY FOLD LOGO DISPLAY---------*/
 @media (max-width: 280px) {
+
     /*-----------LOGO ET ENTETE----------*/
     .logo {
         width: 100%;
         margin-left: auto;
         margin-right: auto;
     }
+
     .logo img {
         width: 100%;
         max-width: 900px;
@@ -156,6 +179,7 @@ a:hover {
         border: none;
         outline: none;
     }
+
     /*----------NAVABAR--------*/
     nav {
         width: 280px;
@@ -168,6 +192,7 @@ a:hover {
         box-shadow: 0px 0px px;
         justify-content: space-between;
     }
+
     /*---------ARTICLE1------*/
     .article1 {
         height: 100px;
@@ -176,11 +201,13 @@ a:hover {
         position: relative;
         justify-content: center;
     }
+
     .article1 img {
         margin-top: 4px;
         width: auto;
         height: 90px;
     }
+
     .article1 h1 {
         font-size: 1.1rem;
         padding-top: 5px;
@@ -188,6 +215,7 @@ a:hover {
         padding-left: 10px;
         overflow: hidden;
     }
+
     /*---------ARTICLE2-------*/
     .article2 {
         height: 80px;
@@ -197,20 +225,24 @@ a:hover {
         box-shadow: 1px 1px 8px;
         text-align: center;
     }
+
     .article2 h2 {
         font-size: 0.8rem;
         padding-top: 3px;
         margin-bottom: 5px;
     }
+
     .article2 ul {
         display: flex;
         justify-content: space-around;
         list-style: none;
         margin: 0px;
     }
+
     .article2 ul li {
         display: block;
     }
+
     .article2 ul li img {
         width: auto;
         height: 30px;
@@ -220,13 +252,16 @@ a:hover {
         box-shadow: 2px 2px 8px rgba(168, 57, 17, 1),
             -2px -2px 8px rgba(131, 131, 131, 1);
     }
+
     .article2 p {
         display: none;
     }
+
     .article2 h3 {
         font-size: 0.5rem;
         text-align: center;
     }
+
     /*---------ARTICLE3------*/
     .article3 {
         display: flex;
@@ -240,16 +275,18 @@ a:hover {
         border-radius: 15px;
         width: 90%;
     }
+
     .article3 h3 {
         margin-top: 1vw;
         text-align: center;
         text-shadow: 0px 2px 2px rgb(0, 0, 0);
-        color:white;
+        color: white;
         margin-left: 10px;
         margin-right: 10px;
         font-size: 0.9rem;
         overflow: hidden;
     }
+
     .article3 img {
         border-radius: 1px 50px 50px 1px;
         margin-top: -3px;
@@ -258,6 +295,7 @@ a:hover {
         border: 3px solid rgba(131, 131, 131, 1);
         box-shadow: -5px 1px 8px;
     }
+
     /*********** FORMULAIRE DE SERVICES****************/
     .clientele {
         background-image: url(../../ressources/fonddeform.jpg);
@@ -272,10 +310,12 @@ a:hover {
         height: 100%;
         text-align: center;
     }
+
     .clientele form {
         flex-direction: column;
         width: 100%;
     }
+
     .clientele label {
         margin-top: 0px;
         font-size: 1.3rem;
@@ -283,6 +323,7 @@ a:hover {
         padding-top: 0px;
         text-shadow: 0px 2px 5px white;
     }
+
     .clientele input {
         height: 40px;
         text-align: center;
@@ -290,10 +331,12 @@ a:hover {
         margin-bottom: 0px;
         padding: 5px;
     }
+
     .clientele select {
         margin-top: 0px;
         border: 2px solid rgb(3, 3, 3);
     }
+
     .clientele button {
         box-shadow: 0px 0px 20px black;
         display: block;
@@ -304,15 +347,19 @@ a:hover {
         border-radius: 5px;
         padding: 10px;
     }
+
     .clientele button a:hover {
         color: white;
     }
+
     .clientele a {
         color: rgb(0, 0, 0);
     }
+
     .clientele a:link {
         text-decoration: none;
     }
+
     /**************** FOOTER **********************/
     .pied {
         margin-top: auto;
@@ -323,21 +370,26 @@ a:hover {
         color: white;
         margin-bottom: 0px;
     }
+
     .pied ul {
         list-style: none;
         flex-direction: column;
         line-height: 0.8;
     }
+
     .pied ul li {
         font-size: 0.7rem;
     }
+
     .pied ul li i {
         margin: 5px;
         font-size: 1rem;
     }
+
     .pied ul li h5 {
         font-size: 0.7rem;
     }
+
     .contact,
     .horaires,
     .sociaux {
@@ -345,24 +397,30 @@ a:hover {
         text-align: center;
         padding: 5px;
     }
+
     .contact li a {
         color: white;
     }
+
     .sociaux {
         font-size: larger;
     }
+
     .sociaux li a {
         text-decoration: none;
         color: white;
     }
 }
+
 @media screen and (min-width: 281px) and (max-width: 380px) {
+
     /*-----------LOGO ET ENTETE----------*/
     .logo {
         width: 100%;
         margin-left: auto;
         margin-right: auto;
     }
+
     .logo img {
         width: 100%;
         max-width: 900px;
@@ -374,6 +432,7 @@ a:hover {
         border: none;
         outline: none;
     }
+
     /*----------NAVABAR--------*/
     nav {
         width: 100%;
@@ -385,6 +444,7 @@ a:hover {
         padding: 0px;
         box-shadow: 0px 0px px;
     }
+
     /*---------ARTICLE1------*/
     .article1 {
         height: 100px;
@@ -393,11 +453,13 @@ a:hover {
         position: relative;
         justify-content: center;
     }
+
     .article1 img {
         margin-top: 4px;
         width: auto;
         height: 90px;
     }
+
     .article1 h1 {
         font-size: 1.1rem;
         padding-top: 5px;
@@ -406,6 +468,7 @@ a:hover {
         overflow: hidden;
         text-transform: uppercase;
     }
+
     /*---------ARTICLE2-------*/
     .article2 {
         height: 80px;
@@ -414,20 +477,24 @@ a:hover {
         box-shadow: 1px 1px 8px;
         text-align: center;
     }
+
     .article2 h2 {
         font-size: 0.8rem;
         padding-top: 3px;
         margin-bottom: 5px;
     }
+
     .article2 ul {
         display: flex;
         justify-content: space-around;
         list-style: none;
         margin: 0px;
     }
+
     .article2 ul li {
         display: block;
     }
+
     .article2 ul li img {
         width: auto;
         height: 30px;
@@ -437,13 +504,16 @@ a:hover {
         box-shadow: 2px 2px 8px rgba(168, 57, 17, 1),
             -2px -2px 8px rgba(131, 131, 131, 1);
     }
+
     .article2 p {
         display: none;
     }
+
     .article2 h3 {
         font-size: 0.6rem;
         text-align: center;
     }
+
     /*---------ARTICLE3------*/
     .article3 {
         display: flex;
@@ -457,16 +527,18 @@ a:hover {
         border-radius: 15px;
         width: 90%;
     }
+
     .article3 h3 {
         margin-top: 1vw;
         text-align: center;
         text-shadow: 0px 2px 2px rgb(0, 0, 0);
-        color:white;
+        color: white;
         margin-left: 10px;
         margin-right: 10px;
         font-size: 1rem;
         overflow: hidden;
     }
+
     .article3 img {
         border-radius: 1px 50px 50px 1px;
         margin-top: -3px;
@@ -475,6 +547,7 @@ a:hover {
         border: 3px solid rgba(131, 131, 131, 1);
         box-shadow: -5px 1px 8px;
     }
+
     /*********** FORMULAIRE DE SERVICES****************/
     .clientele {
         background-image: url(../../ressources/fonddeform.jpg);
@@ -489,9 +562,11 @@ a:hover {
         height: 100%;
         text-align: center;
     }
+
     .clientele form {
         flex-direction: column;
     }
+
     .clientele label {
         margin-top: 0px;
         font-size: 1.3rem;
@@ -499,14 +574,17 @@ a:hover {
         padding-top: 0px;
         text-shadow: 0px 2px 5px white;
     }
+
     .clientele input {
         text-align: center;
         margin-bottom: 0px;
     }
+
     .clientele select {
         margin-top: 0px;
         border: 2px solid rgb(3, 3, 3);
     }
+
     .clientele button {
         box-shadow: 0px 0px 20px black;
         display: block;
@@ -517,15 +595,19 @@ a:hover {
         border-radius: 5px;
         padding: 10px;
     }
+
     .clientele button a:hover {
         color: white;
     }
+
     .clientele a {
         color: rgb(0, 0, 0);
     }
+
     .clientele a:link {
         text-decoration: none;
     }
+
     /**************** FOOTER **********************/
     .pied {
         margin-top: 10px;
@@ -535,20 +617,25 @@ a:hover {
         justify-content: space-around;
         color: white;
     }
+
     .pied ul {
         list-style: none;
         flex-direction: column;
     }
+
     .pied ul li {
         font-size: 0.7rem;
     }
+
     .pied ul li i {
         margin: 5px;
         font-size: 1rem;
     }
+
     .pied ul li h5 {
         font-size: 0.7rem;
     }
+
     .contact,
     .horaires,
     .sociaux {
@@ -557,19 +644,24 @@ a:hover {
         line-height: 1.5;
         padding: 5px;
     }
+
     .contact li a {
         color: white;
     }
+
     .sociaux {
         font-size: larger;
     }
+
     .sociaux li a {
         text-decoration: none;
         color: white;
     }
 }
+
 /*----------MOBILE DISPLAY----------*/
 @media (max-width: 632px) {
+
     /*-----------LOGO ET ENTETE----------*/
     .logo {
         width: 100%;
@@ -577,6 +669,7 @@ a:hover {
         margin-left: auto;
         margin-right: auto;
     }
+
     .logo img {
         width: 100%;
         max-width: 900px;
@@ -587,6 +680,19 @@ a:hover {
         background-color: RGB(168, 58, 17);
         border-radius: 5px;
         box-shadow: 1px 1px 50px rgba(84, 84, 84, 1);
+    }
+    .iconlink {
+        position: absolute;
+        z-index: 2;
+    }
+    .iconlink img {
+        width: 50px;
+        height: 50px;
+        float: left;
+        /* Flottez l'image à gauche */
+    }
+    .iconlink span {
+        display: none;
     }
     /*----------NAVBAR--------*/
     nav {
@@ -628,7 +734,6 @@ a:hover {
     }
     nav li:hover {
         background-color: rgb(128, 128, 128);
-        ;
     }
     .digit ul {
         left: 0%;
@@ -636,7 +741,7 @@ a:hover {
     /*---------ARTICLE1------*/
     .article1 {
         height: 160px;
-        background-color: rgba(131, 131, 131, 0.233);
+        background-color: rgba(131, 131, 131, 0.479);
         display: flex;
         position: relative;
         justify-content: center;
@@ -664,9 +769,10 @@ a:hover {
         text-align: center;
     }
     .article2 h2 {
-        font-size: 1rem;
+        font-size: 0.7rem;
         padding-top: 3px;
         margin-bottom: 5px;
+        /* display: none; */
     }
     .article2 ul {
         display: flex;
@@ -724,12 +830,11 @@ a:hover {
         margin-top: 1vw;
         text-align: center;
         text-shadow: 0px 2px 2px rgb(0, 0, 0);
-        color:white;
+        color: white;
         margin-left: 10px;
         margin-right: 10px;
         font-size: 0.9rem;
     }
-
     .article3 img {
         border-radius: 1px 50px 50px 1px;
         margin-top: -25px;
@@ -738,7 +843,6 @@ a:hover {
         border: 3px solid rgba(131, 131, 131, 1);
         box-shadow: -5px 1px 8px;
     }
-
     /*********** FORMULAIRE DE SERVICES****************/
     .clientele {
         display: block;
@@ -755,23 +859,19 @@ a:hover {
         overflow: scroll;
         text-align: center;
     }
-
     .clientele form {
         flex-direction: column;
-
     }
-
     .clientele label {
         margin-top: 10px;
         font-size: 20px;
         text-shadow: 0px 2px 5px white;
     }
-
     .clientele input {
         margin-top: 20px;
         text-align: center;
     }
-    #immat{
+    #immat {
         height: 30px;
         border-radius: 5px;
         border: 2px solid black;
@@ -781,13 +881,11 @@ a:hover {
         margin-top: 20px;
         border: 2px solid rgb(3, 3, 3);
     }
-
     .clientele form label,
     input,
     select {
         margin-right: 10px;
     }
-
     .clientele button {
         /* box-shadow: 0px 0px 20px black; */
         display: block;
@@ -797,22 +895,16 @@ a:hover {
         margin-right: auto;
         border-radius: 5px;
         padding: 10px;
-
     }
-
     .clientele button a:hover {
         color: white;
     }
-
     .clientele a {
         color: rgb(0, 0, 0);
     }
-
     .clientele a:link {
         text-decoration: none;
-
     }
-
     /**************** FOOTER **********************/
     .pied {
         margin-top: 10px;
@@ -822,30 +914,21 @@ a:hover {
         justify-content: space-around;
         color: white;
     }
-
     .pied ul {
         list-style: none;
         flex-direction: column;
         flex-wrap: wrap;
-
     }
-
     .pied ul li {
         font-size: 0.7rem;
     }
-
     .pied ul li i {
-
         margin: 5px;
         font-size: 1rem;
     }
-
     .pied ul li h5 {
         font-size: 0.7rem;
     }
-
-
-
     .contact,
     .horaires,
     .sociaux {
@@ -854,23 +937,18 @@ a:hover {
         line-height: 1;
         padding: 5px;
         text-shadow: 1px 3px 2px black;
-
     }
-
     .contact li a {
         color: white;
     }
-
     .sociaux {
         font-size: larger;
     }
-
     .sociaux li a {
         text-decoration: none;
         color: white;
     }
 }
-
 /**************TAB AND DESKTOP****************/
 @media screen and (min-width: 633px) {
 
@@ -885,7 +963,6 @@ a:hover {
         margin-left: auto;
         margin-right: auto;
     }
-
     .logo img {
         width: 100%;
         max-width: 900px;
@@ -893,18 +970,25 @@ a:hover {
         height: 100px;
         margin: auto;
         display: flex;
-        
         background-color: RGB(168, 58, 17);
         border-radius: 5px;
         box-shadow: 1px 1px 50px rgba(84, 84, 84, 1);
     }
-    .iconlink img{
-        display: flex;
+    .iconlink {
         position: absolute;
+        z-index: 2;
+    }
+    .iconlink img {
         width: 50px;
         height: 50px;
-        z-index: 9999;
-                
+        float: left;
+        /* Flottez l'image à gauche */
+    }
+    .iconlink span {
+        float: right;
+        line-height: 50px;
+        color: red;
+        margin: 0;
     }
     /*------------NAVBAR------------*/
     nav {
@@ -917,7 +1001,6 @@ a:hover {
         padding: 0px;
         box-shadow: 2px 2px 10px;
     }
-
     nav ul {
         list-style: none;
         color: aliceblue;
@@ -929,7 +1012,6 @@ a:hover {
         margin-bottom: 0px;
         padding-left: 0px;
     }
-
     nav ul li {
         color: white;
         display: flex;
@@ -940,31 +1022,26 @@ a:hover {
         border-right: 1px solid rgb(168, 58, 17);
         border-radius: 5px;
     }
-
     nav ul li a {
         text-decoration: none;
         color: aliceblue;
         overflow: hidden;
         text-shadow: 0px 0px 1px black;
     }
-
     nav ul li a:link {
         text-decoration: none;
         color: white;
     }
-
     nav ul li:hover {
         background-color: rgb(131, 131, 131);
         color: white;
         box-shadow: 1px 1px 5px rgb(168, 58, 17);
     }
-
     .active {
         background-color: rgb(168, 58, 17);
         color: white;
         box-shadow: 0px 0px 5px rgb(255, 255, 255);
     }
-
     /*------banniere accueil------*/
     .article1 {
         height: 300px;
@@ -974,9 +1051,7 @@ a:hover {
         justify-content: end;
         margin-left: auto;
         margin-right: auto;
-
     }
-
     .article1 h1 {
         text-transform: uppercase;
         font-size: 3rem;
@@ -984,15 +1059,12 @@ a:hover {
         width: 50%;
         padding-left: 20px;
         overflow: hidden;
-
     }
-
     .article1 img {
         margin-top: 4px;
         width: auto;
         height: 294px;
     }
-
     /*-----banniere icons---------*/
     .article2 {
         background-color: rgba(131, 131, 131, 0.479);
@@ -1167,7 +1239,7 @@ a:hover {
         text-align: center;
         text-shadow: 0px 2px 2px rgb(0, 0, 0);
         text-shadow: 0px 2px 2px rgb(0, 0, 0);
-        color:white;
+        color: white;
         margin-left: 10px;
         margin-right: 10px;
         font-size: clamp(1.2rem, 2vw, 2rem);
@@ -1267,7 +1339,6 @@ a:hover {
 
 .inscription form {
     max-width: 600px;
-
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
@@ -1275,19 +1346,15 @@ a:hover {
     flex-direction: column;
     align-items: center;
 }
-
 .inscription form label {
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
     padding-top: 0px;
 }
-
-
 .inscription label.inline-label {
     display: inline-block;
 }
-
 .inscription fieldset {
     width: 100%;
     margin-bottom: 10px;
@@ -1297,9 +1364,7 @@ a:hover {
     background-color: rgba(131, 131, 131, 1);
     text-align: center;
     padding-bottom: 20px;
-
 }
-
 .inscription legend {
     font-style: italic;
     font-weight: bold;
@@ -1307,7 +1372,6 @@ a:hover {
     padding: 5px;
     color: rgba(168, 57, 17, 0.74);
 }
-
 .inscription form input,
 form select,
 form textarea {
@@ -1320,13 +1384,11 @@ form textarea {
     /* margin-left: auto;
     margin-right: auto; */
 }
-
 .inscription form input[type="radio"],
 form input[type="checkbox"],
 form input[type="submit"] {
     width: auto;
 }
-
 .inscription fieldset button[type=submit] {
     display: block;
     padding: 10px;
@@ -1336,7 +1398,6 @@ form input[type="submit"] {
     margin-bottom: 20px;
     border-radius: 5px;
 }
-
 .btninscription {
     display: block;
     padding: 10px;
@@ -1349,34 +1410,27 @@ form input[type="submit"] {
     /*  overflow: hidden; */
     border: 2px solid black;
 }
-
 .btninscription a {
     text-decoration: none;
     color: black;
 }
-
 .btninscription a:link {
     text-decoration: none;
-
 }
-
 .button a:hover {
     text-decoration: none;
     color: white;
 }
-
 .btninscription:hover {
     background-color: rgba(168, 57, 17, 0.74);
     color: white;
     border: 2px solid white;
 }
-
 button:hover {
     background-color: rgba(168, 57, 17, 0.74);
     color: white;
     border: 2px solid white;
 }
-
 .inscription select#action {
     width: 100%;
     background-color: rgb(131, 131, 131);
@@ -1389,26 +1443,21 @@ button:hover {
         -2px -2px 8px rgba(131, 131, 131, 1);
     text-align: center;
 }
-
 .inscription .tftable {
     margin: auto;
     width: 100%;
 }
-
 #userFeedBack {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
 #userFeedBack input,
 #userFeedBack textarea,
 #userFeedBack select {
     width: 80%;
     max-width: 400px;
-
 }
-
 /********************PAGE NOS GARAGES*************************/
 .frame {
     margin-left: auto;
@@ -1421,15 +1470,11 @@ button:hover {
     width: 40%;
     height: 600px;
     min-width: 280px;
-    ;
-
 }
-
 .frame iframe {
     width: 100%;
     height: 600px;
 }
-
 /********************PAGE PRESTATION*************************/
 .services {
     display: flex;
