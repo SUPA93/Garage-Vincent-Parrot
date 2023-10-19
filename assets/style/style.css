@@ -681,19 +681,23 @@ a:hover {
         border-radius: 5px;
         box-shadow: 1px 1px 50px rgba(84, 84, 84, 1);
     }
+
     .iconlink {
         position: absolute;
         z-index: 2;
     }
+
     .iconlink img {
         width: 50px;
         height: 50px;
         float: left;
         /* Flottez l'image à gauche */
     }
+
     .iconlink span {
         display: none;
     }
+
     /*----------NAVBAR--------*/
     nav {
         width: 100%;
@@ -703,18 +707,22 @@ a:hover {
         box-shadow: 0px 0px 10px;
         justify-content: space-between;
     }
+
     #icons {
         display: block;
         font-size: 30px;
         justify-content: center;
         width: 50px;
     }
+
     #icons:before {
         content: "\2630";
     }
+
     .digit #icons:before {
         content: "\2715";
     }
+
     nav ul {
         left: -110%;
         margin-top: 80px;
@@ -726,18 +734,22 @@ a:hover {
         transition: 0.25s;
         z-index: 1;
     }
+
     nav li {
         background-color: rgb(84, 84, 84);
         box-shadow: 5px 5px 8px rgba(131, 131, 131, 1),
             -5px 5px 8px rgba(131, 131, 131, 1);
         padding: 20px;
     }
+
     nav li:hover {
         background-color: rgb(128, 128, 128);
     }
+
     .digit ul {
         left: 0%;
     }
+
     /*---------ARTICLE1------*/
     .article1 {
         height: 160px;
@@ -746,11 +758,13 @@ a:hover {
         position: relative;
         justify-content: center;
     }
+
     .article1 img {
         margin-top: 4px;
         width: auto;
         height: 150px;
     }
+
     .article1 h1 {
         font-size: 1.8rem;
         padding-top: 20px;
@@ -759,6 +773,7 @@ a:hover {
         overflow: hidden;
         text-transform: uppercase;
     }
+
     /*---------ARTICLE2-------*/
     .article2 {
         background-color: rgba(131, 131, 131, 0.479);
@@ -768,18 +783,21 @@ a:hover {
         height: 100px;
         text-align: center;
     }
+
     .article2 h2 {
         font-size: 0.7rem;
         padding-top: 3px;
         margin-bottom: 5px;
         /* display: none; */
     }
+
     .article2 ul {
         display: flex;
         justify-content: space-around;
         margin-top: 0px;
         list-style: none;
     }
+
     .article2 ul li img {
         width: auto;
         height: 40px;
@@ -791,27 +809,33 @@ a:hover {
         background: repeating-conic-gradient(from var(--a), #ff2770 0%, #ff2770 5%, transparent 5%, transparent 40%, #ff2770 50%);
         animation: animate 4s linear infinite;
     }
+
     @property --a {
         syntax: '<angle>';
         inherits: false;
         initial-value: 0deg;
     }
+
     @keyframes animate {
         0% {
             --a: 0deg;
         }
+
         100% {
             --a: 360deg;
         }
     }
+
     .article2 p {
         display: none;
     }
+
     .article2 h3 {
         font-size: 0.9rem;
         text-align: center;
         overflow: hidden;
     }
+
     /*---------ARTICLE3------*/
     .article3 {
         display: flex;
@@ -826,6 +850,7 @@ a:hover {
         border-radius: 15px;
         width: 90%;
     }
+
     .article3 h3 {
         margin-top: 1vw;
         text-align: center;
@@ -835,6 +860,7 @@ a:hover {
         margin-right: 10px;
         font-size: 0.9rem;
     }
+
     .article3 img {
         border-radius: 1px 50px 50px 1px;
         margin-top: -25px;
@@ -843,6 +869,7 @@ a:hover {
         border: 3px solid rgba(131, 131, 131, 1);
         box-shadow: -5px 1px 8px;
     }
+
     /*********** FORMULAIRE DE SERVICES****************/
     .clientele {
         display: block;
@@ -859,33 +886,40 @@ a:hover {
         overflow: scroll;
         text-align: center;
     }
+
     .clientele form {
         flex-direction: column;
     }
+
     .clientele label {
         margin-top: 10px;
         font-size: 20px;
         text-shadow: 0px 2px 5px white;
     }
+
     .clientele input {
         margin-top: 20px;
         text-align: center;
     }
+
     #immat {
         height: 30px;
         border-radius: 5px;
         border: 2px solid black;
         padding: 5px;
     }
+
     .clientele select {
         margin-top: 20px;
         border: 2px solid rgb(3, 3, 3);
     }
+
     .clientele form label,
     input,
     select {
         margin-right: 10px;
     }
+
     .clientele button {
         /* box-shadow: 0px 0px 20px black; */
         display: block;
@@ -896,15 +930,19 @@ a:hover {
         border-radius: 5px;
         padding: 10px;
     }
+
     .clientele button a:hover {
         color: white;
     }
+
     .clientele a {
         color: rgb(0, 0, 0);
     }
+
     .clientele a:link {
         text-decoration: none;
     }
+
     /**************** FOOTER **********************/
     .pied {
         margin-top: 10px;
@@ -914,21 +952,26 @@ a:hover {
         justify-content: space-around;
         color: white;
     }
+
     .pied ul {
         list-style: none;
         flex-direction: column;
         flex-wrap: wrap;
     }
+
     .pied ul li {
         font-size: 0.7rem;
     }
+
     .pied ul li i {
         margin: 5px;
         font-size: 1rem;
     }
+
     .pied ul li h5 {
         font-size: 0.7rem;
     }
+
     .contact,
     .horaires,
     .sociaux {
@@ -938,17 +981,21 @@ a:hover {
         padding: 5px;
         text-shadow: 1px 3px 2px black;
     }
+
     .contact li a {
         color: white;
     }
+
     .sociaux {
         font-size: larger;
     }
+
     .sociaux li a {
         text-decoration: none;
         color: white;
     }
 }
+
 /**************TAB AND DESKTOP****************/
 @media screen and (min-width: 633px) {
 
@@ -963,6 +1010,7 @@ a:hover {
         margin-left: auto;
         margin-right: auto;
     }
+
     .logo img {
         width: 100%;
         max-width: 900px;
@@ -974,22 +1022,26 @@ a:hover {
         border-radius: 5px;
         box-shadow: 1px 1px 50px rgba(84, 84, 84, 1);
     }
+
     .iconlink {
         position: absolute;
         z-index: 2;
     }
+
     .iconlink img {
         width: 50px;
         height: 50px;
         float: left;
         /* Flottez l'image à gauche */
     }
+
     .iconlink span {
         float: right;
         line-height: 50px;
         color: red;
         margin: 0;
     }
+
     /*------------NAVBAR------------*/
     nav {
         width: 100%;
@@ -1001,6 +1053,7 @@ a:hover {
         padding: 0px;
         box-shadow: 2px 2px 10px;
     }
+
     nav ul {
         list-style: none;
         color: aliceblue;
@@ -1012,6 +1065,7 @@ a:hover {
         margin-bottom: 0px;
         padding-left: 0px;
     }
+
     nav ul li {
         color: white;
         display: flex;
@@ -1022,26 +1076,31 @@ a:hover {
         border-right: 1px solid rgb(168, 58, 17);
         border-radius: 5px;
     }
+
     nav ul li a {
         text-decoration: none;
         color: aliceblue;
         overflow: hidden;
         text-shadow: 0px 0px 1px black;
     }
+
     nav ul li a:link {
         text-decoration: none;
         color: white;
     }
+
     nav ul li:hover {
         background-color: rgb(131, 131, 131);
         color: white;
         box-shadow: 1px 1px 5px rgb(168, 58, 17);
     }
+
     .active {
         background-color: rgb(168, 58, 17);
         color: white;
         box-shadow: 0px 0px 5px rgb(255, 255, 255);
     }
+
     /*------banniere accueil------*/
     .article1 {
         height: 300px;
@@ -1052,6 +1111,7 @@ a:hover {
         margin-left: auto;
         margin-right: auto;
     }
+
     .article1 h1 {
         text-transform: uppercase;
         font-size: 3rem;
@@ -1060,11 +1120,13 @@ a:hover {
         padding-left: 20px;
         overflow: hidden;
     }
+
     .article1 img {
         margin-top: 4px;
         width: auto;
         height: 294px;
     }
+
     /*-----banniere icons---------*/
     .article2 {
         background-color: rgba(131, 131, 131, 0.479);
@@ -1346,15 +1408,18 @@ a:hover {
     flex-direction: column;
     align-items: center;
 }
+
 .inscription form label {
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
     padding-top: 0px;
 }
+
 .inscription label.inline-label {
     display: inline-block;
 }
+
 .inscription fieldset {
     width: 100%;
     margin-bottom: 10px;
@@ -1365,6 +1430,7 @@ a:hover {
     text-align: center;
     padding-bottom: 20px;
 }
+
 .inscription legend {
     font-style: italic;
     font-weight: bold;
@@ -1372,6 +1438,7 @@ a:hover {
     padding: 5px;
     color: rgba(168, 57, 17, 0.74);
 }
+
 .inscription form input,
 form select,
 form textarea {
@@ -1384,11 +1451,13 @@ form textarea {
     /* margin-left: auto;
     margin-right: auto; */
 }
+
 .inscription form input[type="radio"],
 form input[type="checkbox"],
 form input[type="submit"] {
     width: auto;
 }
+
 .inscription fieldset button[type=submit] {
     display: block;
     padding: 10px;
@@ -1398,6 +1467,7 @@ form input[type="submit"] {
     margin-bottom: 20px;
     border-radius: 5px;
 }
+
 .btninscription {
     display: block;
     padding: 10px;
@@ -1410,27 +1480,33 @@ form input[type="submit"] {
     /*  overflow: hidden; */
     border: 2px solid black;
 }
+
 .btninscription a {
     text-decoration: none;
     color: black;
 }
+
 .btninscription a:link {
     text-decoration: none;
 }
+
 .button a:hover {
     text-decoration: none;
     color: white;
 }
+
 .btninscription:hover {
     background-color: rgba(168, 57, 17, 0.74);
     color: white;
     border: 2px solid white;
 }
+
 button:hover {
     background-color: rgba(168, 57, 17, 0.74);
     color: white;
     border: 2px solid white;
 }
+
 .inscription select#action {
     width: 100%;
     background-color: rgb(131, 131, 131);
@@ -1443,21 +1519,25 @@ button:hover {
         -2px -2px 8px rgba(131, 131, 131, 1);
     text-align: center;
 }
+
 .inscription .tftable {
     margin: auto;
     width: 100%;
 }
+
 #userFeedBack {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 #userFeedBack input,
 #userFeedBack textarea,
 #userFeedBack select {
     width: 80%;
     max-width: 400px;
 }
+
 /********************PAGE NOS GARAGES*************************/
 .frame {
     margin-left: auto;
@@ -1471,10 +1551,12 @@ button:hover {
     height: 600px;
     min-width: 280px;
 }
+
 .frame iframe {
     width: 100%;
     height: 600px;
 }
+
 /********************PAGE PRESTATION*************************/
 .services {
     display: flex;
@@ -1532,7 +1614,8 @@ button:hover {
     grid-gap: 20px;
     margin-top: 30px;
     margin-bottom: 20px;
-
+    justify-content: center;
+    align-items: stretch;
 
 }
 
@@ -1583,36 +1666,63 @@ button:hover {
 }
 
 /*----------SECTION SLIDER----------*/
-.filter_results {
-    margin-top: 5px;
-    display: flex;
-    border: 1px solid black;
-    justify-content: center;
-
-}
-
-.filter_price,
-.filter_mileage,
-.filter_year {
-    flex-direction: row;
-    border: 1px solid blue;
-    padding: 10px;
-}
-
-.filter-section {
-    margin-bottom: 20px;
-}
-
-.filter-title {
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.filter-item {
-    margin-bottom: 10px;
-}
-
-label {
+.slider-container {
+    margin: 10px 0;
+    position: relative;
+    width: 50%;
     display: block;
-    margin-bottom: 5px;
+}
+
+.slider-container input[type="range"] {
+
+    width: 100%;
+    height: 8px;
+    /* Increased height */
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider-container input[type="range"]:hover {
+    opacity: 1;
+}
+
+.slider-container input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    border: 1px solid #d3d3d3;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Added shadow */
+    -webkit-transition: .2s;
+    transition: box-shadow .2s;
+}
+
+.slider-container input[type="range"]::-webkit-slider-thumb:hover {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.slider-container input[type="range"]::-webkit-slider-thumb:active {
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+.slider-container input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    border: 1px solid #d3d3d3;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Added shadow */
+}
+.slider-values {
+    text-align: center;
+    margin-top: 10px;
+}
+.slider-label {
+    display: block;
 }

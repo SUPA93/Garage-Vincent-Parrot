@@ -40,6 +40,7 @@
 </main>
 <!-- <script src="https://kit.fontawesome.com/ba77b5bf65.js" crossorigin="anonymous"></script> -->
 <script src="../scripts/caroussel.js" type="module"></script>
+<script src="https://cdn.jsdelivr.net/npm/nouislider@14.6.4/distribute/nouislider.min.js"></script>
 <script src="../scripts/sort_filter.js" type="module"></script>
 <script src="../scripts/index.js"></script>
 <script src="../scripts/evenements.js" type="module"></script>

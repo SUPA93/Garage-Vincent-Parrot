@@ -43,7 +43,8 @@ $main_menu[$currentPage]["head_title"];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?= $main_menu[$currentPage]["meta_description"] ?>">
     <link rel="manifest" href="../manifest.json">
-    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/nouislider@14.6.4/distribute/nouislider.min.css" rel="stylesheet">
     <?php echo '<link rel="stylesheet" href="/assets/style/style.css">'; ?>
     <title> <?= $main_menu[$currentPage]["head_title"] ?></title>
 </head>
@@ -79,4 +80,4 @@ $main_menu[$currentPage]["head_title"];
             <div id="icons"></div>
         </nav>
     </header>
-<main>
+    <main>
