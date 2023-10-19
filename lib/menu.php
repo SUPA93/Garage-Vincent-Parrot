@@ -16,7 +16,7 @@ $main_menu = [
     "devis.php" =>            ["title" => "VOTRE DEVIS",        "head_title"  => "Devis en ligne",     "meta_description" => "un devis en ligne adapté et garanti", "exclude" => true],
     "admin.php" =>            ["title" => "GESTION",            "head_title"  => "Interface",          "meta_description" => "interface d'admnistration", "exclude" => true],
     "occasions_handler.php" =>["title" => "Gérer les annonces", "head_title"  => "gérer les annonces", "meta_description" => "gestion des véhicules d'occasion", "exclude" => true],
-    "fetch_vehicules.php" =>  ["title" => "Gérer les annonces", "head_title"  => "gérer les annonces", "meta_description" => "gestion des véhicules d'occasion", "exclude" => true]
+    /* "fetch_vehicules.php" =>  ["title" => "Gérer les annonces", "head_title"  => "gérer les annonces", "meta_description" => "gestion des véhicules d'occasion", "exclude" => true] */
 ];
 
 /* $main_menu_2 = [

@@ -2,7 +2,7 @@
 
 require_once __DIR__ . "/templates/header.php";
 require __DIR__ . "/occasion_sort.php";
-ini_set('display_errors', 1);
+
 ?>
 <section class="container">
     <h1>L'occasion</h1>
@@ -10,31 +10,36 @@ ini_set('display_errors', 1);
     <h3>Affinez les resultats</h3>
     <div class="filter-container">
         <form action="" method="GET" class="filter-form">
-            <select name="brand" class="filter-select">
-                <!-- options... -->
+            <select name="brand" id="brand-type" class="filter-select">
                 <option value="" selected>Marques</option>
+                <?php foreach ($brands as $brand) : ?>
+                    <option value="<?php echo $brand; ?>"><?php echo $brand; ?></option>
+                <?php endforeach; ?>
             </select>
+
             <select name="fuel_type" id="fuel-type" class="filter-select">
-                <!-- options... -->
                 <option value="" selected>Carburant</option>
+                <?php foreach ($fuelTypes as $fuelType) : ?>
+                    <option value="<?php echo $fuelType; ?>"><?php echo $fuelType; ?></option>
+                <?php endforeach; ?>
             </select>
 
             <label for="price-slider" class="slider-label">Prix :</label>
             <div class="slider-container">
                 <div id="price-slider"></div>
-                <div class="slider-values"><span id="priceMin">0</span> € - <span id="priceMax">50000</span> €</div>
+                <div class="slider-values"><span id="priceMin"></span> € - <span id="priceMax"></span> €</div>
             </div>
 
             <label for="mileage-slider" class="slider-label">Kilométrage :</label>
             <div class="slider-container">
                 <div id="mileage-slider"></div>
-                <div class="slider-values"><span id="mileageMin">0</span> km - <span id="mileageMax">100000</span> km</div>
+                <div class="slider-values"><span id="mileageMin"></span> km - <span id="mileageMax"></span> km</div>
             </div>
 
             <label for="year-slider" class="slider-label">Années :</label>
             <div class="slider-container">
                 <div id="year-slider"></div>
-                <div class="slider-values"><span id="yearMin">1980</span> - <span id="yearMax">2023</span></div>
+                <div class="slider-values"><span id="yearMin"></span> - <span id="yearMax"></span></div>
             </div>
 
             <button type="submit" class="reset-button" name="reset" value="true">Réinitialiser</button>

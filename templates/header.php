@@ -7,6 +7,7 @@ require __DIR__ . "../../PDOfeedback.php";
 require __DIR__ . "../../PDOmessages.php";
 require __DIR__ . "../../PDOservice.php";
 require __DIR__ . "../../PDOaddUser.php";
+/* require __DIR__ . "../../fetch_vehicules.php"; */
 
 
 

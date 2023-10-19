@@ -1,9 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
-    function createDoubleHandleSlider(sliderElementId, minVal, maxVal, minDisplayId, maxDisplayId) {
+    function createDoubleHandleSlider(sliderElementId, minVal, maxVal, step, minDisplayId, maxDisplayId) {
         const slider = document.getElementById(sliderElementId);
         noUiSlider.create(slider, {
             start: [minVal, maxVal],
             connect: true,
+            step: step,
             range: {
                 'min': minVal,
                 'max': maxVal,
@@ -15,9 +16,10 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    createDoubleHandleSlider('price-slider', 0, 50000, 'priceMin', 'priceMax');
-    createDoubleHandleSlider('mileage-slider', 0, 100000, 'mileageMin', 'mileageMax');
-    createDoubleHandleSlider('year-slider', 1980, 2023, 'yearMin', 'yearMax');
+    createDoubleHandleSlider('price-slider', 1000, 50000, 1000, 'priceMin', 'priceMax');
+    createDoubleHandleSlider('mileage-slider', 0, 100000, 5000, 'mileageMin', 'mileageMax');
+    createDoubleHandleSlider('year-slider', 2000, 2023, 1, 'yearMin', 'yearMax');
+
 });
 document.querySelector('.filter-form').addEventListener('submit', function (event) {
     event.preventDefault();
@@ -37,17 +39,9 @@ document.querySelector('.filter-form').addEventListener('submit', function (even
     });
 
     fetch(`fetch_vehicules.php?${queryParams.toString()}`, { method: 'GET', body: JSON.stringify() })
-        .then(response => {
-            return response.json()
-        })
+        .then(response => response.json())
         .then((data) => {
-            /* const gridContainer = document.querySelector('.grid-container');
-            gridContainer.innerHTML = " "; */
-            /* `$(".grid-container").html("");` is a jQuery code that sets the HTML content of the
-            element with the class "grid-container" to an empty string. This effectively clears the
-            content of the element, removing any existing grid items or other elements inside it. */
             $(".grid-container").html("");
-
 
             for (let dataItem of data) {
                 console.log(dataItem);
@@ -63,7 +57,7 @@ document.querySelector('.filter-form').addEventListener('submit', function (even
                 <p>Prix:  ${dataItem.price}</p>
                 <button class="btninscription"><a href="occasion_detail.php?id=${dataItem.id} " title="Cliquez pour voir plus de détails">Plus de détails</a></button>
             </div>`;
-                $(".grid-container").append(html); // Ajout de l'élément à la grille
+                $(".grid-container").append(html);
             }
         })
         .catch(error => {
