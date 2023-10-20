@@ -1667,9 +1667,9 @@ button:hover {
 /*----------SECTION SLIDER----------*/
 
 .slider-container {
-    margin: 10px 0;
+    margin: 10px;
     position: relative;
-    width: 30%;
+    width: 60%;
     margin-left: auto;
     margin-right: auto;
 }

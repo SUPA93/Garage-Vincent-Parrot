@@ -33,7 +33,7 @@ require __DIR__ . "/occasion_sort.php";
             <label for="mileage-slider" class="slider-label">Kilométrage :</label>
             <div class="slider-container">
                 <div id="mileage-slider"></div>
-                <div class="slider-values"><span id="mileageMin"></span> km - <span id="mileageMax"></span> km</div>
+                <div class="slider-values"><span id="mileageMin"></span>-<span id="mileageMax"></span> km</div>
             </div>
 
             <label for="year-slider" class="slider-label">Années :</label>
