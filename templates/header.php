@@ -54,7 +54,7 @@ $main_menu[$currentPage]["head_title"];
     <header>
         <div class="logo">
             <a href="../index.php">
-                <img src=../ressources/parrotimage.jpg alt="LOGO VPARROT" title="Garage Vincent Parrot">
+                <img src=../ressources/parrotimage.png alt="LOGO VPARROT" title="Garage Vincent Parrot">
             </a>
         </div>
         <nav id="nav">
