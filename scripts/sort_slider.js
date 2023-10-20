@@ -61,6 +61,6 @@ document.querySelector('.filter-form').addEventListener('submit', function (even
             }
         })
         .catch(error => {
-            console.error('Error:', error);
+            console.log('Error:', error);
         });
 });

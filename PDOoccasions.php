@@ -1,7 +1,6 @@
 <?php
 
 require_once __DIR__ . "/config/config.php";
-
 // tableau vide
 $article = [];
 //gestion d'erreur false par défaut
@@ -11,7 +10,6 @@ $error = false;
 try {
     $sql = "SELECT * FROM used_vehicules";
     $stmt = $pdo->query($sql);
-
     // tableau
     $articles = [];
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -19,7 +17,6 @@ try {
     }
     if (isset($_GET['id'])) {
         $id = $_GET["id"];
-
         // véhicule par ID 
         foreach ($articles as $item) {
             if ($item['id'] == $id) {

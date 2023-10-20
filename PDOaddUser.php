@@ -6,11 +6,11 @@ if (isset($_POST["add_user"])) {
 
     if (isset($_SESSION["user"]) && $_SESSION["user"]["role"] === "admin") {
         // Récupérer les données 
-        $nom = $_POST["nom"];
-        $prenom = $_POST["prenom"];
-        $email = $_POST["email"];
-        $mot_de_passe = $_POST["mot_de_passe"];
-        $role = $_POST["role"];
+        $nom = htmlspecialchars($_POST["nom"]);
+        $prenom = htmlspecialchars($_POST["prenom"]);
+        $email = htmlspecialchars($_POST["email"]);
+        $mot_de_passe = htmlspecialchars($_POST["mot_de_passe"]);
+        $role = htmlspecialchars($_POST["role"]);
 
         // Hash mot de passe
         $mot_de_passe_hash = password_hash($mot_de_passe, PASSWORD_DEFAULT);
