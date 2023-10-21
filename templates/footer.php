@@ -39,16 +39,22 @@
 </div>
 </main>
 <!-- <script src="https://kit.fontawesome.com/ba77b5bf65.js" crossorigin="anonymous"></script> -->
-<script src="../scripts/caroussel.js" type="module"></script>
-<script src="https://cdn.jsdelivr.net/npm/nouislider@14.6.4/distribute/nouislider.min.js"></script>
-<script src="../scripts/sort_filter.js" type="module"></script>
-<script src="../scripts/index.js"></script>
-<script src="../scripts/evenements.js" type="module"></script>
-<script src="../scripts/admin.js" type="module"></script>
-<script src="../scripts/sort_slider.js" type="module"></script>
-<script src="../scripts/feedback_form.js" type="module"></script>
+<?php
+if ($currentPage === 'occasions.php') { ?>
+    <script src="https://cdn.jsdelivr.net/npm/nouislider@14.6.4/distribute/nouislider.min.js"></script>
+    <script src="../scripts/sort_slider.js"></script>
+    <script src="../scripts/sort_filter.js"></script>
+<?php } elseif ($currentPage === 'index.php') { ?>
+    <script src="../scripts/caroussel.js" type="module"></script>
+    <script src="../scripts/index.js"></script>
+<?php } elseif ($currentPage === 'admin.php') { ?>
+    <script src="../scripts/admin.js"></script>
+<?php } elseif ($currentPage === 'feedback_form.php') { ?>
+    <script src="../scripts/evenements.js"></script>
+    <script src="../scripts/feedback_form.js"></script>
 
+<?php }
+?>
 </body>
-
 
 </html>

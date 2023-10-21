@@ -1,27 +1,31 @@
-let carousel = document.querySelector('.carousel');
-let moving = false;  
+document.addEventListener('DOMContentLoaded', function () {
 
-function moveCarousel() {
-    if (moving) return;  
+    let carousel = document.querySelector('.carousel');
+    let moving = false;
 
-    let firstChild = carousel.firstElementChild;
-    let width = firstChild.clientWidth + 20;  // ne pas oublier de changer la taille du gap
+    function moveCarousel() {
+        if (moving) return;
 
-    moving = true;  // transition en cours
-    carousel.style.transition = 'transform 3s linear';//correspond au CSS
-    carousel.style.transform = `translateX(-${width}px)`;
+        let firstChild = carousel.firstElementChild;
+        let width = firstChild.clientWidth + 20;  // ne pas oublier de changer la taille du gap
 
-    // fonction appelée une fois la transition terminée
-    carousel.addEventListener('transitionend', function () {
-        carousel.style.transition = 'none';  // désactive 
-        carousel.style.transform = 'translateX(0)';  // remet à zéro 
-        carousel.removeChild(firstChild);  // supprime la première carte
-        carousel.appendChild(firstChild);  // ajoute la première carte à la fin du carrousel
-        moving = false;  // transition terminée
+        moving = true;  // transition en cours
+        carousel.style.transition = 'transform 3s linear';//correspond au CSS
+        carousel.style.transform = `translateX(-${width}px)`;
 
-        requestAnimationFrame(moveCarousel);  // prochain déplacement
-    }, { once: true });  // écouteur d'événement exécuté une seule fois
-}
+        // fonction une fois la transition terminée
+        carousel.addEventListener('transitionend', function () {
+            carousel.style.transition = 'none';  // désactive 
+            carousel.style.transform = 'translateX(0)';  // remet à zéro 
+            carousel.removeChild(firstChild);  // supprime la première carte
+            carousel.appendChild(firstChild);  // ajoute la première carte à la fin du carrousel
+            moving = false;  // transition terminée
 
-// appel
-moveCarousel();
+            requestAnimationFrame(moveCarousel);  // prochain déplacement
+        }, { once: true });  // écouteur d'événement exécuté une seule fois
+    }
+
+    // appel
+    moveCarousel();
+
+});

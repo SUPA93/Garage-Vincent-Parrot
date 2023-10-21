@@ -6,8 +6,8 @@ require __DIR__ . "/occasion_sort.php";
 ?>
 <section class="container">
     <h1>L'occasion</h1>
-    <h2>Nos véhicules d'occasion sont vérifiés & remis en état par nos soins</h2>
-    <h3>Affinez les resultats</h3>
+    <!-- <h2>Nos véhicules d'occasion sont vérifiés & remis en état par nos soins</h2> -->
+    <h2>Affinez les resultats</h2>
     <div class="filter-container">
         <form action="" method="GET" class="filter-form">
             <select name="brand" id="brand-type" class="filter-select">
@@ -43,10 +43,9 @@ require __DIR__ . "/occasion_sort.php";
             </div>
 
             <button type="submit" class="reset-button" name="reset" value="true">Réinitialiser</button>
-            <button type="submit" class="filter-button">Filtrer</button>
+            <button type="button" id="filter_cars_button" class="filter-button">Filtrer</button>
         </form>
     </div>
-
 
 
     <form id="filterForm" class="inscription">
