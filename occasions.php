@@ -3,47 +3,46 @@
 require_once __DIR__ . "/templates/header.php";
 require __DIR__ . "/occasion_sort.php";
 
+
+
+// Récupération et nettoyage des paramètres GET
+$priceMin = '';
+$priceMax = '';
+$mileageMin = isset($_GET['mileageMin']) ? htmlspecialchars($_GET['mileageMin'], ENT_QUOTES, 'UTF-8') : '';
+$mileageMax = isset($_GET['mileageMax']) ? htmlspecialchars($_GET['mileageMax'], ENT_QUOTES, 'UTF-8') : '';
+$yearMin = isset($_GET['yearMin']) ? htmlspecialchars($_GET['yearMin'], ENT_QUOTES, 'UTF-8') : '';
+$yearMax = isset($_GET['yearMax']) ? htmlspecialchars($_GET['yearMax'], ENT_QUOTES, 'UTF-8') : '';
+
 ?>
 <section class="container">
     <h1>L'occasion</h1>
     <!-- <h2>Nos véhicules d'occasion sont vérifiés & remis en état par nos soins</h2> -->
     <h2>Affinez les resultats</h2>
     <div class="filter-container">
-        <form action="" method="GET" class="filter-form">
-            <select name="brand" id="brand-type" class="filter-select">
-                <option value="" selected>Marques</option>
-                <?php foreach ($brands as $brand) : ?>
-                    <option value="<?php echo $brand; ?>"><?php echo $brand; ?></option>
-                <?php endforeach; ?>
-            </select>
-
-            <select name="fuel_type" id="fuel-type" class="filter-select">
-                <option value="" selected>Carburant</option>
-                <?php foreach ($fuelTypes as $fuelType) : ?>
-                    <option value="<?php echo $fuelType; ?>"><?php echo $fuelType; ?></option>
-                <?php endforeach; ?>
-            </select>
-
-            <label for="price-slider" class="slider-label">Prix :</label>
-            <div class="slider-container">
-                <div id="price-slider"></div>
-                <div class="slider-values"><span id="priceMin"></span> € - <span id="priceMax"></span> €</div>
-            </div>
-
-            <label for="mileage-slider" class="slider-label">Kilométrage :</label>
-            <div class="slider-container">
-                <div id="mileage-slider"></div>
-                <div class="slider-values"><span id="mileageMin"></span>-<span id="mileageMax"></span> km</div>
-            </div>
-
-            <label for="year-slider" class="slider-label">Années :</label>
-            <div class="slider-container">
-                <div id="year-slider"></div>
-                <div class="slider-values"><span id="yearMin"></span> - <span id="yearMax"></span></div>
-            </div>
-
-            <button type="submit" class="reset-button" name="reset" value="true">Réinitialiser</button>
-            <button type="button" id="filter_cars_button" class="filter-button">Filtrer</button>
+        <form  method="GET" id= "filterForm" class="form-control p-4">
+            <label for="price">Prix :</label>
+            <div id="price-slider" class="mb-3"></div>
+            <input type="hidden" id="priceMin" name="priceMin" value="<?= htmlspecialchars($priceMin) ?>">
+            <input type="hidden" id="priceMax" name="priceMax" value="<?= htmlentities($priceMax) ?>">
+            <div id="price-values"></div>
+            <hr class="divider">
+            <br>
+            <label for="kilometrage">Kilométrage :</label>
+            <div id="kilometrage-slider" class="mb-3"></div>
+            <input type="hidden" id="mileageMin" name="mileageMin" value="<?= htmlentities($mileageMin) ?>">
+            <input type="hidden" id="mileageMax" name="mileageMax" value="<?= htmlentities($mileageMax) ?>">
+            <div id="kilometrage-values"></div>
+            <hr class="divider">
+            <br>
+            <label for="annee">Années :</label>
+            <div id="annee-slider" class="mb-3"></div>
+            <input type="hidden" id="yearMin" name="yearMin" value="<?= htmlentities($yearMin) ?>">
+            <input type="hidden" id="yearMax" name="yearMax" value="<?= htmlentities($yearMax) ?>">
+            <div id="annee-values"></div>
+            <hr class="divider">
+            <br>
+            <button type="submit" class="btn btn-warning m-2" name="reset" value="true">Réinitialiser</button>
+            <!-- <button type="button" id="filter_cars_button" class="btn btn-primary m-2">Filtrer</button> -->
         </form>
     </div>
 

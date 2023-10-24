@@ -56,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $ads_date = date("Y-m-d");
 
             // image par défaut
-            $defaultImage = 'assets/images/default_cars.png';
+            $defaultImage = '/assets/images/default_cars.png';
 
             // Vérifier si des fichiers ont été téléchargés et vérification du nombre d'images.
             $uploadedImages = [];

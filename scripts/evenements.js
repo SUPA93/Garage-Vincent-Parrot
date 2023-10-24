@@ -1,3 +1,4 @@
+//gestion du formulaire de contact suivant les champs choisis
 document.addEventListener("DOMContentLoaded", function () {
     /* const formulaire = document.getElementById("formulaire");
 
