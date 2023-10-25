@@ -54,10 +54,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $location = $_POST['location'];
             $dept = $_POST['dept'];
             $ads_date = date("Y-m-d");
-
             // image par défaut
             $defaultImage = '/assets/images/default_cars.png';
-
             // Vérifier si des fichiers ont été téléchargés et vérification du nombre d'images.
             $uploadedImages = [];
             if (isset($_FILES['pictures']) && count($_FILES['pictures']['tmp_name']) <= 5) {

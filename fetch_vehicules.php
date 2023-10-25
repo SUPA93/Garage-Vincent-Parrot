@@ -10,53 +10,70 @@ $mileageMin = isset($_GET['mileageMin']) ? htmlspecialchars($_GET['mileageMin'],
 $mileageMax = isset($_GET['mileageMax']) ? htmlspecialchars($_GET['mileageMax'], ENT_QUOTES, 'UTF-8') : '';
 $yearMin = isset($_GET['yearMin']) ? htmlspecialchars($_GET['yearMin'], ENT_QUOTES, 'UTF-8') : '';
 $yearMax = isset($_GET['yearMax']) ? htmlspecialchars($_GET['yearMax'], ENT_QUOTES, 'UTF-8') : '';
-
+/* $reset = isset($_GET['reset']); */
 // Construction de la requête SQL en fonction des paramètres fournis
-$sql = "SELECT * FROM used_vehicules WHERE 1=1"; // 1=1 pour faciliter l'ajout des conditions
+$sql = "SELECT * FROM used_vehicules WHERE 1=1";
 
-if ($priceMin) {
+/* // REINITIALISER LES FILTRES
+if ($reset) {
+    $brand = null;
+    $energy = null;
+    $priceMin = "";
+    $priceMax = "";
+    $mileageMin = "";
+    $mileageMax = "";
+    $yearMin = "";
+    $yearMax = "";
+} */
+
+if (!empty($_GET['priceMin'])) {
     $sql .= " AND price >= :priceMin";
 }
-if ($priceMax) {
+if (!empty($_GET['priceMax'])) {
     $sql .= " AND price <= :priceMax";
 }
-if ($mileageMin) {
+if (!empty($_GET['mileageMin'])) {
     $sql .= " AND mileage >= :mileageMin";
 }
-if ($mileageMax) {
+if (!empty($_GET['mileageMax'])) {
     $sql .= " AND mileage <= :mileageMax";
 }
-if ($yearMin) {
+if (!empty($_GET['yearMin'])) {
     $sql .= " AND year >= :yearMin";
 }
-if ($yearMax) {
+if (!empty($_GET['yearMax'])) {
     $sql .= " AND year <= :yearMax";
 }
 
 $stmt = $pdo->prepare($sql);
 
 // Liaison des paramètres
-if ($priceMin) {
-    $stmt->bindParam(':priceMin', $priceMin, PDO::PARAM_INT);
+if (!empty($_GET['priceMin'])) {
+    $stmt->bindValue(':priceMin', $_GET['priceMin'], PDO::PARAM_INT);
 }
-if ($priceMax) {
-    $stmt->bindParam(':priceMax', $priceMax, PDO::PARAM_INT);
+
+if (!empty($_GET['priceMax'])) {
+    $stmt->bindValue(':priceMax', $_GET['priceMax'], PDO::PARAM_INT);
 }
-if ($mileageMin) {
-    $stmt->bindParam(':mileageMin', $mileageMin, PDO::PARAM_INT);
+
+if (!empty($_GET['mileageMin'])) {
+    $stmt->bindValue(':mileageMin', $_GET['mileageMin'], PDO::PARAM_INT);
 }
-if ($mileageMax) {
-    $stmt->bindParam(':mileageMax', $mileageMax, PDO::PARAM_INT);
+
+if (!empty($_GET['mileageMax'])) {
+    $stmt->bindValue(':mileageMax', $_GET['mileageMax'], PDO::PARAM_INT);
 }
-if ($yearMin) {
-    $stmt->bindParam(':yearMin', $yearMin, PDO::PARAM_INT);
+
+if (!empty($_GET['yearMin'])) {
+    $stmt->bindValue(':yearMin', $_GET['yearMin'], PDO::PARAM_INT);
 }
-if ($yearMax) {
-    $stmt->bindParam(':yearMax', $yearMax, PDO::PARAM_INT);
+
+if (!empty($_GET['yearMax'])) {
+    $stmt->bindValue(':yearMax', $_GET['yearMax'], PDO::PARAM_INT);
 }
 
 $stmt->execute();
 $filteredVehicules = $stmt->fetchAll(PDO::FETCH_ASSOC);
+/* $stmt = null; */
 
-// Renvoi des données au format JSON
 echo json_encode($filteredVehicules);

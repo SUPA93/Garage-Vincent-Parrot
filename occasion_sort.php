@@ -39,7 +39,7 @@ if (isset($_GET["sortBy"])) {
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
 
-    // Récupérez les résultats de la requête
+    // Récupére les résultats de la requête
     $sortedCars = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     if (!empty($sortedCars)) {

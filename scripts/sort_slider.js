@@ -25,9 +25,9 @@ $(function () {
     sliderKilometrage.slider({
         range: true,
         min: 0,
-        max: 100000,
-        values: [0, 100000],
-        step: 10000,
+        max: 150000,
+        values: [0, 150000],
+        step: 2500,
         create: function () {
             let mileageMin = sliderKilometrage.slider("values", 0);
             let mileageMax = sliderKilometrage.slider("values", 1);
@@ -62,7 +62,8 @@ $(function () {
     });
 });
 
-$('#filterForm').on('slidechange', function() {
+$('#filterForm').on('slidechange ', function() {
+
     const priceMin = document.getElementById('priceMin').value;
     const priceMax = document.getElementById('priceMax').value;
     const mileageMin = document.getElementById('mileageMin').value;
