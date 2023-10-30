@@ -38,7 +38,7 @@
     </footer>
 </div>
 </main>
-<!-- <script src="https://kit.fontawesome.com/ba77b5bf65.js" crossorigin="anonymous"></script> -->
+<script src="https://kit.fontawesome.com/ba77b5bf65.js" crossorigin="anonymous"></script>
 <?php
 if ($currentPage === 'occasions.php') { ?>
     <script src="../scripts/sort_slider.js"></script>

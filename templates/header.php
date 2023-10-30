@@ -7,7 +7,7 @@ require __DIR__ . "../../PDOfeedback.php";
 require __DIR__ . "../../PDOmessages.php";
 require __DIR__ . "../../PDOservice.php";
 require __DIR__ . "../../PDOaddUser.php";
-/* require __DIR__ . "../../fetch_vehicules.php"; */
+
 
 
 
@@ -40,7 +40,6 @@ $main_menu[$currentPage]["head_title"];
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?= $main_menu[$currentPage]["meta_description"] ?>">
     <link rel="manifest" href="../manifest.json">

@@ -7,8 +7,6 @@
         <span>connexion</span>
     </a>
 </div>
-
-
 <article class="article1">
     <img src="ressources/VPARROTSANSFOND.png" alt="photo Vincent Parrot" title="Vincent Parrot">
     <h1>Comparez,<br> réservez en toute confiance.</h1>

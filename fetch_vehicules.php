@@ -1,19 +1,17 @@
 <?php
 require __DIR__ . '/config/config.php';
-header('Content-Type: application/json');
-
 
 // Récupération des paramètres GET et nettoyage
-$priceMin = isset($_GET['priceMin']) ? htmlspecialchars($_GET['priceMin'], ENT_QUOTES, 'UTF-8') : '';
-$priceMax = isset($_GET['priceMax']) ? htmlspecialchars($_GET['priceMax'], ENT_QUOTES, 'UTF-8') : '';
-$mileageMin = isset($_GET['mileageMin']) ? htmlspecialchars($_GET['mileageMin'], ENT_QUOTES, 'UTF-8') : '';
-$mileageMax = isset($_GET['mileageMax']) ? htmlspecialchars($_GET['mileageMax'], ENT_QUOTES, 'UTF-8') : '';
-$yearMin = isset($_GET['yearMin']) ? htmlspecialchars($_GET['yearMin'], ENT_QUOTES, 'UTF-8') : '';
-$yearMax = isset($_GET['yearMax']) ? htmlspecialchars($_GET['yearMax'], ENT_QUOTES, 'UTF-8') : '';
+$priceMin = isset($_GET['priceMin']) ? intval($_GET['priceMin']) : '';
+$priceMax = isset($_GET['priceMax']) ? intval($_GET['priceMax']) : '';
+$mileageMin = isset($_GET['mileageMin']) ? intval($_GET['mileageMin']) : '';
+$mileageMax = isset($_GET['mileageMax']) ? intval($_GET['mileageMax']) : '';
+$yearMin = isset($_GET['yearMin']) ? intval($_GET['yearMin']) : '';
+$yearMax = isset($_GET['yearMax']) ? intval($_GET['yearMax']) : '';
 /* $reset = isset($_GET['reset']); */
 // Construction de la requête SQL en fonction des paramètres fournis
-$sql = "SELECT * FROM used_vehicules WHERE 1=1";
 
+$sql = "SELECT * FROM used_vehicules WHERE 1=1";
 /* // REINITIALISER LES FILTRES
 if ($reset) {
     $brand = null;

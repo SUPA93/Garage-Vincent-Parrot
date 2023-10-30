@@ -8,9 +8,9 @@ $(function () {
         values: [0, 100000],
         step: 1000,
         create: function () {
-            let minPrice = sliderPrice.slider("values", 0);
-            let maxPrice = sliderPrice.slider("values", 1);
-            $("#price-values").text(minPrice + " € " + " - " + maxPrice + " € ");
+            let priceMin = sliderPrice.slider("values", 0);
+            let priceMax = sliderPrice.slider("values", 1);
+            $("#price-values").text(priceMin + " € " + " - " + priceMax + " € ");
         },
         slide: function (event, ui) {
             $("#priceMin").val(ui.values[0]);
@@ -62,23 +62,23 @@ $(function () {
     });
 });
 
-$('#filterForm').on('slidechange ', function() {
+$('#filterForm').on('slidechange ', function () {
 
-    const priceMin = document.getElementById('priceMin').value;
-    const priceMax = document.getElementById('priceMax').value;
-    const mileageMin = document.getElementById('mileageMin').value;
-    const mileageMax = document.getElementById('mileageMax').value;
-    const yearMin = document.getElementById('yearMin').value;
-    const yearMax = document.getElementById('yearMax').value;
+    let priceMin = document.getElementById('priceMin').value;
+    let priceMax = document.getElementById('priceMax').value;
+    let mileageMin = document.getElementById('mileageMin').value;
+    let mileageMax = document.getElementById('mileageMax').value;
+    let yearMin = document.getElementById('yearMin').value;
+    let yearMax = document.getElementById('yearMax').value;
 
     const url = `fetch_vehicules.php?priceMin=${priceMin}&priceMax=${priceMax}&mileageMin=${mileageMin}&mileageMax=${mileageMax}&yearMin=${yearMin}&yearMax=${yearMax}`;
 
     fetch(url)
-    .then(response => response.json())
-    .then(data => {
-        let htmlString = "";
-        data.forEach(car => {
-            htmlString +=  `
+        .then(response => response.json())
+        .then(data => {
+            $(".grid-container").html("");
+            for (car of data) {
+                let html = `
                 <div class="grid-item">
                     <a href="occasion_detail.php?id=${car.id}" title="Plus de détails">
                         <img src="${car.pictures}" alt="Image du véhicule" title="Plus de détails"/>
@@ -93,11 +93,11 @@ $('#filterForm').on('slidechange ', function() {
                         <a href="occasion_detail.php?id=${car.id}" title="Cliquez pour voir plus de détails">Plus de détails</a>
                     </button>
                 </div>`;
-        });
-        document.querySelector(".grid-container").innerHTML = htmlString;
-    })
-    .catch(error => {
-        console.error('Erreur lors de la requête Fetch:', error);
-    });
+                $(".grid-container").append(html);
+            }
+        })
+    .catch (error => {
+    console.error('Erreur lors de la requête Fetch:', error);
 });
 
+});
