@@ -1,8 +1,6 @@
 <?php require_once __DIR__ . "/templates/header.php"; ?>
 
-
 <h1 class="inscription">Votre Devis en ligne</h1>
-
 <style type="text/css">
     .tftable {
         color: #333333;

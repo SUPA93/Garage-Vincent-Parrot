@@ -9,8 +9,7 @@ $mileageMax = isset($_GET['mileageMax']) ? intval($_GET['mileageMax']) : '';
 $yearMin = isset($_GET['yearMin']) ? intval($_GET['yearMin']) : '';
 $yearMax = isset($_GET['yearMax']) ? intval($_GET['yearMax']) : '';
 /* $reset = isset($_GET['reset']); */
-// Construction de la requête SQL en fonction des paramètres fournis
-
+// Construction de la requête SQL en fonction des paramètres
 $sql = "SELECT * FROM used_vehicules WHERE 1=1";
 /* // REINITIALISER LES FILTRES
 if ($reset) {
