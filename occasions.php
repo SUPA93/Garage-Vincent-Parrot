@@ -39,7 +39,6 @@ $yearMax = isset($_GET['yearMax']) ? htmlspecialchars($_GET['yearMax'], ENT_QUOT
             <hr class="divider">
             <br>
             <button type="submit" class="btn btn-warning m-2" name="reset" value="true">Réinitialiser</button>
-            <!-- <button type="button" id="filter_cars_button" class="btn btn-primary m-2">Filtrer</button> -->
         </form>
     </div>
     <form id="filterForm" class="inscription">

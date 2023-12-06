@@ -96,8 +96,8 @@ $('#filterForm').on('slidechange ', function () {
                 $(".grid-container").append(html);
             }
         })
-    .catch (error => {
-    console.error('Erreur lors de la requête Fetch:', error);
-});
+        .catch(error => {
+            console.error('Erreur lors de la requête Fetch:', error);
+        });
 
 });

@@ -26,6 +26,7 @@ require_once __DIR__ . "/templates/header.php";
         <button type="button" title="Retour à la liste" class="btninscription">
             <a href="occasions.php">Retour aux occasions</a>
         </button>
+        </div>
     <?php } ?>
 </section>
 
