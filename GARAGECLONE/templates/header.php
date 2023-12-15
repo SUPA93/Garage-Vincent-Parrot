@@ -6,8 +6,8 @@ include_once __DIR__ . '/../lib/connexions.php';
 require_once __DIR__ . '/../lib/schedule.php';
 
 /* if (session_status() === PHP_SESSION_NONE) {
-    session_start();
 } */
+session_start();
 // False by default
 $isAdminOrUser = false;
 
@@ -31,12 +31,13 @@ $currentPage = htmlentities(basename($_SERVER["SCRIPT_NAME"]));
 ?>
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?= $main_menu[$currentPage]["meta_description"] ?>">
     <!-- <link rel="manifest" href="../manifest.json"> -->
-
+    
     <!-- JQUERY-->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../assets/style/jquery-ui.css">
@@ -73,11 +74,11 @@ $currentPage = htmlentities(basename($_SERVER["SCRIPT_NAME"]));
                     $shouldExclude = isset($menu_item["exclude"]) && $menu_item["exclude"];
                     if (!$shouldExclude) {
                         $path = isset($menu_item["path"]) ? $menu_item["path"] : "/" . $key;
-                ?>
+                        ?>
                         <li class="<?= $isActive; ?>">
                             <a href="<?= $path; ?>"><?= $menu_item["title"] ?></a>
                         </li>
-                <?php
+                        <?php
                     }
                 }
                 ?>
@@ -86,3 +87,4 @@ $currentPage = htmlentities(basename($_SERVER["SCRIPT_NAME"]));
         </nav>
     </header>
     <main>
+        <div id="sessionTimer" data-start-time="<?php echo $_SESSION['session_start_time'] ?? ''; ?>">temps</div>

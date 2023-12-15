@@ -2,14 +2,21 @@
 require_once __DIR__ . "/config.php";
 require_once __DIR__ . "/pdo.php";
 
-function startSession() {
+//CHECK PHP'S ERRORS
+/* ini_set('display_errors', 1);
+error_reporting(E_ALL);
+ */
+
+function startSession()
+{
     if (session_status() === PHP_SESSION_NONE) {
         ini_set('session.gc_maxlifetime', 60);
         session_start();
+        if(!isset($_SESSION['session_start_time'])) {
+            $_SESSION['session_start_time'] = time();
+        }
     }
 }
-startSession();
-
 function getUserByEmail($pdo, $email)
 {
     $sql = "SELECT * FROM utilisateurs_parrot WHERE email = :email";
@@ -17,11 +24,13 @@ function getUserByEmail($pdo, $email)
     $stmt->bindParam(':email', $email);
     $stmt->execute();
     return $stmt->fetch();
+
 }
+
 function authenticateUser($user, $password)
 {
     if ($user && password_verify($password, $user['mot_de_passe'])) {
-        
+        startSession();
         $_SESSION["loggedin"] = true;
         $_SESSION["user"] = [
             "name" => $user["nom"],
@@ -35,6 +44,7 @@ function authenticateUser($user, $password)
 }
 function redirectToDashboard($userRole)
 {
+    /* echo "Redirection vers le tableau de bord pour le rôle: $userRole<br>"; */
     if ($userRole === "admin" || $userRole === "user") {
         header("Location: admin.php");
     } else {
@@ -45,6 +55,10 @@ function redirectToDashboard($userRole)
 if (isset($_POST["send_connexion"])) {
     $email = $_POST["email"];
     $password = $_POST["password"];
+
+    /* echo "Email: " . htmlspecialchars($email) . "<br>";
+    echo "Password: " . htmlspecialchars($password) . "<br>"; */
+
     $pdo = connectToDatabase($dbHost, $dbName, $dbUser, $dbPassword);
     $user = getUserByEmail($pdo, $email);
     if (authenticateUser($user, $password)) {

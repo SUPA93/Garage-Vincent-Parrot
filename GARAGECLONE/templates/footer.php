@@ -30,6 +30,10 @@
     </footer>
 </div>
 </main>
+<script>
+    // Passer la valeur de temps de début de session de PHP à JavaScript
+    const sessionStartTime = <?php echo json_encode($_SESSION['session_start_time'] ?? null); ?>;
+</script>
 <!-- <script src="https://kit.fontawesome.com/ba77b5bf65.js" crossorigin="anonymous"></script> -->
 <?php
 if ($currentPage === 'occasions.php') { ?>
@@ -40,9 +44,10 @@ if ($currentPage === 'occasions.php') { ?>
     <script src="../assets/JS/caroussel.js" type="module"></script>
     <script src="../assets/JS/feedback_form.js"></script>
     <script src="../assets/JS/index.js"></script>
-    <?php } elseif ($currentPage === 'admin.php') { ?>
-        <script src="../assets/JS/admin.js"></script>
-        <script src="../assets/JS/index.js"></script>
+<?php } elseif ($currentPage === 'admin.php') { ?>
+    <script src="../assets/JS/admin.js"></script>
+    <script src="../assets/JS/index.js"></script>
+    <script src="../assets/JS/sessionTimer.js"></script>
 <?php } elseif ($currentPage === 'contactUs.php') { ?>
     <script src="../assets/JS/evenements.js"></script>
 <?php } else { ?>
