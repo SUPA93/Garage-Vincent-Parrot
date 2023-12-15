@@ -1,14 +1,14 @@
-const maxLifetime = 60;
+const maxLifetime = 6000; // MUST BE SAME AS PHP FUNCTION 
 const sessionEndTime = sessionStartTime + maxLifetime;
 
 function updateTimer() {
-    const currentTime = Math.floor(Date.now() / 1000); // Temps actuel en secondes
-    const timeLeft = sessionEndTime - currentTime; // Temps restant en secondes
+    const currentTime = Math.floor(Date.now() / 1000); // CURRENT TIME
+    const timeLeft = sessionEndTime - currentTime; // TIME LEFT
 
     if (timeLeft >= 0) {
         let minutes = Math.floor(timeLeft / 60);
         let seconds = timeLeft % 60;
-        // Affichage du temps restant
+        // DISPLAY TIME LEFT
         document.getElementById('sessionTimer').textContent = minutes + " minutes, " + seconds + " secondes restantes";
     } else {
         document.getElementById('sessionTimer').textContent = "Session expirée";
@@ -16,6 +16,6 @@ function updateTimer() {
     }
 }
 
-// Mise à jour du timer toutes les secondes
+// 1 SECONDE INTERVAL
 setInterval(updateTimer, 1000);
 

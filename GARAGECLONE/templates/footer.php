@@ -31,8 +31,8 @@
 </div>
 </main>
 <script>
-    // Passer la valeur de temps de début de session de PHP à JavaScript
-    const sessionStartTime = <?php echo json_encode($_SESSION['session_start_time'] ?? null); ?>;
+    // AFFICHAGE CHRONO POUR LE TIMER DE SESSION
+    // const sessionStartTime = <?php /* echo json_encode($_SESSION['session_start_time'] ?? null); */ ?>;
 </script>
 <!-- <script src="https://kit.fontawesome.com/ba77b5bf65.js" crossorigin="anonymous"></script> -->
 <?php

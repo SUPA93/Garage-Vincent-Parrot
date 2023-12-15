@@ -10,7 +10,7 @@ error_reporting(E_ALL);
 function startSession()
 {
     if (session_status() === PHP_SESSION_NONE) {
-        ini_set('session.gc_maxlifetime', 60);
+        ini_set('session.gc_maxlifetime', 6000);
         session_start();
         if(!isset($_SESSION['session_start_time'])) {
             $_SESSION['session_start_time'] = time();
