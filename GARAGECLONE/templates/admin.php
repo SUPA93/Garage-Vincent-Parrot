@@ -1,8 +1,8 @@
 <!-- ADMINISTRATION PAGE FOR ADMIN AND SALARY (NOT CLIENT) -->
 <?php
 require_once  "../lib/config.php";
-require_once __DIR__ . "/header.php";
 require_once __DIR__ . "/../lib/connexions.php";
+require_once __DIR__ . "/header.php";
 
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     // USER NOT LOGGED IN RE LOCATION

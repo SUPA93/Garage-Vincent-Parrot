@@ -1,6 +1,3 @@
-<?php
-
-?>
 <div class="bas">
     <footer class="pied">
         <ul class="contact">
@@ -31,9 +28,11 @@
 </div>
 </main>
 <script>
-    // AFFICHAGE CHRONO POUR LE TIMER DE SESSION
-    // const sessionStartTime = <?php /* echo json_encode($_SESSION['session_start_time'] ?? null); */ ?>;
+    const sessionStartTime = <?php echo json_encode($_SESSION['session_start_time'] ?? null); ?>;
+    
 </script>
+<script src="../assets/JS/sessionTimer.js"></script>
+
 <!-- <script src="https://kit.fontawesome.com/ba77b5bf65.js" crossorigin="anonymous"></script> -->
 <?php
 if ($currentPage === 'occasions.php') { ?>
@@ -47,7 +46,6 @@ if ($currentPage === 'occasions.php') { ?>
 <?php } elseif ($currentPage === 'admin.php') { ?>
     <script src="../assets/JS/admin.js"></script>
     <script src="../assets/JS/index.js"></script>
-    <script src="../assets/JS/sessionTimer.js"></script>
 <?php } elseif ($currentPage === 'contactUs.php') { ?>
     <script src="../assets/JS/evenements.js"></script>
 <?php } else { ?>
