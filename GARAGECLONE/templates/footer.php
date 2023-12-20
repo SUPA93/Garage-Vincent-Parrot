@@ -17,7 +17,7 @@
         ?>
         <ul class="sociaux">
             <li>
-                <h5>Nos reseaux sociaux</h5>
+                <h5>Nos reseaux</h5>
             </li>
             <li><i class="fa-brands fa-instagram"></i><a href="#">Insta </a></li>
             <li><i class="fa-brands fa-facebook "></i><a href="#">Facebook</a></li>

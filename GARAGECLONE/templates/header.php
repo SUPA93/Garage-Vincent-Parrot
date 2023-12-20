@@ -88,7 +88,5 @@ $currentPage = htmlentities(basename($_SERVER["SCRIPT_NAME"]));
             </ul>
             <div id="icons"></div>
         </nav>
-        <!-- LINE FOR DISPLAY SESSION TIME LEFT -->
-        <div id="sessionTimer" data-start-time="<?php echo $_SESSION['session_start_time'] ?? ''; ?>">SESSION</div>
     </header>
     <main>
