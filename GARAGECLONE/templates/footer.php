@@ -46,8 +46,9 @@ if ($currentPage === 'occasions.php') { ?>
 <?php } elseif ($currentPage === 'admin.php') { ?>
     <script src="../assets/JS/admin.js"></script>
     <script src="../assets/JS/index.js"></script>
-<?php } elseif ($currentPage === 'contactUs.php') { ?>
-    <script src="../assets/JS/evenements.js"></script>
+    <?php } elseif ($currentPage === 'contactUs.php') { ?>
+        <script src="../assets/JS/evenements.js"></script>
+        <script src="../assets/JS/index.js"></script>
 <?php } else { ?>
     <script src="../assets/JS/index.js"></script>
 <?php } ?>
