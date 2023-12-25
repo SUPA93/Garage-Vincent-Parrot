@@ -16,7 +16,8 @@ $main_menu = [
     "adminEditCar_form.php" =>["title" => "Modifier une annonce","head_title" => "Modifier une annonce","meta_description"=> "modification d'un véhicule",                   "path" => "/templates/adminEditCar.php", "exclude" => true],
     "occasionContact_form.php" =>["title" => "Contactez-nous","head_title" => "Ce véhicule m'interresse","meta_description"=> "contact pour ce véhicule",                    "path" => "/templates/occasionContact_form.php", "exclude" => true],
     "carsFilter.php" =>       ["title" => "filtrer les annonces","head_title" => "filtrer les annonces","meta_description"=> "filter les annonces",                          "path"=>"/lib/carsFilter.php", "exclude" => true],
-    "test_session.php" =>       ["title" => "filtrer les annonces","head_title" => "TEST DE SESSION",    "meta_description"=> "TEST PAGE","path"=>"/templates/test_session.php", "exclude" => true]
+    "test_session.php" =>       ["title" => "filtrer les annonces","head_title" => "TEST DE SESSION",    "meta_description"=> "TEST PAGE","path"=>"/templates/test_session.php", "exclude" => true],
+    "error404.php" =>       ["title" => "filtrer les annonces","head_title" => "TEST DE SESSION",    "meta_description"=> "TEST PAGE","path"=>"/templates/error404.php", "exclude" => true]
 ];
 
 ?>
