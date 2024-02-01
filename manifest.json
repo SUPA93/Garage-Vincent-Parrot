@@ -1,9 +1,0 @@
-{
-  "name": "V Parrot Répare",
-  "short_name": "vparrotrepare",
-  "theme_color": "#a83911",
-  "background_color": "#545454",
-  "display": "fullscreen",
-  "scope": "/",
-  "start_url": "/index.php"
-}
