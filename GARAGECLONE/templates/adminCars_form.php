@@ -28,7 +28,7 @@ require_once "../lib/cars.php";
                         <td><?= $article['price'] ?></td>
                         <td><img style="max-width:100px" ; src="<?= $article["pictures"] ?>" alt="<?= $article["brand"] . " " . $article["model"] ?>" title="<?= $article["brand"] . " " . $article["model"] ?>"></td>
                         <td><a href='adminEditCar_form.php?id=<?= $article['id'] ?>'>Modifier</a></td>
-                        <td><a href='../lib/cars.php?id=<?= $article['id'] ?>'>Supprimer</a></td>
+                        <td><a href='../lib/cars.php?delete_id=<?= $article['id'] ?>'>Supprimer</a></td>
                     </tr>
                 <?php endforeach; ?>
             </thead>

@@ -192,15 +192,11 @@ function deleteVehicleById($pdo, $article_id)
 
     try {
         $stmt = $pdo->prepare($sql);
-
         $stmt->bindParam(':article_id', $article_id, PDO::PARAM_INT);
-
         $stmt->execute();
-
         header("Location: ../templates/admin.php");
         exit();
     } catch (PDOException $e) {
-
         echo "Erreur : " . $e->getMessage();
     }
 }
