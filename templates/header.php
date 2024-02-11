@@ -49,7 +49,6 @@ $currentPage = htmlentities(basename($_SERVER["SCRIPT_NAME"]));
     <title> <?= $main_menu[$currentPage]["head_title"] ?></title>
     <link rel="icon" href="../assets/la-satisfaction.png" type="image/x-icon">
 </head>
-
 <body>
     <header>
         <div class="logo">
