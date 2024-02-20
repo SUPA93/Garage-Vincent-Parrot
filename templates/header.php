@@ -26,7 +26,6 @@ if ($isAdminOrUser) {
 }
 
 // GET THE CURRENT PAGE
-/* $currentPage = htmlentities(basename($_SERVER['PHP_SELF'])); */
 $currentPage = htmlentities(basename($_SERVER["SCRIPT_NAME"]));
 ?>
 <!DOCTYPE html>

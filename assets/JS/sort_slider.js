@@ -72,7 +72,7 @@ $('#filterForm').on('slidechange ', function () {
     let yearMax = document.getElementById('yearMax').value;
 
     const url = `../lib/carsFilter.php?priceMin=${priceMin}&priceMax=${priceMax}&mileageMin=${mileageMin}&mileageMax=${mileageMax}&yearMin=${yearMin}&yearMax=${yearMax}`;
-    console.log("URL de la requête:", url);
+    /* console.log("URL de la requête:", url); */
     fetch(url)
         .then(response => {
             console.log("Réponse brute:", response);

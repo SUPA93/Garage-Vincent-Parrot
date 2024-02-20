@@ -1,4 +1,4 @@
-const maxLifetime = 300; // VALUES MUST BE SAME AS PHP CONNEXIONS FUNCTION
+const maxLifetime = 3600; // VALUES AS PHP CONNEXIONS FUNCTION
 let timeout;
 let sessionEndTime;
 

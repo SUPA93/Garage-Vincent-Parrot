@@ -1,7 +1,9 @@
 <!-- ADMIN SERVICES FORM -->
-<?php 
+<?php
 
 require_once "../lib/service.php";
+
+
 ?>
 
 <form method="post">
@@ -9,6 +11,11 @@ require_once "../lib/service.php";
         <h2>Liste des services</h2>
         <table class="tftable" border="1">
             <thead>
+                <?php if ($alertMessage != "") : ?>
+                    <div id="alertMessage">
+                        <?php echo htmlspecialchars($alertMessage); ?>
+                    </div>
+                <?php endif; ?>
                 <tr>
                     <th>ID</th>
                     <th>Service</th>
@@ -17,16 +24,18 @@ require_once "../lib/service.php";
                     <th>Supprimer</th>
                 </tr>
                 <?php
-                foreach ($services as $service) {
-                    echo "<tr>";
-                    echo "<td>{$service['id']}</td>"; // ID du service
-                    echo "<td>{$service['svc_name']}</td>"; // Nom du service
-                    echo "<td>{$service['svc_price']}</td>"; // Tarif
-                    echo "<td>{$service['svc_time']}</td>"; // Durée
-                    echo "<td><a href='delete_service.php?id={$service['id']}'>Supprimer</a></td>";
-                    echo "</tr>";
-                }
-                ?>
+                foreach ($services as $service) : ?>
+                    <tr>
+                        <td><?= $service['id'] ?></td>
+                        <td><?= $service['svc_name'] ?></td>
+                        <td><?= $service['svc_price'] ?></td>
+                        <td><?= $service['svc_time'] ?></td>
+                        <td>
+                            <a href="../lib/service.php?id=<?= $service['id'] ?>">Supprimer</a>
+                        </td>
+                    </tr>
+
+                <?php endforeach; ?>
             </thead>
         </table>
 

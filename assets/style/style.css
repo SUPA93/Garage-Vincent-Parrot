@@ -143,11 +143,6 @@ a:hover {
     width: calc(100% * 2);
 }
 
-/* .navigation_admin {
-    display: flex;
-    justify-content: center;
-} */
-
 .inscription .tftable {
     margin-right: auto;
     margin-right: auto;
@@ -193,7 +188,7 @@ a:hover {
 }
 
 .tftable tr:hover {
-    background-color: #ffffff;
+    background-color: #9090907d;
 }
 /*---------GALAXY FOLD LOGO DISPLAY---------*/
 @media (max-width: 280px) {
@@ -1487,6 +1482,7 @@ form textarea {
     border-radius: 5px;
     /* margin-left: auto;
     margin-right: auto; */
+    cursor: pointer;
 }
 
 .inscription form input[type="radio"],
@@ -1555,6 +1551,7 @@ button:hover {
     box-shadow: 2px 2px 8px rgba(131, 131, 131, 1),
         -2px -2px 8px rgba(131, 131, 131, 1);
     text-align: center;
+    cursor: pointer;
 }
 
 .inscription .tftable {

@@ -3,7 +3,7 @@
         <fieldset>
             <legend>Informations de connexion</legend>
             <!-- ERROR MESSAGE DISPLAY -->
-            <?php if ($errorMessage != ''): ?>
+            <?php if ($errorMessage != ""): ?>
             <div id="error-message" style="color: red;">
                 <?php echo htmlspecialchars($errorMessage); ?>
             </div>
