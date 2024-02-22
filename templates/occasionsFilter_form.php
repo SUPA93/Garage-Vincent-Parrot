@@ -33,14 +33,14 @@
         </div>
     </div>
     <br>
-</form>
-<!-- 
-<form id="filterForm" class="inscription">
     <div class="row justify-content-center ">
         <div class="col-md-6">
-            <button type="submit" class="btn btn-warning m-0" name="reset" value="true">Réinitialiser</button>
+            <button type="submit" class="btn btn-warning mb-2 " >Réinitialiser les filtres</button>
         </div>
     </div>
+</form>
+
+<!-- <form id="filterForm" class="inscription">
     <label for="sortBy">Trier par :</label>
     <select id="sortBy" name="sortBy">
         <option value="year-asc">Année croissante</option>

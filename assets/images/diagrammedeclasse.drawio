@@ -1,44 +1,50 @@
 <mxfile host="65bd71144e">
     <diagram id="CkaYdKFN-Y4JmhTi5wJ0" name="Page-1">
-        <mxGraphModel dx="2080" dy="930" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="1752" dy="879" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2339" pageHeight="3300" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="2" value="-id : int&lt;br&gt;&lt;br&gt;-nom : varchar(255)&lt;br&gt;&lt;br&gt;-prenom : varchar(255)&lt;br&gt;&lt;br&gt;-email : varchar(255)&lt;br&gt;&lt;br&gt;-mot_de_passe : varchar(255)&lt;br&gt;&lt;br&gt;-role : ENUM('admin', 'user')&amp;nbsp;" style="whiteSpace=wrap;html=1;direction=south;align=left;verticalAlign=top;" vertex="1" parent="1">
-                    <mxGeometry x="40" y="70" width="200" height="200" as="geometry"/>
+                <mxCell id="2" value="-id : int&lt;br&gt;&lt;br&gt;-nom : varchar(255)&lt;br&gt;&lt;br&gt;-prenom : varchar(255)&lt;br&gt;&lt;br&gt;-email : varchar(255)&lt;br&gt;&lt;br&gt;-mot_de_passe : varchar(255)&lt;br&gt;&lt;br&gt;-role : ENUM('admin', 'user')&amp;nbsp;" style="whiteSpace=wrap;html=1;direction=south;align=left;verticalAlign=top;" parent="1" vertex="1">
+                    <mxGeometry x="200" y="70" width="200" height="200" as="geometry"/>
                 </mxCell>
-                <mxCell id="4" value="utilisateurs_parrot" style="whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="1">
-                    <mxGeometry x="40" y="40" width="200" height="30" as="geometry"/>
+                <mxCell id="4" value="utilisateurs_parrot" style="whiteSpace=wrap;html=1;direction=south;" parent="1" vertex="1">
+                    <mxGeometry x="200" y="40" width="200" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="7" value="&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;-id : int&lt;br&gt;&lt;br&gt;-first_name : varchar(255)&lt;br&gt;&lt;br&gt;-last_name : varchar(255)&lt;br&gt;&lt;br&gt;-feedback : text&lt;br&gt;&lt;br&gt;-note : int&lt;br&gt;&lt;br&gt;-valide : tinyint(1)&amp;nbsp;&lt;br&gt;&lt;div style=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;&amp;nbsp;" style="whiteSpace=wrap;html=1;direction=south;align=left;verticalAlign=bottom;" vertex="1" parent="1">
-                    <mxGeometry x="280" y="40" width="200" height="230" as="geometry"/>
+                <mxCell id="7" value="&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;-id : int&lt;br&gt;&lt;br&gt;-first_name : varchar(255)&lt;br&gt;&lt;br&gt;-last_name : varchar(255)&lt;br&gt;&lt;br&gt;-feedback : text&lt;br&gt;&lt;br&gt;-note : int&lt;br&gt;&lt;br&gt;-valide : tinyint(1)&amp;nbsp;&lt;br&gt;&lt;div style=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;&amp;nbsp;" style="whiteSpace=wrap;html=1;direction=south;align=left;verticalAlign=bottom;" parent="1" vertex="1">
+                    <mxGeometry x="500" y="40" width="200" height="230" as="geometry"/>
                 </mxCell>
-                <mxCell id="8" value="user_feedback" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
-                    <mxGeometry x="280" y="40" width="200" height="30" as="geometry"/>
+                <mxCell id="8" value="user_feedback" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="500" y="40" width="200" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="9" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;-id : int&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;br&gt;-jour_semaine : varchar(10)&lt;br&gt;&lt;br&gt;-heure_ouverture : time&lt;br&gt;&lt;br&gt;-heure_fermeture : time" style="whiteSpace=wrap;html=1;align=left;fillColor=default;verticalAlign=top;" vertex="1" parent="1">
-                    <mxGeometry x="40" y="480" width="200" height="120" as="geometry"/>
+                <mxCell id="9" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;-id : int&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;br&gt;-jour_semaine : varchar(10)&lt;br&gt;&lt;br&gt;-heure_ouverture : time&lt;br&gt;&lt;br&gt;-heure_fermeture : time" style="whiteSpace=wrap;html=1;align=left;fillColor=default;verticalAlign=top;" parent="1" vertex="1">
+                    <mxGeometry x="200" y="540" width="200" height="120" as="geometry"/>
                 </mxCell>
-                <mxCell id="10" value="horaires" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
-                    <mxGeometry x="40" y="450" width="200" height="30" as="geometry"/>
+                <mxCell id="10" value="horaires" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="200" y="510" width="200" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="11" value="-id : int&lt;br&gt;&lt;br&gt;-svc_name : varchar(50)&lt;br&gt;&lt;br&gt;-svc_price : decimal(10,2)&lt;br&gt;&lt;br&gt;-svc_time : time" style="whiteSpace=wrap;html=1;fillColor=default;verticalAlign=top;align=left;" vertex="1" parent="1">
-                    <mxGeometry x="40" y="320" width="200" height="120" as="geometry"/>
+                <mxCell id="11" value="-id : int&lt;br&gt;&lt;br&gt;-svc_name : varchar(50)&lt;br&gt;&lt;br&gt;-svc_price : decimal(10,2)&lt;br&gt;&lt;br&gt;-svc_time : time" style="whiteSpace=wrap;html=1;fillColor=default;verticalAlign=top;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="200" y="340" width="200" height="120" as="geometry"/>
                 </mxCell>
-                <mxCell id="12" value="services" style="whiteSpace=wrap;html=1;fillColor=default;" vertex="1" parent="1">
-                    <mxGeometry x="40" y="280" width="200" height="40" as="geometry"/>
+                <mxCell id="12" value="services" style="whiteSpace=wrap;html=1;fillColor=default;" parent="1" vertex="1">
+                    <mxGeometry x="200" y="300" width="200" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="13" value="-id : int&lt;br&gt;&lt;br&gt;-nom : varchar(255)&lt;br&gt;&lt;br&gt;-prenom : varchar(255)&lt;br&gt;&lt;br&gt;-statut : enum('particulier', 'professionnel)&lt;br&gt;&lt;br&gt;-societe : varchar(255)&lt;br&gt;&lt;br&gt;-objet : varchar(255)&lt;br&gt;&lt;br&gt;-email : varchar(255)&lt;br&gt;&lt;br&gt;-adress : varchar(255)&lt;br&gt;&lt;br&gt;-fichier : varchar(255)&lt;br&gt;&lt;br&gt;-message : text&lt;br&gt;&lt;br&gt;-date_submission : timestamp" style="whiteSpace=wrap;html=1;fillColor=default;verticalAlign=top;align=left;" vertex="1" parent="1">
-                    <mxGeometry x="280" y="320" width="230" height="320" as="geometry"/>
+                <mxCell id="13" value="-id : int&lt;br&gt;&lt;br&gt;-nom : varchar(255)&lt;br&gt;&lt;br&gt;-prenom : varchar(255)&lt;br&gt;&lt;br&gt;-statut : enum('particulier', 'professionnel)&lt;br&gt;&lt;br&gt;-societe : varchar(255)&lt;br&gt;&lt;br&gt;-objet : varchar(255)&lt;br&gt;&lt;br&gt;-email : varchar(255)&lt;br&gt;&lt;br&gt;-adress : varchar(255)&lt;br&gt;&lt;br&gt;-fichier : varchar(255)&lt;br&gt;&lt;br&gt;-message : text&lt;br&gt;&lt;br&gt;-date_submission : timestamp" style="whiteSpace=wrap;html=1;fillColor=default;verticalAlign=top;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="500" y="340" width="230" height="320" as="geometry"/>
                 </mxCell>
-                <mxCell id="14" value="formulaire_contact" style="whiteSpace=wrap;html=1;fillColor=default;" vertex="1" parent="1">
-                    <mxGeometry x="280" y="280" width="230" height="40" as="geometry"/>
+                <mxCell id="14" value="formulaire_contact" style="whiteSpace=wrap;html=1;fillColor=default;" parent="1" vertex="1">
+                    <mxGeometry x="500" y="300" width="230" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="15" value="-id : int&lt;br&gt;&lt;br&gt;-brand : varchar(50)&lt;br&gt;&lt;br&gt;-model : varchar(50)&lt;br&gt;&lt;br&gt;-color : varchar(50)&lt;br&gt;&lt;br&gt;-mileage : int&lt;br&gt;&lt;br&gt;-year : year&lt;br&gt;&lt;br&gt;-fuel_type :&amp;nbsp; varchar(50)&lt;br&gt;&lt;br&gt;-gearbox : varchar(15)&lt;br&gt;&lt;br&gt;-warranty : int&lt;br&gt;&lt;br&gt;-price : int&lt;br&gt;&lt;br&gt;-finish : varchar(50)&lt;br&gt;&lt;br&gt;-location : varchar(50)&lt;br&gt;&lt;br&gt;-dept : int&lt;br&gt;&lt;br&gt;-ads_date: date&lt;br&gt;&lt;br&gt;-pictures : text" style="whiteSpace=wrap;html=1;fillColor=default;verticalAlign=top;align=left;" vertex="1" parent="1">
-                    <mxGeometry x="530" y="80" width="210" height="440" as="geometry"/>
+                <mxCell id="15" value="-id : int&lt;br&gt;&lt;br&gt;-brand : varchar(50)&lt;br&gt;&lt;br&gt;-model : varchar(50)&lt;br&gt;&lt;br&gt;-color : varchar(50)&lt;br&gt;&lt;br&gt;-mileage : int&lt;br&gt;&lt;br&gt;-year : year&lt;br&gt;&lt;br&gt;-fuel_type :&amp;nbsp; varchar(50)&lt;br&gt;&lt;br&gt;-gearbox : varchar(15)&lt;br&gt;&lt;br&gt;-warranty : int&lt;br&gt;&lt;br&gt;-price : int&lt;br&gt;&lt;br&gt;-finish : varchar(50)&lt;br&gt;&lt;br&gt;-location : varchar(50)&lt;br&gt;&lt;br&gt;-dept : int&lt;br&gt;&lt;br&gt;-ads_date: date&lt;br&gt;&lt;br&gt;-pictures : text" style="whiteSpace=wrap;html=1;fillColor=default;verticalAlign=top;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="780" y="80" width="210" height="440" as="geometry"/>
                 </mxCell>
-                <mxCell id="16" value="used_vehicules" style="whiteSpace=wrap;html=1;fillColor=default;" vertex="1" parent="1">
-                    <mxGeometry x="530" y="40" width="210" height="40" as="geometry"/>
+                <mxCell id="16" value="used_vehicules" style="whiteSpace=wrap;html=1;fillColor=default;" parent="1" vertex="1">
+                    <mxGeometry x="780" y="40" width="210" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="fuel_type" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="1030" y="40" width="170" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="1030" y="80" width="170" height="240" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>

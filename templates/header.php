@@ -6,6 +6,7 @@ include_once __DIR__ . '/../lib/connexions.php';
 require_once __DIR__ . '/../lib/schedule.php';
 
 
+
 session_start();
 
 // False by default

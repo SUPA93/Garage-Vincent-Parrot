@@ -47,7 +47,7 @@ $(function () {
         range: true,
         min: 2000,
         max: 2023,
-        values: [2000, 2023],
+        values: [2000, 2024],
         step: 1,
         create: function () {
             let yearMin = sliderAnnee.slider("values", 0);
@@ -72,7 +72,8 @@ $('#filterForm').on('slidechange ', function () {
     let yearMax = document.getElementById('yearMax').value;
 
     const url = `../lib/carsFilter.php?priceMin=${priceMin}&priceMax=${priceMax}&mileageMin=${mileageMin}&mileageMax=${mileageMax}&yearMin=${yearMin}&yearMax=${yearMax}`;
-    /* console.log("URL de la requête:", url); */
+    /* console.log("URL de la requête:", url);
+    history.pushState({ path: url }, '', url); */
     fetch(url)
         .then(response => {
             console.log("Réponse brute:", response);

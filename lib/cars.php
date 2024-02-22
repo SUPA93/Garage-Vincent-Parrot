@@ -2,13 +2,13 @@
 <?php
 
 include_once __DIR__ . '/pdo.php';
-
+include_once __DIR__ . '/validateFieldsCars.php';
 $pdo = connectToDatabase();
 // GET USED VEHICLES FROM DATA BASE
 function getUsedVehicles($pdo)
 {
     try {
-        $sql = "SELECT * FROM used_vehicules";
+        $sql = "SELECT uv.*, ft.type AS fuel_type FROM used_vehicules uv LEFT JOIN fuel_types ft ON uv.fuel_type_id = ft.id";
         $stmt = $pdo->query($sql);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
@@ -16,15 +16,16 @@ function getUsedVehicles($pdo)
         return [];
     }
 }
+
 // GET USED VEHICLE'S ID FROM DB
-function getVehicleById($pdo, $id)
+function getVehicleById($pdo, int $id)
 {
     if (!$id) {
         echo "ID du véhicule manquant";
         return null;
     }
     try {
-        $sql = "SELECT * FROM used_vehicules WHERE id = :id";
+        $sql = "SELECT uv.*, ft.type AS fuel_type FROM used_vehicules uv LEFT JOIN fuel_types ft ON uv.fuel_type_id = ft.id WHERE uv.id = :id";
         $stmt = $pdo->prepare($sql);
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
@@ -85,26 +86,54 @@ function getVehicleForEdit($pdo, $id)
 
     return $vehicle;
 }
+
+function getFuelTypes($pdo)
+{
+    try {
+        $sql = "SELECT id, type FROM fuel_types ORDER BY type";
+        $stmt = $pdo->query($sql);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        echo "Erreur lors de la récupération des types de carburant : " . $e->getMessage();
+        return [];
+    }
+}
+
 // ADD VEHICLE TO DB
-function insertVehicle($pdo, $data, $uploadedImages) {
+function insertVehicle($pdo, $data, $uploadedImages)
+{
     // check and clean datas
     $data['year'] = filter_var($data['year'], FILTER_VALIDATE_INT);
     $data['price'] = filter_var($data['price'], FILTER_VALIDATE_FLOAT);
     $data['mileage'] = filter_var($data['mileage'], FILTER_VALIDATE_INT);
-    $data['dept'] = filter_var($data['dept'], FILTER_VALIDATE_INT);
+    $data['dept'] = filter_var($data['dept'], FILTER_SANITIZE_STRING);
     // handling data error
-    if (!$data['year'] || !$data['price'] || !$data['mileage'] || !$data['dept']) {
-        echo "Données non conformes";
+    if (!$data['year']) {
+        echo "L'année est invalide.";
         return;
     }
+    if (!$data['price']) {
+        echo "Le prix invalide.";
+        return;
+    }
+    if (!$data['mileage']) {
+        echo "Le kilométrage invalide.";
+        return;
+    }
+    if (!$data['dept']) {
+        echo "Valeur de dept: '{$data['dept']}'";
+        echo "Le département invalide.";
+        return;
+    }
+
 
     // format and prepare datas for insert
     $ads_date = date("Y-m-d");
     $imagesString = !empty($uploadedImages) ? implode(',', $uploadedImages) : '/assets/images/default_cars.png';
 
-    $sql = "INSERT INTO used_vehicules (brand, model, color, mileage, year, fuel_type, gearbox, warranty, price, finish, pictures, location, dept, ads_date)
-            VALUES (:brand, :model, :color, :mileage, :year, :fuel_type, :gearbox, :warranty, :price, :finish, :pictures, :location, :dept, :ads_date)";
-    
+    $sql = "INSERT INTO used_vehicules (brand, model, color, mileage, year, fuel_type_id, gearbox, warranty, price, finish, pictures, location, dept, ads_date)
+            VALUES (:brand, :model, :color, :mileage, :year, :fuel_type_id, :gearbox, :warranty, :price, :finish, :pictures, :location, :dept, :ads_date)";
+
     try {
         $stmt = $pdo->prepare($sql);
         foreach ($data as $key => $value) {
@@ -119,6 +148,7 @@ function insertVehicle($pdo, $data, $uploadedImages) {
         echo "Erreur lors de l'ajout des données : " . $e->getMessage();
     }
 }
+
 
 // HANDLE IMAGES UPLOAD
 function uploadImages($files, $isUpdate = false)
@@ -165,17 +195,22 @@ function uploadImages($files, $isUpdate = false)
 // UPDATE VEHICLE 
 function updateVehicle($pdo, $id, $data, $uploadedImages)
 {
-
     $imagesString = !empty($uploadedImages) ? implode(',', $uploadedImages) : (isset($data['existing_pictures']) ? $data['existing_pictures'] : '');
 
-    $sql = "UPDATE used_vehicules SET brand = :brand, model = :model, color = :color, mileage = :mileage, year = :year, fuel_type = :fuel_type, gearbox = :gearbox, warranty = :warranty, price = :price, finish = :finish, pictures = :pictures, location = :location, dept = :dept WHERE id = :id";
+
+    $sql = "UPDATE used_vehicules SET brand = :brand, model = :model, color = :color, mileage = :mileage, year = :year, fuel_type_id = :fuel_type_id, gearbox = :gearbox, warranty = :warranty, price = :price, finish = :finish, pictures = :pictures, location = :location, dept = :dept WHERE id = :id";
+
     try {
         $stmt = $pdo->prepare($sql);
         foreach ($data as $key => $value) {
-            if ($key != 'existing_pictures' && $key != 'id' && $key != 'update_vehicle' && $key != 'new_pictures') {
+            // Assurez-vous de lier aussi fuel_type_id correctement
+            if ($key != 'existing_pictures' && $key != 'id' && $key != 'update_vehicle' && $key != 'new_pictures' && $key != 'fuel_type') {
                 $stmt->bindParam(':' . $key, $data[$key]);
             }
         }
+
+        $stmt->bindParam(':fuel_type_id', $data['fuel_type_id'], PDO::PARAM_INT);
+
         $stmt->bindParam(':pictures', $imagesString);
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
@@ -185,6 +220,7 @@ function updateVehicle($pdo, $id, $data, $uploadedImages)
         echo "Erreur lors de la mise à jour des données : " . $e->getMessage();
     }
 }
+
 // ERASE VEHICLE FROM DB
 function deleteVehicleById($pdo, $article_id)
 {
@@ -195,7 +231,7 @@ function deleteVehicleById($pdo, $article_id)
         $stmt->bindParam(':article_id', $article_id, PDO::PARAM_INT);
         $stmt->execute();
         header("Location: ../templates/admin.php");
-        exit();
+        exit;
     } catch (PDOException $e) {
         echo "Erreur : " . $e->getMessage();
     }
@@ -203,22 +239,34 @@ function deleteVehicleById($pdo, $article_id)
 // CHECK ADD VEHICLE FORM SUBMISSION
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add_vehicle'])) {
     $uploadedImages = uploadImages($_FILES);
-
     $data = [
-        'brand' => $_POST['brand'],
-        'model' => $_POST['model'],
-        'color' => $_POST['color'],
-        'mileage' => $_POST['mileage'],
-        'year' => $_POST['year'],
-        'fuel_type' => $_POST['fuel_type'],
-        'gearbox' => $_POST['gearbox'],
-        'warranty' => $_POST['warranty'],
-        'price' => $_POST['price'],
-        'finish' => $_POST['finish'],
-        'location' => $_POST['location'],
-        'dept' => $_POST['dept']
+        'brand' => htmlspecialchars($_POST['brand']),
+        'model' => htmlspecialchars($_POST['model']),
+        'color' => htmlspecialchars($_POST['color']),
+        'mileage' => filter_var($_POST['mileage'], FILTER_VALIDATE_INT),
+        'year' => filter_var($_POST['year'], FILTER_VALIDATE_INT),
+        'fuel_type_id' => htmlspecialchars($_POST['fuel_type_id']),
+        'gearbox' => htmlspecialchars($_POST['gearbox']),
+        'warranty' => htmlspecialchars($_POST['warranty']),
+        'price' => filter_var($_POST['price'], FILTER_VALIDATE_FLOAT),
+        'finish' => htmlspecialchars($_POST['finish']),
+        'location' => htmlspecialchars($_POST['location']),
+        'dept' => trim($_POST['dept'])
     ];
+    $errors = validateVehicleData($data);
 
+    if (!empty($errors)) {
+
+        foreach ($errors as $error) {
+            echo "<div style='text-align: center; margin-top: 20px;'>";
+            echo "<p style='font-size: 1.5rem;'>" . htmlspecialchars($error, ENT_QUOTES, 'UTF-8') . "</p>";
+            echo "</div>";
+        }
+        echo "<div style='text-align: center; margin-top: 20px;'>"; // Centre le bouton et ajoute un peu d'espace au-dessus
+        echo "<a href='../templates/admin.php' style='display: inline-block; background-color: #FF0000; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; border: 1px solid black;'>Retour</a>";
+        echo "</div>";
+        return;
+    }
     insertVehicle($pdo, $data, $uploadedImages);
 }
 // CHECK UPDATE VEHICLE FORM SUBMISSION

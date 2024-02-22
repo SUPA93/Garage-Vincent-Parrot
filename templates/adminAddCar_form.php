@@ -1,4 +1,10 @@
+<?php include_once "../lib/cars.php";
+include_once "../lib/locations.php";
+$fuelTypes = getFuelTypes($pdo);
+?>
 <!-- ADMIN USED CAR ADD FORM -->
+
+
 <form method="post" action="../lib/cars.php" id="add_used_form" enctype="multipart/form-data">
     <button type="button" title="Retour administration" class="btninscription">
         <a href="admin.php">Retour</a>
@@ -22,8 +28,16 @@
         <label for="year">Année :</label>
         <input type="number" id="year" name="year" required>
 
-        <label for="fuel_type">Type de carburant :</label>
-        <input type="text" id="fuel_type" name="fuel_type" required>
+        <select id="fuel_type_id" name="fuel_type_id" required>
+            <option value="">Sélectionnez un type de carburant</option>
+            <?php foreach ($fuelTypes as $type) : ?>
+                <option value="<?php echo htmlspecialchars($type['id']); ?>">
+                    <?php echo htmlspecialchars($type['type']); ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
+
+
 
         <label for="gearbox">Boîte de vitesses :</label>
         <input type="text" id="gearbox" name="gearbox" required>
@@ -39,12 +53,18 @@
         <input type="text" id="finish" name="finish" required>
 
         <label for="location">Emplacement :</label>
-        <input type="text" id="location" name="location" required>
+        <select id="location" name="location" onchange="updateDeptNumber()" required>
+            <option value="">Sélectionnez un département</option>
+            <?php foreach ($departements as $nom => $numero) : ?>
+                <option data-deptnum="<?php echo htmlspecialchars($numero); ?>" value="<?php echo htmlspecialchars($nom); ?>">
+                    <?php echo htmlspecialchars($nom); ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
+        <!-- Champ caché pour le numéro du département -->
+        <input type="hidden" id="dept" name="dept">
 
-        <label for="dept">Département :</label>
-        <input type="text" id="dept" name="dept" required>
-
-        <label for="pictures">Ajouter des photos (max 5) :</label>
+        <label for="pictures">Ajouter une photo :</label>
         <input type="file" id="pictures" name="pictures[]" accept="image/*" multiple>
 
         <div class="form_selector">
@@ -52,3 +72,13 @@
         </div>
     </fieldset>
 </form>
+<script>
+    function updateDeptNumber() {
+        var locationSelect = document.getElementById('location');
+        var selectedOption = locationSelect.options[locationSelect.selectedIndex];
+        var deptNumber = selectedOption.getAttribute('data-deptnum');
+        console.log("data-deptum");
+        document.getElementById('dept').value = deptNumber;
+        console.log(dept);
+    }
+</script>

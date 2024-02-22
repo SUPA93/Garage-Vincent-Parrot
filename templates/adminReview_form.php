@@ -8,7 +8,7 @@ require_once '../lib/review.php';
         <table class="tftable" border="1">
             <thead>
                 <tr>
-                    <th></th>
+                    <th>id</th>
                     <th>Prénom</th>
                     <th>Nom</th>
                     <th>Message</th>

@@ -53,5 +53,5 @@ if (!empty($_GET['yearMax'])) {
 $stmt->execute();
 $filteredVehicules = $stmt->fetchAll(PDO::FETCH_ASSOC);
 /* print_r($filteredVehicules); */
-
+/* header('Content-type:application/json'); */
 echo json_encode($filteredVehicules);
