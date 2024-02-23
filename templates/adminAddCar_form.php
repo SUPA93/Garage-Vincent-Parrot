@@ -3,14 +3,11 @@ include_once "../lib/locations.php";
 $fuelTypes = getFuelTypes($pdo);
 ?>
 <!-- ADMIN USED CAR ADD FORM -->
-
-
 <form method="post" action="../lib/cars.php" id="add_used_form" enctype="multipart/form-data">
     <button type="button" title="Retour administration" class="btninscription">
         <a href="admin.php">Retour</a>
     </button>
     <fieldset id="gestion_used">
-
         <h2>Ajouter un véhicule</h2>
 
         <label for="brand">Marque :</label>
@@ -36,8 +33,6 @@ $fuelTypes = getFuelTypes($pdo);
                 </option>
             <?php endforeach; ?>
         </select>
-
-
 
         <label for="gearbox">Boîte de vitesses :</label>
         <input type="text" id="gearbox" name="gearbox" required>

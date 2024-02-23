@@ -276,7 +276,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update_vehicle'])) {
 
     updateVehicle($pdo, $_POST['id'], $data, $uploadedImages);
 }
-// CHECK DELETE USED CAR FORM SUBMISSION
+// CHECK DELETE USED VEHICLEFORM SUBMISSION
 if (isset($_GET['delete_id'])) {
     $article_id = $_GET['delete_id'];
     deleteVehicleById($pdo, $article_id);

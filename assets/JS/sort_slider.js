@@ -1,21 +1,29 @@
 
 $(function () {
+    // selection des elements du slider par ID
     let sliderPrice = $("#price-slider");
     sliderPrice.slider({
-        range: true,
-        min: 0,
-        max: 100000,
+        range: true, //activer la selection d'une plage de valeur
+        min: 0, //val min
+        max: 100000, //val max
         values: [0, 100000],
-        step: 1000,
+        step: 1000, //pas d'incrémentation du slider
         create: function () {
+            //Déclaration des valeurs initiales du range slider
             let priceMin = sliderPrice.slider("values", 0);
             let priceMax = sliderPrice.slider("values", 1);
-            $("#price-values").text(priceMin + " € " + " - " + priceMax + " € ");
+            $("#price-values").text(
+                priceMin + " € " + " - " + priceMax + " € "
+            );
         },
         slide: function (event, ui) {
+            // Mettre à jour les inputs cachés
             $("#priceMin").val(ui.values[0]);
             $("#priceMax").val(ui.values[1]);
-            $("#price-values").text(ui.values[0] + " € " + " - " + ui.values[1] + " € ");
+            $("#price-values").text(
+                //mise à jour des valeurs du range sur le front 
+                ui.values[0] + " € " + " - " + ui.values[1] + " € "
+            );
         },
     });
 });
@@ -70,23 +78,27 @@ $('#filterForm').on('slidechange ', function () {
     let mileageMax = document.getElementById('mileageMax').value;
     let yearMin = document.getElementById('yearMin').value;
     let yearMax = document.getElementById('yearMax').value;
-
+    // Construction de l'URL par défaut 
     const url = `../lib/carsFilter.php?priceMin=${priceMin}&priceMax=${priceMax}&mileageMin=${mileageMin}&mileageMax=${mileageMax}&yearMin=${yearMin}&yearMax=${yearMax}`;
     /* console.log("URL de la requête:", url);
     history.pushState({ path: url }, '', url); */
     fetch(url)
         .then(response => {
-            console.log("Réponse brute:", response);
+            /* console.log("Réponse brute:", response); */
             if (!response.ok) {
                 throw new Error(`Erreur HTTP ! statut: ${response.status}`);
             }
             return response.json();
         })
         .then(data => {
-            console.log("Données reçues:", data);
+            /* console.log("Données reçues:", data); */
             $(".grid-container").html("");
-            for (car of data) {
-                let html = `
+            //IF NO RESULTS
+            if (data.length === 0) {
+                $(".grid-container").html(`<div class="inscription"><h3>Désolé: Pas de resultats<br>Modifiez vos filtres</h3></div`);
+            } else {
+                for (car of data) {
+                    let html = `
                 <div class="grid-item">
                     <a href="occasions_partial.php?id=${car.id}" title="Plus de détails">
                         <img src="${car.pictures}" alt="Image du véhicule" title="Plus de détails"/>
@@ -101,11 +113,11 @@ $('#filterForm').on('slidechange ', function () {
                         <a href="occasions_partial.php?id=${car.id}" title="Cliquez pour voir plus de détails">Plus de détails</a>
                     </button>
                 </div>`;
-                $(".grid-container").append(html);
+                    $(".grid-container").append(html);
+                }
             }
         })
         .catch(error => {
             console.error('Erreur lors de la requête Fetch:', error);
         });
-
 });
