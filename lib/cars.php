@@ -50,20 +50,20 @@ function displayVehicleDetails($pdo, $vehicleId)
         return "<p>Véhicule non trouvé.</p>";
     }
     $output = "<div class='grid-container'>";
-    $output = "<div class='grid-item'>";
-    $output .= "<img src='" . htmlentities($vehicle['pictures']) . "' />";
-    $output .= "<h2>" . htmlspecialchars($vehicle['brand']) . ' ' . htmlspecialchars($vehicle['model']) . "</h2>";
-    $output .= "<p>" . "Marque: " . htmlspecialchars($vehicle['brand']) . "</p>";
-    $output .= "<p>" . "Modèle: " . htmlspecialchars($vehicle['model']) . "</p>";
-    $output .= "<p>" . "Année: " . htmlspecialchars($vehicle['year']) . "</p>";
-    $output .= "<p>" . "Kilomètres: " . htmlspecialchars($vehicle['mileage']) . " km" . "</p>";
-    $output .= "<p>" . "Energie: " . htmlspecialchars($vehicle['fuel_type']) . "</p>";
-    $output .= "<p>" . "Prix: " . htmlspecialchars($vehicle['price']) . " €" . "</p>";
-    $output .= "<p>" . "Boite: " . htmlspecialchars($vehicle['gearbox']) . "</p>";
-    $output .= "<p>" . "Couleur:  " . htmlspecialchars($vehicle['color']) . "</p>";
-    $output .= "<p>Garantie: " . htmlentities($warrantyText) . "</p>";
-    $output .= "<p>" . "Localisation: " . htmlspecialchars($vehicle['location']) . "</p>";
-    $output .= "<p>" . "Departement: " . htmlspecialchars($vehicle['dept']) . "</p>";
+    $output .= "<div class='grid-item'>";
+    $output .= "<img src='" . htmlentities($vehicle['pictures'], ENT_QUOTES, 'UTF-8') . "' />";
+    $output .= "<h2>" . htmlspecialchars($vehicle['brand'], ENT_QUOTES, 'UTF-8') . ' ' . htmlspecialchars($vehicle['model'], ENT_QUOTES, 'UTF-8') . "</h2>";
+    $output .= "<p>" . "Marque: " . htmlspecialchars($vehicle['brand'], ENT_QUOTES, 'UTF-8') . "</p>";
+    $output .= "<p>" . "Modèle: " . htmlspecialchars($vehicle['model'], ENT_QUOTES, 'UTF-8') . "</p>";
+    $output .= "<p>" . "Année: " . htmlspecialchars($vehicle['year'], ENT_QUOTES, 'UTF-8') . "</p>";
+    $output .= "<p>" . "Kilomètres: " . htmlspecialchars($vehicle['mileage'], ENT_QUOTES, 'UTF-8') . " km" . "</p>";
+    $output .= "<p>" . "Energie: " . htmlspecialchars($vehicle['fuel_type'], ENT_QUOTES, 'UTF-8') . "</p>";
+    $output .= "<p>" . "Prix: " . htmlspecialchars($vehicle['price'], ENT_QUOTES, 'UTF-8') . " €" . "</p>";
+    $output .= "<p>" . "Boite: " . htmlspecialchars($vehicle['gearbox'], ENT_QUOTES, 'UTF-8') . "</p>";
+    $output .= "<p>" . "Couleur:  " . htmlspecialchars($vehicle['color'], ENT_QUOTES, 'UTF-8') . "</p>";
+    $output .= "<p>Garantie: " . htmlentities($warrantyText, ENT_QUOTES, 'UTF-8') . "</p>";
+    $output .= "<p>" . "Localisation: " . htmlspecialchars($vehicle['location'], ENT_QUOTES, 'UTF-8') . "</p>";
+    $output .= "<p>" . "Departement: " . htmlspecialchars($vehicle['dept'], ENT_QUOTES, 'UTF-8') . "</p>";
     $output .= "</div>";
     $output .= "</div>";
 
@@ -106,7 +106,7 @@ function insertVehicle($pdo, $data, $uploadedImages)
     $data['year'] = filter_var($data['year'], FILTER_VALIDATE_INT);
     $data['price'] = filter_var($data['price'], FILTER_VALIDATE_FLOAT);
     $data['mileage'] = filter_var($data['mileage'], FILTER_VALIDATE_INT);
-    $data['dept'] = filter_var($data['dept'], FILTER_SANITIZE_STRING);
+    $data['dept'] = filter_var($data['dept']);
     // handling data error
     if (!$data['year']) {
         echo "L'année est invalide.";
@@ -258,7 +258,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add_vehicle'])) {
     if (!empty($errors)) {
 
         foreach ($errors as $error) {
-            echo "<div style='text-align: center; margin-top: 20px;'>";
+            echo "<div style='text-align: center; margin-top: 20px; color: #FF0000;'>";
             echo "<p style='font-size: 1.5rem;'>" . htmlspecialchars($error, ENT_QUOTES, 'UTF-8') . "</p>";
             echo "</div>";
         }

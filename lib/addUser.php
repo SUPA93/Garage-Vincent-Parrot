@@ -18,13 +18,9 @@ function addUser($pdo, $nom, $prenom, $email, $mot_de_passe, $role)
     } else {
         // Hash mot de passe
         $mot_de_passe_hash = password_hash($mot_de_passe, PASSWORD_DEFAULT);
-
         try {
             // Préparer la requête 
-            $sql = "INSERT INTO utilisateurs_parrot (nom, prenom, email, mot_de_passe, role) 
-                VALUES (:nom, :prenom, :email, :mot_de_passe_hash, :role)";
-
-
+            $sql = "INSERT INTO utilisateurs_parrot (nom, prenom, email, mot_de_passe, role) VALUES (:nom, :prenom, :email, :mot_de_passe_hash, :role)";
             // Préparer et exécuter PDO
             $stmt = $pdo->prepare($sql);
             $stmt->bindParam(':nom', $nom);
@@ -33,7 +29,6 @@ function addUser($pdo, $nom, $prenom, $email, $mot_de_passe, $role)
             $stmt->bindParam(':mot_de_passe', $mot_de_passe_hash);
             $stmt->bindParam(':role', $role);
             $stmt->execute();
-
             // message de succès
             return "Utilisateur ajouté avec succès.";
         } catch (PDOException $e) {
