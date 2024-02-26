@@ -1,12 +1,26 @@
 <!-- FILE FOR USER'S REVIEWS -->
 <?php
-include_once __DIR__. "/pdo.php";
+include_once __DIR__ . "/pdo.php";
+include_once __DIR__ . "/validateFieldsFeedback.php";
 
 $pdo = connectToDatabase();
+$errors = validateFeedbackData($_POST);
 
-
-function sendFeedback($pdo, $firstName, $lastName, $feedback, $note) {
+function sendFeedback($pdo, $data)
+{
+    $errors = validateFeedbackData($data);
     $valide = false; // false by default
+    if (!empty($errors)) {
+        return ['success' => false, 'error' => $errors];
+    }
+    //extraction
+    $firstName = $data['firstName'];
+    $lastName = $data['familyName'];
+    $feedback = $data['userMessage'];
+    $note = $data['userRating'];
+    //modération de la review
+    $valide = false; // false by default
+
     $sql = "INSERT INTO user_feedback (first_name, last_name, feedback, note, valide) VALUES (:firstName, :lastName, :feedback, :note, :valide)";
 
     try {
@@ -18,17 +32,21 @@ function sendFeedback($pdo, $firstName, $lastName, $feedback, $note) {
         $stmt->bindParam(':valide', $valide);
         $stmt->execute();
 
-        header('Location: index.php');
-        exit;
+        return ['success' => true];
+
+        /* header('Location: index.php'); */
+        /* exit; */
     } catch (PDOException $e) {
-        echo "Erreur lors de l'enregistrement de l'avis : " . $e->getMessage();
+        return ['success' => false, 'errors' => ["Erreur lors de l'enregistrement de l'avis : " . $e->getMessage()]];
     }
 }
-function getFeedbacks($pdo) {
+function getFeedbacks($pdo)
+{
     $sql = "SELECT id, first_name, last_name, feedback, note, valide FROM user_feedback";
     return $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 }
-function deleteFeedback($pdo, $comment_id) {
+function deleteFeedback($pdo, $comment_id)
+{
     $sql = "DELETE FROM user_feedback WHERE id = :comment_id";
 
     try {
@@ -41,7 +59,8 @@ function deleteFeedback($pdo, $comment_id) {
         echo "Erreur : " . $e->getMessage();
     }
 }
-function validateFeedback($pdo, $avisId) {
+function validateFeedback($pdo, $avisId)
+{
     $sqlSelect = "SELECT valide FROM user_feedback WHERE id = :id";
 
     try {
@@ -68,8 +87,24 @@ function validateFeedback($pdo, $avisId) {
     }
 }
 if (isset($_POST['send_feedback'])) {
-    sendFeedback($pdo, $_POST['firstName'], $_POST['familyName'], $_POST['userMessage'], $_POST['userRating']);
+    
+    $errors = validateFeedbackData($_POST);
+
+    if (!empty($errors)) {
+        $_SESSION['feedback_errors'] = $errors;
+        header('Location: index.php#feedbackSection.php'); 
+        exit;
+    } else {
+        
+        $result = sendFeedback($pdo, $_POST);
+        if ($result) {
+            $_SESSION['feedback_success'] = "Votre avis a été soumis avec succès!";
+            header('Location: index.php'); 
+            exit;
+        }
+    }
 }
+
 if (isset($_POST['delete_feedback'])) {
     deleteFeedback($pdo, $_POST['id']);
 }

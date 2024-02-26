@@ -1,5 +1,5 @@
 <?php
-// validateFieldsCars.php
+// REGEX FOR CARS FORM
 function validateVehicleData($data)
 {
     $errors = [];

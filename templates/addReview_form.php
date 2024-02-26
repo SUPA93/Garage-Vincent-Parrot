@@ -3,12 +3,26 @@
     <fieldset id="userFeedBack">
         <h2>Déjà client ? Dites-nous tout!</h2>
         <input type="hidden" name="my_form_feedback" value="my_unique_value">
+        <?php
+        if (isset($_SESSION['feedback_errors'])) {
+            foreach ($_SESSION['feedback_errors'] as $error) {
+                echo "<p style='color: red;'>$error</p>"; // erreur
+            }
+            unset($_SESSION['feedback_errors']); // Effacez les erreurs  
+        } elseif (!empty($_SESSION['feedback_success'])) {
+            echo "<p style='color: green; background: white;'>" . $_SESSION['feedback_success'] . "</p>";
+            unset($_SESSION['feedback_success']);
+        }
+        ?>
         <label for="firstName" id="firstNameLabel">Prénom*</label>
         <input type="text" id="firstNameInput" name="firstName" placeholder="Prénom..." required autocomplete="given-name">
+
         <label for="familyName" id="familyNameLabel">Votre Nom*</label>
         <input type="text" id="familyNameInput" name="familyName" placeholder="Votre nom" required autocomplete="family-name">
+
         <label for="userMessage" id="userMessageLabel">Laissez un commentaire</label>
         <textarea id="userMessageInput" name="userMessage" cols="15" rows="3" placeholder="Votre message..."></textarea>
+
         <label for="userRating" id="userRatingLabel" required>Donnez nous une note (de 1 à 5)*</label>
         <select id="userRating" name="userRating" required>
             <option value="5">5 (Excellent)</option>
